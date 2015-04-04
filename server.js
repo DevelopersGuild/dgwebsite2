@@ -2,6 +2,7 @@
 
 var bodyParser    = require('body-parser');
 var express       = require('express');
+var moment        = require('moment');
 var nunjucks      = require('nunjucks');
 var path          = require('path');
 var session       = require('express-session');
@@ -12,6 +13,9 @@ var MongoStore = require('connect-mongo')(session);
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+var router      = express.Router();
+var routerForum = express.Router();
 
 // Include database model
 var Db = require('./models/database');
@@ -64,6 +68,10 @@ env.addFilter('getOnline', function(username, callback) {
   }
 }, true);
 
+env.addFilter('convertTimestamp', function(timestamp) {
+  return moment(timestamp).fromNow();
+});
+
 // Tell Express to serve static objects from the /public/ directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -74,23 +82,30 @@ app.use(function(req, res, next) {
   next();
 });
 
+require('./routes/index')(router);
+require('./routes/forum')(routerForum);
+require('./routes/user')(routerForum);
+
+app.use(router);
+app.use('/forum', routerForum);
+
 // Put the forum require before the user because the app.all('*')
 // is chained to all other requests
-//require('./routes/forum')(app);
-//require('./routes/user')(app);
+// require('./routes/forum')(app);
+// require('./routes/user')(app);
 
-/*
+
 // Handle 404 Error
 app.use(function(req, res, next) {
   var templateVars = {
+    title: 'Not Found',
     code: 404,
-    message: 'Not Found',
     sessUser: req.session.user
   };
 
   res.render('error.html', templateVars);
 });
-*/
+
 
 
 var server = app.listen(SERVER_PORT, SERVER_ADDRESS, function () {

@@ -4,8 +4,6 @@ var mongoose  = require('mongoose');
 
 // Include database model
 var Db = require('./database');
-var Thread = require('../models/thread');
-
 
 var ReplySchema = mongoose.Schema({
   message     : {type: String, required: true},
