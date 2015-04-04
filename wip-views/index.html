@@ -1,7 +1,11 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/lightSlider.css">
+    <script type="text/javascript" src="js/jquery.lightSlider.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
     <!-- <img id="overlay-master" src="mockup.png"></img> -->
@@ -9,8 +13,21 @@
         <p>DEVELOPERS' GUILD FORUM</p>
     </div>
     <div id="gallery">
-        <div id="slider-buttons"></div>
-        <div id="gallery-items"></div>
+        <div id="slider-buttons">
+          <a id="left-arrow" ><img src="resources/arrowbutton.png" alt=""></a>
+          <a id="right-arrow" ><img src="resources/arrowbutton.png" alt=""></a>
+        </div>
+        <ul class="project-gallery">
+            <a href=""><li class="gallery-item"></li></a>
+            <a href=""><li class="gallery-item"></li></a>
+            <a href=""><li class="gallery-item"></li></a>
+            <a href=""><li class="gallery-item"></li></a>
+            <a href=""><li class="gallery-item"></li></a>
+            <a href=""><li class="gallery-item"></li></a>
+            <a href=""><li class="gallery-item"></li></a>
+            <a href=""><li class="gallery-item"></li></a>
+          </ul>
+        </div>
     </div>
     <div id="ann">
         <div id="ann-header">
@@ -44,67 +61,73 @@
             <div class="sf-cont">
               <div class="sf-header">
                 <span class="sf-title">General Discussion (Q&A and Feedback)</span>
-                <span class="sf-meta">Replies</span>
-                <span class="sf-meta">Original by</span>
-              </div>
-              <div class="sf-thread">
-                <div class="ava"><img class="sf-ava recent-ava"></img></div>
-                <div class="thread-content">
-                  <p class="thread-title">What does this club do?</p>
-                  <p class="thread-trunc">@vihanchaudry at 10:30AM: post text post text</p>
-                </div>
-                <div><span class="thread-meta">3</span></div>
-                <div class="ava">
-                  <img class="sf-ava orig-ava"></img>
-                </div>
-                <div class="originalby">
-                  <span class="thread-meta">joshuapham</span>
+                <div class="sf-meta">
+                  <span>Replies</span>
+                  <span>Last Post</span>
                 </div>
               </div>
               <div class="sf-thread">
-                <div class="ava"><img class="sf-ava recent-ava"></img></div>
+                <div class="ava"><img class="sf-ava orig-ava"></img></div>
                 <div class="thread-content">
                   <p class="thread-title">What does this club do?</p>
-                  <p class="thread-trunc">@vihanchaudry at 10:30AM: post text post text</p>
+                  <p class="thread-starter">by @vihanchaudry</p>
                 </div>
                 <div><span class="thread-meta">3</span></div>
                 <div class="ava">
-                  <img class="sf-ava orig-ava"></img>
+                  <img class="sf-ava recent-ava"></img>
                 </div>
                 <div class="originalby">
-                  <span class="thread-meta">joshuapham</span>
+                  <span class="thread-meta">@joshuapham</span><br>
+                  <span class="thread-meta-date">on 10/23 10:40AM</span>
                 </div>
               </div>
               <div class="sf-thread">
-                <div class="ava"><img class="sf-ava recent-ava"></img></div>
+                <div class="ava"><img class="sf-ava orig-ava"></img></div>
                 <div class="thread-content">
                   <p class="thread-title">What does this club do?</p>
-                  <p class="thread-trunc">@vihanchaudry at 10:30AM: post text post text</p>
+                  <p class="thread-starter">by @vihanchaudry</p>
                 </div>
                 <div><span class="thread-meta">3</span></div>
                 <div class="ava">
-                  <img class="sf-ava orig-ava"></img>
+                  <img class="sf-ava recent-ava"></img>
                 </div>
                 <div class="originalby">
-                  <span class="thread-meta">joshuapham</span>
+                  <span class="thread-meta">@joshuapham</span><br>
+                  <span class="thread-meta-date">on 10/23 10:40AM</span>
                 </div>
               </div>
               <div class="sf-thread">
-                <div class="ava"><img class="sf-ava recent-ava"></img></div>
+                <div class="ava"><img class="sf-ava orig-ava"></img></div>
                 <div class="thread-content">
                   <p class="thread-title">What does this club do?</p>
-                  <p class="thread-trunc">@vihanchaudry at 10:30AM: post text post text</p>
+                  <p class="thread-starter">by @vihanchaudry</p>
                 </div>
                 <div><span class="thread-meta">3</span></div>
                 <div class="ava">
-                  <img class="sf-ava orig-ava"></img>
+                  <img class="sf-ava recent-ava"></img>
                 </div>
                 <div class="originalby">
-                  <span class="thread-meta">joshuapham</span>
+                  <span class="thread-meta">@joshuapham</span><br>
+                  <span class="thread-meta-date">on 10/23 10:40AM</span>
+                </div>
+              </div>
+              <div class="sf-thread">
+                <div class="ava"><img class="sf-ava orig-ava"></img></div>
+                <div class="thread-content">
+                  <p class="thread-title">What does this club do?</p>
+                  <p class="thread-starter">by @vihanchaudry</p>
+                </div>
+                <div><span class="thread-meta">3</span></div>
+                <div class="ava">
+                  <img class="sf-ava recent-ava"></img>
+                </div>
+                <div class="originalby">
+                  <span class="thread-meta">@joshuapham</span><br>
+                  <span class="thread-meta-date">on 10/23 10:40AM</span>
                 </div>
               </div>
               <div class="footer">
-                <div class="see-all"><p>SEE ALL THREADS</p></div>
+                <div class="see-all"><a><p>SEE ALL THREADS</p></a></div>
               </div>
             </div>
         </div>

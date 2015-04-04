@@ -33,6 +33,36 @@ body {
     background-color: #D8D8D8;
 }
 
+#slider-buttons {
+    position:absolute;
+    width:100%;
+    z-index:5;
+}
+
+#slider-buttons > img:hover {
+    opacity:0.5;
+}
+
+#left-arrow {
+    position: absolute;
+    left: 40;
+    top: 70;
+}
+
+#right-arrow {
+    right: 40;
+    position: absolute;
+    top: 70;
+    transform: rotate(180deg);
+}
+
+.gallery-item {
+    height: 180;
+    border:5px solid white;
+    width: 240;
+    display: inline-block;
+}
+
 #ann-header {
     height:62px;
     width:auto;
@@ -118,6 +148,7 @@ body {
     font-weight:200;
     font-size:16px;
     line-height:2.8em;
+    position: relative;
 }
 
 .sf-title {
@@ -126,7 +157,14 @@ body {
 }
 
 .sf-meta {
-    margin-right:55px;
+    position:absolute;
+    right: 0;
+    top: 0;
+}
+
+.sf-meta > span {
+    margin-right: 71px;
+    position: relative;
 }
 
 .sf-thread {
@@ -153,7 +191,7 @@ body {
 
 }
 
-.recent-ava {
+.orig-ava {
     margin: 0 24px 0 31px;
 }
 
@@ -169,27 +207,36 @@ body {
     margin: 0;
 }
 
-.thread-trunc {
+.thread-starter {
     color:gray;
     font-size:12;
     margin-top: 4px;
 }
 
 .thread-meta {
-    margin-right: 13px;
     font-size: 14;
 }
 
-.orig-ava {
+.originalby .thread-meta {
+    margin-right: 31px;
+}
+
+.thread-meta-date {
+    font-size: 12;
+    line-height: 2em;
+    color:#969696;
+}
+
+.recent-ava {
     margin: 0 0 0 65;
 }
 
 .originalby {
-    padding: 0 0 0 10px;
+    padding: 0 0 0 13px;
 }
 
 .footer {
-    height: 40;
+    height: 30;
     background-color: #BEC7D1;
     position: relative;
 }
@@ -200,13 +247,13 @@ body {
     color:white;
     right:0;
     height: 100%;
-    font-size: 14;
+    font-size: 12;
     font-family: Open Sans;
     font-weight: 200;
 }
 
-.see-all > p {
-    margin: 8 30 0 30;
+.see-all p {
+    margin: 7px 30px 0 30;
 }
 
 #feed {
