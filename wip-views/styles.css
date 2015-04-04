@@ -1,0 +1,302 @@
+body {
+    padding: 0;
+    margin: 0;
+    position:relative;
+}
+
+#overlay-master {
+    position:fixed;
+    width:100%;
+    opacity:0.4;
+    z-index:10;
+}
+
+
+#header {
+    height: 62px;
+    width:auto;
+    background-color:#4E5963;
+    border-bottom: #323940 solid 10px;
+    padding:0 30px;
+}
+
+#header > p {
+    font-family:Lato;
+    font-weight:300;
+    font-size:24px;
+    color:white;
+    line-height:2.5em;
+}
+
+#gallery {
+    height:215px;
+    background-color: #D8D8D8;
+}
+
+#ann-header {
+    height:62px;
+    width:auto;
+    padding:0 30px;
+    background-color: white;
+}
+
+#ann-header > span {
+    font-family:Lato;
+    font-weight:300;
+    font-size:20px;
+    line-height:3em;
+}
+
+.ann-item {
+    height:144px;
+    width:50%;
+    background-color:white;
+    position:relative;
+    opacity:1;
+}
+
+.ann-item > p {
+    font-size:14px;
+    width:480px;
+    font-family:Open Sans;
+    display:inline-block;
+    margin-left:115px;
+
+}
+
+.ann-avatar {
+    position:absolute;
+    height:45px;
+    width:45px;
+    margin: 20 0 0 20;
+    border:7px #4E5963 solid;
+    border-radius: 53px;
+    background-color:#FFE1BD;
+}
+
+#ann-container {
+    display: flex;
+    flex-flow: wrap;
+}
+
+#content {
+    width:100%;
+    height:auto;
+    margin-top: 12px;
+    display: flex;
+    flex-flow: wrap;
+}
+
+#directory {
+    width: 950px;
+    background-color: #CFD8E3;
+    height: 1000px;
+}
+
+.overlay-dir {
+    width:950px;
+    height:auto;
+    position:absolute;
+    z-index:9;
+    opacity: .4;
+    margin:0 0px;
+}
+
+.sf-cont {
+    margin-left:33px;
+    background-color: white;
+    width:883px;
+    margin-top:30px;
+}
+
+.sf-header {
+    background-color: #3F494D;
+    height:45px;
+    color: rgba(255, 255, 255, 0.8);
+
+    font-family: Open Sans;
+    font-weight:200;
+    font-size:16px;
+    line-height:2.8em;
+}
+
+.sf-title {
+    margin-left:16px;
+    margin-right:320px;
+}
+
+.sf-meta {
+    margin-right:55px;
+}
+
+.sf-thread {
+    border-bottom: 2px solid #969696;
+    font-family:Open Sans;
+    font-weight: 200;
+    height:72px;
+    display: table;
+    width: 100%;
+    padding: 5 0;
+}
+
+.sf-thread > * {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.sf-ava {
+    height:25px;
+    width:25px;
+    border-radius: 25px;
+    border: 3px solid rgb(97, 97, 97);
+    background-color: white;
+
+}
+
+.recent-ava {
+    margin: 0 24px 0 31px;
+}
+
+
+.thread-content {
+    line-height: 1.3em;
+    font-size:14px;
+    width: 585px;
+}
+
+.thread-title {
+    color:black;
+    margin: 0;
+}
+
+.thread-trunc {
+    color:gray;
+    font-size:12;
+    margin-top: 4px;
+}
+
+.thread-meta {
+    margin-right: 13px;
+    font-size: 14;
+}
+
+.orig-ava {
+    margin: 0 0 0 65;
+}
+
+.originalby {
+    padding: 0 0 0 10px;
+}
+
+.footer {
+    height: 40;
+    background-color: #BEC7D1;
+    position: relative;
+}
+
+.see-all {
+    position:absolute;
+    background-color: #3F494D;
+    color:white;
+    right:0;
+    height: 100%;
+    font-size: 14;
+    font-family: Open Sans;
+    font-weight: 200;
+}
+
+.see-all > p {
+    margin: 8 30 0 30;
+}
+
+#feed {
+    background-color: #A9BACC;
+    height: 1000px;
+    width: 330px;
+}
+
+#dir-header {
+    height:62px;
+    border-bottom:10px solid #7E8187;
+    background-color:white;
+}
+
+#dir-header > span {
+    font-family:Lato;
+    font-weight:300;
+    font-size:20px;
+    line-height:3em;
+    margin-left:25px;
+}
+
+#feed-header {
+    height:62px;
+    border-bottom:10px solid #3F494D;
+    background-color:white;
+}
+
+#feed-header > span {
+    font-family:Lato;
+    font-weight:300;
+    font-size:20px;
+    line-height:3em;
+    margin-left:25px;
+}
+
+.feed-item {
+    margin-top:12px;
+    margin-left: 14px;
+    width: auto;
+    position: relative;
+}
+
+.feed-sig {
+    border: 6px solid white;
+    border-radius: 37px;
+    height: 37px;
+    width: 37px;
+    margin-top: 15px;
+    position:absolute;
+}
+
+.feedoverlay {
+    width:330px;
+    height:auto;
+    position:absolute;
+    z-index:9;
+    opacity: .1;
+    margin:0 0px;
+}
+
+.feed-info {
+    border-radius:3px;
+    background-color: #D0E2F5;
+    width: 220px;
+    padding:10px;
+    margin-left: 60px;
+    max-height: 65px;
+    overflow: scroll;
+    display:inline-block;
+    font-family: Open Sans;
+}
+
+.feed-info span.date {
+    line-height:1.4em;
+    font-family: Open Sans;
+    font-size:12;
+    margin: 0;
+    color:#9191A1;
+}
+
+.feed-info span {
+    color:#84858F;
+    margin-left:3px;
+}
+
+.feed-info > p.item-header {
+    font-size:14;
+    line-height:1em;
+    font-weight:500;
+    margin: 0px 0px 5px 0px;
+    color:#39393F;
+}
