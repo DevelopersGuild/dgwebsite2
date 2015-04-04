@@ -4,54 +4,8 @@ module.exports = function(app) {
 
   var validator = require('validator');
 
-  var Thread  = require('.././models/thread');
+  var Thread = require('.././models/thread');
   var Reply  = require('.././models/reply');
-
-  /*
-  var handleForumFetch = function(req, res) {
-
-    var page = validator.toInt(validator.escape(req.query.page)) || 1;
-
-    // (TEMP)
-    var section = 0;
-    // validation for page
-    if ( (page < 1) || (page % 1 !== 0) ) {
-      page = 1;
-    }
-
-    // Grab all threads.
-    Thread.getAll(section, page, function(err, threads, lastPage) {
-
-      if (err) {
-        res.send(err);
-        return;
-      }
-
-      // If user is on a page with no threads, redirect them to index
-      if ((page !== 1) && (page > lastPage)) {
-        res.redirect('/');
-        return;
-      }
-
-      User.getActiveUsers(function(docs) {
-        var onlineUsers = docs;
-
-        var templateVars = {
-          title: '',
-          threads: threads,
-          page: page,
-          lastPage: lastPage,
-          onlineUsers: onlineUsers
-        };
-
-        // Render template
-        res.render('forum.html', templateVars);
-
-      });
-    });
-
-  };
-  */
 
   function handleThreadFetch(req, res) {
 
@@ -111,9 +65,18 @@ module.exports = function(app) {
 
     //var author = req.session.author;
 
-    // (TEMP)
-    var section = 0;
+    var section = validator.toInt(validator.escape(req.query.section));
+
     var result;
+
+    if (!section) {
+      result = {
+        code    : 400,
+        message : 'Section not specified.'
+      };
+      res.send(result);
+      return;
+    }
 
     if (!author) {
       result = {

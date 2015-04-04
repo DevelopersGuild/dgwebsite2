@@ -57,7 +57,27 @@
 
 <h2>General Discussion Threads</h2>
 
-{% for thread in threads %}
+{% for thread in threadsGD %}
+
+  <a href="forum/thread/{{ thread.prettyId }}">{{ thread.subject }}</a> by {{ thread.author }}
+
+{% endfor %}
+
+<br><hr><br>
+
+<h2>Ideas Threads</h2>
+
+{% for thread in threadsIdeas %}
+
+  <a href="forum/thread/{{ thread.prettyId }}">{{ thread.subject }}</a> by {{ thread.author }}
+
+{% endfor %}
+
+<br><hr><br>
+
+<h2>News Threads</h2>
+
+{% for thread in threadsNews %}
 
   <a href="forum/thread/{{ thread.prettyId }}">{{ thread.subject }}</a> by {{ thread.author }}
 
@@ -69,13 +89,44 @@
 
 <h2>Post a New Thread</h2>
 
-<form action="forum/makethread" method="post">
+<form action="forum/makethread?section=0" method="post">
   <textarea name="subject" rows="1" dir="ltr" placeholder="title"></textarea>
   <br>
   <textarea name="message" rows="10" dir="ltr" placeholder="message"></textarea>
-  <input value="Post Thread" type="submit"/>
+  <br>
+  <input value="Post GD Thread" type="submit"/>
+</form>
+
+<br><br>
+
+<form action="forum/makethread?section=1" method="post">
+  <textarea name="subject" rows="1" dir="ltr" placeholder="title"></textarea>
+  <br>
+  <textarea name="message" rows="10" dir="ltr" placeholder="message"></textarea>
+  <br>
+  <input value="Post Ideas Thread" type="submit"/>
+</form>
+
+<br><br>
+
+<form action="forum/makethread?section=2" method="post">
+  <textarea name="subject" rows="1" dir="ltr" placeholder="title"></textarea>
+  <br>
+  <textarea name="message" rows="10" dir="ltr" placeholder="message"></textarea>
+  <br>
+  <input value="Post News Thread" type="submit"/>
 </form>
 
 {% endif %}
+
+<br><hr><br>
+
+<h2>Online Users</h2>
+
+{% for user in onlineUsers %}
+
+<a href="forum/user/{{ user.username }}">{{ user.username }}</a>
+
+{% endfor %}
 
 {% endblock %}
