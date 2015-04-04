@@ -1,7 +1,81 @@
 {% extends "base.html" %}
 
 {% block page %}
+{% if sessUser %}
 
-<h2>This page is under construction!<h2>
+<h2>Logout</h2>
+
+<form action="forum/logout" method="get">
+
+  <input value="Logout" type="submit">
+
+</form>
+{% else %}
+
+<h2>Login</h2>
+
+<form action="forum/login" method="post">
+
+  Username/Email <input name="usernameEmail" placeholder="username/email">
+
+  Password <input name="password" placeholder="password">
+
+
+  <input value="Login" type="submit">
+
+</form>
+
+<br><hr><br>
+
+<h2>Sign Up</h2>
+
+<form action="forum/signup" method="post">
+
+  Username <input name="username" placeholder="username">
+
+  Email <input name="email" placeholder="email">
+
+  First Name <input name="fName" placeholder="first name">
+
+  Last Name <input name="lName" placeholder="last name">
+
+  Password <input name="password" placeholder="password">
+
+  <br>
+
+  <div class="g-recaptcha" data-sitekey="6Lc4KAETAAAAANqjmmrIuQm1iojbfFetPmk2TJ-Q"></div>
+
+  <input value="Signup" type="submit">
+
+</form>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+{% endif %}
+
+<br><hr><br>
+
+<h2>General Discussion Threads</h2>
+
+{% for thread in threads %}
+
+  <a href="forum/thread/{{ thread.prettyId }}">{{ thread.subject }}</a> by {{ thread.author }}
+
+{% endfor %}
+
+{% if sessUser %}
+
+<br><hr><br>
+
+<h2>Post a New Thread</h2>
+
+<form action="forum/makethread" method="post">
+  <textarea name="subject" rows="1" dir="ltr" placeholder="title"></textarea>
+  <br>
+  <textarea name="message" rows="10" dir="ltr" placeholder="message"></textarea>
+  <input value="Post Thread" type="submit"/>
+</form>
+
+{% endif %}
 
 {% endblock %}
