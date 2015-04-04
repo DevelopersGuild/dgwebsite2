@@ -9,16 +9,10 @@ module.exports = function(app) {
   var User = require('.././models/user');
 
   // Username can only contain letters, numbers, underscores, and dashes
-  var isUsername = function (str) {
+  function isUsername(str) {
     var regex = /^[a-zA-Z0-9-_]+$/;
     return regex.test(str);
-  };
-
-  // Full Name can only contain letters and spaces.
-  var isFullName = function (str) {
-    var regex = /^[a-zA-Z ]+$/;
-    return regex.test(str);
-  };
+  }
 
   var SECRET = process.env.CAPTCHA_SECRET ||
               '6Lc4KAETAAAAAPAytG014cMHnx_89YCWk-269q4s';
@@ -42,7 +36,7 @@ module.exports = function(app) {
     );
   }
 
-  var handleLoginRequest = function(req, res) {
+  function handleLoginRequest(req, res) {
     var usernameEmail = validator.toString(validator.escape(req.body.usernameEmail));
     var password = validator.toString(validator.escape(req.body.password));
 
@@ -119,9 +113,9 @@ module.exports = function(app) {
 
       });
     });
-  };
+  }
 
-  var handleSignupRequest = function(req, res) {
+  function handleSignupRequest(req, res) {
 
     // Captcha key
     var key = req.body['g-recaptcha-response'];
@@ -312,9 +306,9 @@ module.exports = function(app) {
         );
       }
     });
-  };
+  }
 
-  var handleLogoutRequest = function(req, res) {
+  function handleLogoutRequest(req, res) {
 
     if (!req.session.user) {
       var result = {
@@ -340,9 +334,9 @@ module.exports = function(app) {
 
       });
     });
-  };
+  }
 
-  var handleProfileRequest = function(req, res) {
+  function handleProfileRequest(req, res) {
 
     // sanitize username
     // TODO: Check max length of this
@@ -374,9 +368,9 @@ module.exports = function(app) {
       }
     });
 
-  };
+  }
 
-  var handleUserProfileChange = function(req, res) {
+  function handleUserProfileChange(req, res) {
 
     var fName = validator.toString(validator.escape(req.body.fName));
     var lName = validator.toString(validator.escape(req.body.lName));
@@ -475,7 +469,7 @@ module.exports = function(app) {
       res.send(result);
     });
   */
-  };
+  }
 
   app.post('/login'       , handleLoginRequest);
   app.get('/logout'       , handleLogoutRequest);

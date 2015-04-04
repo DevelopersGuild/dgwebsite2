@@ -3,7 +3,7 @@
 module.exports = function(app) {
   var User = require('.././models/user');
 
-  var handleOnEveryRequest = function(req, res, next) {
+  function handleOnEveryRequest(req, res, next) {
 
     // TODO: Check if request is logout
     if (req.session.user) {
@@ -23,7 +23,7 @@ module.exports = function(app) {
     }
 
     next();
-  };
+  }
 
   function handleIndexFetch(req, res, next) {
     var templateVars = {
@@ -32,7 +32,7 @@ module.exports = function(app) {
     res.render('index.html', templateVars);
   }
 
-  var handleGetAllMembers = function(req, res){
+  function handleGetAllMembers(req, res) {
 
     User.getAllMembers(function(docs){
 
@@ -48,7 +48,7 @@ module.exports = function(app) {
 
     });
 
-  };
+  }
 
   app.all('*', handleOnEveryRequest);
   app.get('/', handleIndexFetch);

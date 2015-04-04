@@ -53,7 +53,7 @@ module.exports = function(app) {
   };
   */
 
-  var handleThreadFetch = function(req, res) {
+  function handleThreadFetch(req, res) {
 
     var page = validator.toInt(validator.escape(req.query.page)) || 1;
 
@@ -100,9 +100,9 @@ module.exports = function(app) {
         res.render('thread.html', templateVars);
       }
     });
-  };
+  }
 
-  var handleThreadCreate = function(req, res) {
+  function handleThreadCreate(req, res) {
 
     var subject = validator.toString(validator.escape(req.body.subject));
     var message = validator.toString(validator.escape(req.body.message));
@@ -176,9 +176,9 @@ module.exports = function(app) {
       }
 
     });
-  };
+  }
 
-  var handleThreadReply = function(req, res) {
+  function handleThreadReply(req, res) {
 
     var threadId = validator.toString(validator.escape(req.params.id));
     var message = validator.toString(validator.escape(req.body.message));
@@ -242,7 +242,7 @@ module.exports = function(app) {
         );
       }
     });
-  };
+  }
 
   app.post('/makethread'          , handleThreadCreate);
   app.get('/thread/:id'           , handleThreadFetch);
