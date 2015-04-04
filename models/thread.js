@@ -75,6 +75,13 @@ function getAllThreads(section, page, callback) {
 
     var skip = ( LIMIT * (page - 1) );
 
+    // Page 0 is the index
+    if (page === 0) {
+      LIMIT = 5;
+      skip = 0;
+    }
+
+
     ThreadMongoModel.find({section: section},
       '_id subject author prettyId flags lastPost',
       {sort: {'lastPost.time': -1} , limit: LIMIT, skip: skip},

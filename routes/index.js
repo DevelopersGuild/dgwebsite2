@@ -1,9 +1,12 @@
 'use strict';
 
 module.exports = function(app) {
+
+  var async = require('async');
+  var validator = require('validator');
+
   var User = require('.././models/user');
   var Thread = require('.././models/thread');
-  var validator = require('validator');
 
   function handleOnEveryRequest(req, res, next) {
 
@@ -29,37 +32,55 @@ module.exports = function(app) {
 
   function handleIndexFetch(req, res, next) {
 
+    /*
     var page = validator.toInt(validator.escape(req.query.page)) || 1;
 
-    // (TEMP)
-    var section = 0;
     // validation for page
     if ( (page < 1) || (page % 1 !== 0) ) {
       page = 1;
     }
+    */
 
-    // Grab all threads.
-    Thread.getAll(section, page, function(err, threads, lastPage) {
 
+    var sectionGD = 0;
+    var sectionIdeas = 1;
+    var sectionNews = 2;
+
+    // Page zero grabs only 5 threads
+    var page = 0;
+
+    async.parallel({
+      threadsGD: function(next) {
+        Thread.getAll(sectionGD, page, function(err, threads) {
+          next(err, threads);
+        });
+      },
+      threadsIdeas: function(next) {
+        Thread.getAll(sectionIdeas, page, function(err, threads) {
+          next(err, threads);
+        });
+      },
+      threadsNews: function(next) {
+        Thread.getAll(sectionNews, page, function(err, threads) {
+          next(err, threads);
+        });
+      }
+    },
+    function(err, results) {
       if (err) {
         res.send(err);
         return;
       }
 
-      // If user is on a page with no threads, redirect them to index
-      if ((page !== 1) && (page > lastPage)) {
-        res.redirect('/');
-        return;
-      }
-
-      User.getActiveUsers(function(docs) {
-        var onlineUsers = docs;
+      User.getActiveUsers(function(onlineUsers) {
 
         var templateVars = {
           title: 'Index',
-          threads: threads,
-          page: page,
-          lastPage: lastPage,
+          threadsGD: results.threadsGD,
+          threadsIdeas: results.threadsIdeas,
+          threadsNews: results.threadsNews,
+          // page: page,
+          // lastPage: lastPage,
           onlineUsers: onlineUsers
         };
 
@@ -67,7 +88,9 @@ module.exports = function(app) {
         res.render('index.html', templateVars);
 
       });
+
     });
+
   }
 
   function handleGetAllMembers(req, res) {
