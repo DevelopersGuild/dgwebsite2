@@ -20,7 +20,7 @@ module.exports = function(app) {
     var threadId = validator.toString(validator.escape(req.params.id));
 
     // Check to see if the threadId is valid and if it's 5 characters long
-    if (!threadId || !validator.isLength(threadId, 5, 5) || !validator.isAlphanumeric(threadId)) {
+    if (!threadId || !validator.isAlphanumeric(threadId)) {
       var templateVars = {
         title: 'Thread not found.',
         code: 404,
@@ -69,9 +69,9 @@ module.exports = function(app) {
 
     var result;
 
-    if (!section) {
+    if (!section && section !== 0) {
       result = {
-        code    : 400,
+        code    : 500,
         message : 'Section not specified.'
       };
       res.send(result);

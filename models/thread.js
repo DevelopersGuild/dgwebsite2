@@ -2,6 +2,7 @@
 
 //var crypto    = require('crypto');
 var mongoose  = require('mongoose');
+var shortid   = require('shortid');
 
 // Include database and reply model
 var Db = require('./database');
@@ -11,7 +12,7 @@ var ThreadSchema = mongoose.Schema({
   subject     : { type: String, required: true },
   message     : { type: String, required: true },
   author      : { type: String, required: true },
-  prettyId    : { type: String, required: true, unique: true },
+  prettyId    : { type: String, unique: true, default: shortid.generate },
   section     : { type: Number, required: true},
   views       : { type: Number, default: 0 },
   creationDate: { type: Date, default: Date.now },
@@ -40,30 +41,6 @@ var ThreadSchema = mongoose.Schema({
 
 var ThreadMongoModel = Db.model('threads', ThreadSchema);
 
-
-function generatePrettyId(callback, counter) {
-
-  if (!counter) {
-    counter = 0;
-  } else if (counter > 20) {
-    var err = new Error('Server is failing to generate prettyId');
-
-    callback(err);
-  }
-
-  var id = Math.random().toString(36).substr(2, 5);
-
-  ThreadMongoModel.findOne({ prettyId: id },function(err, doc){
-
-    if (doc) {
-      generatePrettyId(callback, counter);
-    } else {
-      callback(null, id);
-    }
-
-  });
-
-}
 
 function getAllThreads(section, page, callback) {
 
@@ -148,36 +125,28 @@ function getThread(id, page, callback) {
 
 function createThread(subject, message, author, section, callback) {
 
-  generatePrettyId(function(err, id) {
+  ThreadMongoModel.create({
+    subject : subject,
+    message : message,
+    author  : author,
+    section : section,
+    lastPost: {
+      author: author
+    }
+  }, function(err, thread) {
 
+    var result;
     if (err) {
-      return callback(err);
+      result = {
+        code    : 500,
+        message : 'Something went wrong in the database.'
+      };
+      console.error(err);
     }
 
-    ThreadMongoModel.create({
-      subject : subject,
-      message : message,
-      author  : author,
-      prettyId: id,
-      section : section,
-      lastPost: {
-        author: author
-      }
-    }, function(err, thread) {
-
-      var result;
-      if (err) {
-        result = {
-          code    : 500,
-          message : 'Something went wrong in the database.'
-        };
-        console.error(err);
-      }
-
-      callback(result, thread);
-    });
-
+    callback(result, thread);
   });
+
 
 }
 
