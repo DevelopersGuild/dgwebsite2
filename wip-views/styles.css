@@ -163,7 +163,7 @@ body {
 }
 
 .sf-meta > span {
-    margin-right: 71px;
+    margin-right:55px;
     position: relative;
 }
 
@@ -311,7 +311,7 @@ body {
     height:auto;
     position:absolute;
     z-index:9;
-    opacity: .1;
+    opacity: .4;
     margin:0 0px;
 }
 
@@ -321,14 +321,12 @@ body {
     width: 220px;
     padding:10px;
     margin-left: 60px;
-    overflow: hidden;
+    max-height: 65px;
+    overflow: scroll;
     display:inline-block;
     font-family: Open Sans;
 }
 
-.github > .feed-info, .forum > .feed-info {
-    max-height: 65px;
-}
 .feed-info span.date {
     line-height:1.4em;
     font-family: Open Sans;
@@ -348,17 +346,4 @@ body {
     font-weight:500;
     margin: 0px 0px 5px 0px;
     color:#39393F;
-}
-
-.instagram .feed-info {
-    padding: 10;
-    width: 220px;
-}
-
-img.insta {
-    height:240px;
-    width:240px;
-    margin-left: -10;
-    margin-bottom:5px;
-    background-color: white;
 }
