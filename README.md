@@ -18,15 +18,18 @@
 **Node Packages Used**
 
 - Async
-- Bcrypt
-- Body-Parser
-- Cookie-Parser
-- Connect-Mongo
-- Express
-- Express-Session
-- Mongoose
-- Nunjucks
-- Validator
+- Bcrypt - Encrypt passwords
+- Body-Parser - Parse body data from HTTP requests
+- Connect-Mongo - Store sessions
+- Express - Must-have Node.js framework
+- Express-Session - Handle sessions
+- Moment - Parse time
+- Mongoose - MongoDB wrapper
+- Nunjucks - Render HTML templates
+- Request - Make HTTP requests to APIs
+- Short Id - Generate short ids for threads
+- Socket.io - Update elements in realtime
+- Validator - Validate user input
 
 **License**
 
