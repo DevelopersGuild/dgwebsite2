@@ -123,10 +123,16 @@
 
 <h2>Online Users</h2>
 
-{% for user in onlineUsers %}
+<ul id="onlineUsers">
+  <!--{% for user in onlineUsers %}
 
-<a href="forum/user/{{ user.username }}">{{ user.username }}</a>
+  <li><a href="forum/user/{{ user.username }}">{{ user.username }}</a></li>
 
-{% endfor %}
+  {% endfor %}-->
+
+
+</ul>
+
+<h2 id="onlineGuests">Online Guests: </h2>
 
 {% endblock %}

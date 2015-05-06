@@ -1,12 +1,15 @@
 
-module.exports = function(app) {
+module.exports = function(app, io) {
 
   'use strict';
-  var https = require('https');
+  var https     = require('https');
   var moment    = require('moment');
   var validator = require('validator');
 
-  var User = require('.././models/user');
+  var User = require('./../models/user');
+
+  var guests = require('./../config/guestlist');
+  var users = require('./../config/userlist');
 
   // Username can only contain letters, numbers, underscores, and dashes
   function isUsername(str) {
@@ -92,26 +95,24 @@ module.exports = function(app) {
         res.send(err);
         return;
       }
-      User.setOnlineStatus(user.username, true, function(err) {
-        if (err) {
-          res.send(err);
-          return;
-        }
 
-        req.session.user = user;
+      delete guests[req.session.guest];
 
-        //         ms      s    m    h    d
-        var week = 1000 * 60 * 60 * 24 * 7;
+      io.emit('guestNum', Object.keys(guests).length);
+
+      req.session.user = user;
+
+      //         ms      s    m    h    d
+      var week = 1000 * 60 * 60 * 24 * 7;
 
         // Set the session to expire in a week
-        req.session.cookie.expires = new Date(Date.now() + week);
+      req.session.cookie.expires = new Date(Date.now() + week);
 
-        res.send({
-          code    : 200,
-          message : 'You have logged in.'
-        });
-
+      res.send({
+        code    : 200,
+        message : 'You have logged in.'
       });
+
     });
   }
 
@@ -281,26 +282,25 @@ module.exports = function(app) {
           function(err, user) {
             if (err) {
               res.send(err);
-            } else {
-              User.setOnlineStatus(user.username, true, function(err) {
-                if (err) {
-                  res.send(err);
-                  return;
-                }
-                req.session.user = user;
-
-                // 1 week
-                var week = 1000 * 60 * 60 * 24 * 7;
-
-                // Set the session to expire in a week
-                req.session.cookie.expires = new Date(Date.now() + week);
-
-                res.send({
-                  code    : 200,
-                  message : 'Account successfully created.'
-                });
-              });
+              return;
             }
+
+            delete guests[req.session.guest];
+
+            io.emit('guestNum', Object.keys(guests).length);
+
+            req.session.user = user;
+
+            // 1 week
+            var week = 1000 * 60 * 60 * 24 * 7;
+
+            // Set the session to expire in a week
+            req.session.cookie.expires = new Date(Date.now() + week);
+
+            res.send({
+              code    : 200,
+              message : 'Account successfully created.'
+            });
 
           }
         );
@@ -321,19 +321,12 @@ module.exports = function(app) {
       return;
     }
 
+    delete users[req.session.user.username];
 
-    User.setOnlineStatus(req.session.user.username, false, function(err) {
+    io.emit('onlineUsers', users);
+    req.session.user = null;
 
-      // TODO: Handle this error
-
-      req.session.destroy(function(err) {
-
-        // TODO: Handle this error
-
-        res.redirect('back');
-
-      });
-    });
+    res.redirect('back');
   }
 
   function handleProfileRequest(req, res) {

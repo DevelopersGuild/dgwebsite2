@@ -1,16 +1,20 @@
 'use strict';
 
-var bodyParser    = require('body-parser');
-var express       = require('express');
-var moment        = require('moment');
-var nunjucks      = require('nunjucks');
-var path          = require('path');
-var session       = require('express-session');
+var bodyParser      = require('body-parser');
+var express         = require('express');
+var moment          = require('moment');
+var nunjucks        = require('nunjucks');
+var path            = require('path');
+var expressSession  = require('express-session');
 
-var MongoStore = require('connect-mongo')(session);
+var MongoStore = require('connect-mongo')(expressSession);
 
 // Use middleware
 var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -22,7 +26,7 @@ var Db = require('./models/database');
 
 var User = require('./models/user');
 
-var sess = {
+var sessionOptions = {
   secret: process.env.SESS_SECRET || 'http://youtu.be/BwBK2xkjaSU',
   store: new MongoStore({ mongooseConnection: Db }),
   resave: false,
@@ -40,8 +44,13 @@ if (app.get('env') === 'production') {
   // sess.cookie.secure = true;
 }
 
+var session = expressSession(sessionOptions);
 
-app.use(session(sess));
+io.use(function(socket, next) {
+    session(socket.request, socket.request.res, next);
+});
+
+app.use(session);
 
 // Tell Nunjucks where the templates are stored.
 var env = new nunjucks.Environment(new nunjucks.FileSystemLoader('views'),
@@ -84,7 +93,9 @@ app.use(function(req, res, next) {
 
 require('./routes/index')(router);
 require('./routes/forum')(routerForum);
-require('./routes/user')(routerForum);
+require('./routes/user')(routerForum, io);
+
+require('./events/index')(io);
 
 app.use(router);
 app.use('/forum', routerForum);
@@ -108,7 +119,7 @@ app.use(function(req, res, next) {
 
 
 
-var server = app.listen(SERVER_PORT, SERVER_ADDRESS, function () {
+server.listen(SERVER_PORT, SERVER_ADDRESS, function () {
 
   var host = server.address().address;
   var port = server.address().port;

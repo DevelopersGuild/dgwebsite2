@@ -9,25 +9,8 @@ var validator = require('validator');
 var db = require('./database');
 
 // Titles for users
-// README: The Forum Developer title exists so forum developers can have access
-// To tools required to work on the forums.
-//
 var TITLES = ['Guest', 'Member', 'Officer'];
-/*
-// Guest: White, Member: Blue, Officer: Green
-var TITLES = [
-  {
-    label: 'Guest',
-    color: '#ffffff'
-  }, {
-    label: 'Member',
-    color: '#0070FF'
-  }, {
-    label: 'Officer',
-    color: '#00aa00'
-  }
-];
-*/
+
 var STOCKAVATARS = ['alpaca.png', 'anthony.png', 'bird.png', 'cat.png',
                     'chinchilla.png', 'fox.png', 'hedgehog.png', 'rat.png',
                     'husky.png', 'rabbit.png', 'polarbear.png', 'wifi.gif',
