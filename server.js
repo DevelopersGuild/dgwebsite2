@@ -33,8 +33,10 @@ io.use(require('./app/socket-session'));
 
 app.use(Session);
 
-// Tell Express to serve static objects from the /public/ directory
 app.use(express.static('public'));
+app.use(express.static('node_modules/animate.css'));
+app.use(express.static('node_modules/bootstrap/dist'));
+app.use(express.static('node_modules/jquery/dist'));
 
 app.use(require('./app/nunjucks')(app, NunjucksEnv));
 

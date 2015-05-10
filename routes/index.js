@@ -20,7 +20,7 @@ module.exports = function(app) {
     next();
   }
 
-  function handleIndexFetch(req, res, next) {
+  function handleIndexFetch(req, res) {
 
     /*
     var page = validator.toInt(validator.escape(req.query.page)) || 1;
@@ -31,7 +31,15 @@ module.exports = function(app) {
     }
     */
 
+    /*
 
+    if (!req.session.splash) {
+
+      res.redirect('/splash');
+
+      return;
+    }
+    */
     var sectionGD = 0;
     var sectionIdeas = 1;
     var sectionNews = 2;
@@ -83,6 +91,15 @@ module.exports = function(app) {
 
   }
 
+  function handleSplashFetch(req, res) {
+
+    // TEMP
+    //req.session.splash = true;
+
+    res.render('splash.html');
+  }
+
+
   function handleGetAllMembers(req, res) {
 
     User.getAllMembers(function(docs){
@@ -103,6 +120,7 @@ module.exports = function(app) {
 
   app.all('*', handleOnEveryRequest);
   app.get('/', handleIndexFetch);
+  app.get('/splash', handleSplashFetch);
   app.get('/members', handleGetAllMembers);
 };
 
