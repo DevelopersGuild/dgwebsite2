@@ -1,15 +1,19 @@
+'use strict';
 
-module.exports = function(app, io) {
+var express   = require('express');
+var https     = require('https');
+var moment    = require('moment');
+var validator = require('validator');
 
-  'use strict';
-  var https     = require('https');
-  var moment    = require('moment');
-  var validator = require('validator');
+var User = require('./../models/user');
 
-  var User = require('./../models/user');
+var guests  = require('./../config/guestlist');
+var users   = require('./../config/userlist');
 
-  var guests = require('./../config/guestlist');
-  var users = require('./../config/userlist');
+
+module.exports = function(io) {
+
+  var router = express.Router();
 
   // Username can only contain letters, numbers, underscores, and dashes
   function isUsername(str) {
@@ -464,10 +468,11 @@ module.exports = function(app, io) {
   */
   }
 
-  app.post('/login'       , handleLoginRequest);
-  app.get('/logout'       , handleLogoutRequest);
-  app.post('/signup'      , handleSignupRequest);
-  app.get('/user/:userid' , handleProfileRequest);
-  app.post('/changeprofile', handleUserProfileChange);
+  router.post('/login'       , handleLoginRequest);
+  router.get('/logout'       , handleLogoutRequest);
+  router.post('/signup'      , handleSignupRequest);
+  router.get('/user/:userid' , handleProfileRequest);
+  router.post('/changeprofile', handleUserProfileChange);
 
+  return router;
 };
