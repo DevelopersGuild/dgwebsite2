@@ -4,7 +4,7 @@ $(window).load(function() {
         slideshowSpeed: 1500,
         animationSpeed: 50,
         controlNav: false,
-        directionNav: false, 
+        directionNav: false,
         pauseOnAction: false,
         touch: false,
     });
@@ -13,7 +13,7 @@ $(window).load(function() {
       trigger: 'button#joinbutton'
     });
 
-    if(window.location.hash && window.location.hash === 'join'){
+    if(window.location.hash && window.location.hash === '#join'){
       $('#modal').jqmShow()
     }
 
@@ -25,11 +25,11 @@ $(window).load(function() {
 //go to top button function
 $("#gotop").mouseenter(function(){
    $("#gotop").fadeTo("fast", 0.8);
-}); 
-$("#gotop").mouseleave(function(){
-   $("#gotop").fadeTo("fast", 0.3);  
 });
-   
+$("#gotop").mouseleave(function(){
+   $("#gotop").fadeTo("fast", 0.3);
+});
+
 $(window).scroll(function() {
   if (window.iOS) {
     return;
@@ -59,7 +59,7 @@ if (window.iOS) {
 
     // Wow doesn't activate while scrolling on iOS, which is confusing.  It activates after any scrolling completely stops.
     $(".wow").removeClass("wow");
-    
+
     // iOS doesn't support "background-attachment: fixed," and, in fact, does something weird, instead.
     $(".fixed-background").removeClass("fixed-background");
 }
