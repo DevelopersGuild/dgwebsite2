@@ -1,138 +1,23 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
 
-{% block page %}
-{% if sessUser %}
+<html>
 
-<h2>Logout</h2>
+  <head>
 
-<form action="forum/logout" method="get">
+    <meta charset="utf-8">
+    <title>Developers' Guild</title>
 
-  <input value="Logout" type="submit">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 
-</form>
-{% else %}
+  </head>
 
-<h2>Login</h2>
+  <body>
+    <h1>Hello!</h1>
 
-<form action="forum/login" method="post">
+    <script src="/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/socket.io.js"></script>
+  </body>
+</html>
 
-  Username/Email <input name="usernameEmail" placeholder="username/email">
-
-  Password <input name="password" placeholder="password">
-
-
-  <input value="Login" type="submit">
-
-</form>
-
-<br><hr><br>
-
-<h2>Sign Up</h2>
-
-<form action="forum/signup" method="post">
-
-  Username <input name="username" placeholder="username">
-
-  Email <input name="email" placeholder="email">
-
-  First Name <input name="fName" placeholder="first name">
-
-  Last Name <input name="lName" placeholder="last name">
-
-  Password <input name="password" placeholder="password">
-
-  <br>
-
-  <div class="g-recaptcha" data-sitekey="6Lc4KAETAAAAANqjmmrIuQm1iojbfFetPmk2TJ-Q"></div>
-
-  <input value="Signup" type="submit">
-
-</form>
-
-<script src='https://www.google.com/recaptcha/api.js'></script>
-
-{% endif %}
-
-<br><hr><br>
-
-<h2>General Discussion Threads</h2>
-
-{% for thread in threadsGD %}
-
-  <a href="forum/thread/{{ thread.prettyId }}">{{ thread.subject }}</a> by {{ thread.author }}
-
-{% endfor %}
-
-<br><hr><br>
-
-<h2>Ideas Threads</h2>
-
-{% for thread in threadsIdeas %}
-
-  <a href="forum/thread/{{ thread.prettyId }}">{{ thread.subject }}</a> by {{ thread.author }}
-
-{% endfor %}
-
-<br><hr><br>
-
-<h2>News Threads</h2>
-
-{% for thread in threadsNews %}
-
-  <a href="forum/thread/{{ thread.prettyId }}">{{ thread.subject }}</a> by {{ thread.author }}
-
-{% endfor %}
-
-{% if sessUser %}
-
-<br><hr><br>
-
-<h2>Post a New Thread</h2>
-
-<form action="forum/makethread?section=0" method="post">
-  <textarea name="subject" rows="1" dir="ltr" placeholder="title"></textarea>
-  <br>
-  <textarea name="message" rows="10" dir="ltr" placeholder="message"></textarea>
-  <br>
-  <input value="Post GD Thread" type="submit"/>
-</form>
-
-<br><br>
-
-<form action="forum/makethread?section=1" method="post">
-  <textarea name="subject" rows="1" dir="ltr" placeholder="title"></textarea>
-  <br>
-  <textarea name="message" rows="10" dir="ltr" placeholder="message"></textarea>
-  <br>
-  <input value="Post Ideas Thread" type="submit"/>
-</form>
-
-<br><br>
-
-<form action="forum/makethread?section=2" method="post">
-  <textarea name="subject" rows="1" dir="ltr" placeholder="title"></textarea>
-  <br>
-  <textarea name="message" rows="10" dir="ltr" placeholder="message"></textarea>
-  <br>
-  <input value="Post News Thread" type="submit"/>
-</form>
-
-{% endif %}
-
-<br><hr><br>
-
-<h2>Online Users</h2>
-
-<ul id="onlineUsers">
-  <!--{% for user in onlineUsers %}
-
-  <li><a href="forum/user/{{ user.username }}">{{ user.username }}</a></li>
-
-  {% endfor %}-->
-
-
-</ul>
-
-<h2 id="onlineGuests">Online Guests: </h2>
-
-{% endblock %}
