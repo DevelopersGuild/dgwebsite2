@@ -18,14 +18,35 @@ body {
     background-color:#4E5963;
     border-bottom: #323940 solid 10px;
     padding:0 30px;
+    font-family: Lato;
 }
 
-#header > p {
-    font-family:Lato;
+#header > span {
     font-weight:300;
     font-size:24px;
     color:white;
     line-height:2.5em;
+}
+
+.header-link > a {
+  color:white;
+  padding-bottom:5px;
+  text-decoration: none;
+}
+
+.header-link {
+  float: right;
+}
+
+span.header-link {
+  line-height:2.5em;
+  font-weight:200;
+  font-size:16px;
+  margin-left:30px;
+}
+
+.header-link > a:hover {
+  border-bottom:solid white 3px;
 }
 
 #gallery {

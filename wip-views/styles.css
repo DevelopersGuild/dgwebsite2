@@ -21,7 +21,7 @@ body {
 }
 
 #header > p {
-    font-family:Lato;
+    font-family:"Lato", Sans;
     font-weight:300;
     font-size:24px;
     color:white;
@@ -71,7 +71,7 @@ body {
 }
 
 #ann-header > span {
-    font-family:Lato;
+    font-family:"Lato", Sans;
     font-weight:300;
     font-size:20px;
     line-height:3em;
@@ -269,7 +269,7 @@ body {
 }
 
 #dir-header > span {
-    font-family:Lato;
+    font-family:"Lato", Sans;
     font-weight:300;
     font-size:20px;
     line-height:3em;
@@ -283,7 +283,7 @@ body {
 }
 
 #feed-header > span {
-    font-family:Lato;
+    font-family:"Lato", Sans;
     font-weight:300;
     font-size:20px;
     line-height:3em;
