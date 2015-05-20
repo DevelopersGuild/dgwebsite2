@@ -315,7 +315,31 @@ section#downloads .dl-icon {
   margin: 0 auto;
   background-color: rgba(29, 27, 26, 1);
   margin-top: 20px;
+  transition:0.2s;
 }
+
+#people .item-icon > p {
+  position:absolute;
+  display:none;
+  left: 16%;
+  top: 31%;
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: 200;
+}
+
+#people .item:hover .item-icon > p {
+  display:inline-block;
+  background-color: rgba(0,0,0,0.3);
+  /*padding: 17px;*/
+  border-radius: 5px;
+}
+
+#people .item:hover .item-icon {
+  background-color: rgb(0,0,0);
+}
+
+
 
 #people .item-meta > * {
     font-size: 18px;
@@ -336,9 +360,19 @@ section#downloads .dl-icon {
   border-top: 7px solid rgb(60, 54, 63);
 }
 
-#footer p, #footer a {
-  font-size:1.3em;
+#footer p{
+  font-size: 14pt;
   line-height: 1.7em;
   display: block;
+  color: rgb(79, 78, 86);
+  margin:0;
+}
+
+#footer a {
+  display:inline-block;
+  font-size: 14pt;
+  padding: 0px 5px;
+  background: rgb(41, 40, 45);
+  margin-bottom: 10px;
   color: rgb(79, 78, 86);
 }

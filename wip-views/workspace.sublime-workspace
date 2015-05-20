@@ -179,7 +179,7 @@
 			"file": "project-page-mockup/base.html",
 			"settings":
 			{
-				"buffer_size": 6870,
+				"buffer_size": 12131,
 				"line_ending": "Unix"
 			}
 		},
@@ -187,7 +187,7 @@
 			"file": "project-page-mockup/projects-styles.css",
 			"settings":
 			{
-				"buffer_size": 4608,
+				"buffer_size": 6358,
 				"line_ending": "Unix"
 			}
 		},
@@ -195,7 +195,7 @@
 			"file": "project-page-mockup/scrollbehavior.js",
 			"settings":
 			{
-				"buffer_size": 1638,
+				"buffer_size": 1653,
 				"line_ending": "Unix"
 			}
 		}
@@ -342,6 +342,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\"gitlink\">",
+			"<p class=\"gitlink\">",
+			"github.com",
+			"gitlink\">",
+			"\"item-icon\">",
+			"</h2>",
+			"<h2 class=\"subheading-block\">",
+			"3",
 			"</p",
 			"img src=\"",
 			"l-button\">",
@@ -422,15 +430,15 @@
 					"file": "project-page-mockup/base.html",
 					"settings":
 					{
-						"buffer_size": 6870,
+						"buffer_size": 12131,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5382,
-								5382
+								10754,
+								10754
 							]
 						],
 						"settings":
@@ -439,12 +447,12 @@
 							"color_scheme": "Packages/User/Color Highlighter/themes/base16-eighties.dark.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1350.0,
+						"translation.y": 1187.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -454,19 +462,15 @@
 					"file": "project-page-mockup/projects-styles.css",
 					"settings":
 					{
-						"buffer_size": 4608,
+						"buffer_size": 6358,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3961,
-								3961
-							],
-							[
-								4606,
-								4606
+								6355,
+								6355
 							]
 						],
 						"settings":
@@ -479,7 +483,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3367.0,
+						"translation.y": 5305.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -489,19 +493,20 @@
 					"file": "project-page-mockup/scrollbehavior.js",
 					"settings":
 					{
-						"buffer_size": 1638,
+						"buffer_size": 1653,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1562,
+								1562
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"color_scheme": "Packages/User/Color Highlighter/themes/base16-eighties.dark.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
@@ -510,7 +515,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 102.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
