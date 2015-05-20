@@ -35,6 +35,43 @@ p {
     background-size: cover;
 }
 
+#page-header {
+  width:100vw;
+  background-color: rgb(31, 30, 36);
+  height:auto;
+  position: fixed;
+  padding: 10px 30px;
+  z-index: 1000;
+  max-height: 60px;
+  display: inline;
+}
+
+#page-header img.logo {
+  max-height:40px;
+  float:left;
+}
+
+#page-header span {
+  text-transform: uppercase;
+  margin-left: 2em;
+  position: relative;
+  font-size: 1.4em;
+  line-height: 2em;
+  color:white;
+}
+
+#page-header title {
+  float:left;
+}
+
+#page-header span.link {
+  float: right;
+}
+
+#page-header a:hover > span {
+  border-bottom: rgb(192, 190, 200) 4px solid;
+}
+
 /* Landing and overarching */
 .landing {
     width:1140px;
@@ -56,13 +93,13 @@ p {
     width:100vw;
     height:250px;
     bottom:0;
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1)); /* Standard syntax */;
-    background: rgba(0,0,0,0.8);
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)); /* Standard syntax */;
+    /* background: rgba(0,0,0,0.8); */
 }
 
 .content {
     width:100vw;
-    height:400vh;
+    height: auto;
     margin: 0 auto;
     position:relative;
     background-color: rgb(189, 189, 189);
@@ -75,14 +112,14 @@ p {
 .header-cont {
     position:absolute;
     width: 100%;
-    background: rgba(29, 27, 26, 1);
+    background: rgba(38, 35, 40, 1);
     z-index:10;
     height: 100px;
 }
 
 .header-cont.enter-content {
     position:fixed;
-    top:0;
+    top: 60px;
 }
 
 .header {
@@ -289,4 +326,17 @@ section#downloads .dl-icon {
 
 #people .item-meta > .name {
   color: rgb(243, 238, 245);
+}
+
+#footer {
+  background-color: rgb(31, 30, 36);
+  padding:30px 0px;
+  text-align: center;
+}
+
+#footer p, #footer a {
+  font-size:1.3em;
+  line-height: 1.7em;
+  display: block;
+  color: rgb(79, 78, 86);
 }

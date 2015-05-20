@@ -52,7 +52,7 @@ $(document).scroll(function() {
 
     var scrollpos = $(this).scrollTop();
 
-    if (scrollpos >= landingHeight) {
+    if (scrollpos >= landingHeight - 60) {
         $('.header-cont').addClass('enter-content');
     } else
         $('.header-cont').removeClass('enter-content');
