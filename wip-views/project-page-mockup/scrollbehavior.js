@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 var landingHeight = $('.landing').innerHeight();
 
-var panes = ['demo', 'controls', 'downloads']; // ID's
+var panes = ['demo', 'controls', 'downloads', 'people']; // ID's
 var activeNav;
 panes.forEach(function(idsuffix) {
 

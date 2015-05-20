@@ -1,8 +1,7 @@
 /* bootstrap override below */
 
 .row {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 /* MAIN */
@@ -141,16 +140,24 @@ section#description .media {
 }
 
 h2.subheading-block {
-    font-family:'Montserrat';
-    color: rgb(216, 209, 205);
-    text-transform: uppercase;
-    font-size: 24px; 
-    background: rgb(111, 84, 136);
-    display: inline-block;
-    padding: 16px;
-    border-radius: 4px;
-    border-bottom: 5px solid rgb(44, 37, 32);
-    margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 77px;
+    display: block;
+}
+
+h2.subheading-block > span {
+  font-family:'Montserrat';
+  color: rgb(216, 209, 205);
+  text-transform: uppercase;
+  font-size: 24px; 
+  background: rgb(111, 84, 136);
+  padding: 16px;
+  border-radius: 4px;
+  border-bottom: 5px solid rgb(44, 37, 32);
+}
+
+h2.subheading-block.orange > span{
+  background-color: rgb(214, 141, 75);
 }
 
 #controls {
@@ -193,10 +200,6 @@ section#downloads .row {
 }
 
 section#downloads .dl {
-  /* background-color: rgba(255, 255, 255, 0.35); */
-  height: 500px;
-  /* border: 6px solid rgb(66, 53, 71); */
-  border-radius: 5px;
   text-align: center;
 }
 
@@ -204,7 +207,7 @@ section#downloads .dl-icon {
   border-radius:300px;
   height: 200px;
   width: 200px;
-  border: solid rgb(111, 84, 136) 10px;
+  border: solid rgb(190, 116, 49) 10px;
   margin: 0 auto;
   background-color: rgba(29, 27, 26, 1);
   margin-top: 20px;
@@ -252,4 +255,38 @@ section#downloads .dl-icon {
 
 #downloads .dl-button span {
   color: rgb(184, 184, 184);
+}
+
+#people .item {
+  height:auto;
+  display: table;
+  padding: 0px 0px 50px 0px;
+}
+
+#people .item > * {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 30px;
+}
+
+#people .item-icon {
+  border-radius:300px;
+  height: 180px;
+  width: 180px;
+  border: solid rgb(111, 84, 136) 10px;
+  margin: 0 auto;
+  background-color: rgba(29, 27, 26, 1);
+  margin-top: 20px;
+}
+
+#people .item-meta > * {
+    font-size: 18px;
+}
+
+#people .item-meta > p.role {
+  font-style: italic;
+}
+
+#people .item-meta > .name {
+  color: rgb(243, 238, 245);
 }

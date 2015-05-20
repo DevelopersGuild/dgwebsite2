@@ -5,7 +5,7 @@
 		[
 			[
 				"text",
-				"text-decoration"
+				"text-align"
 			],
 			[
 				"head",
@@ -176,26 +176,26 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "project-page-mockup/base.html",
 			"settings":
 			{
-				"buffer_size": 8060,
+				"buffer_size": 6870,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "css/styles.css",
+			"file": "project-page-mockup/projects-styles.css",
 			"settings":
 			{
-				"buffer_size": 5599,
+				"buffer_size": 4608,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/joshuapham/Documents/School/2015 Spring/CIS 29/Lab 1: Binary Decoding/Lab 1: Binary Decoding/Morse.bin",
+			"file": "project-page-mockup/scrollbehavior.js",
 			"settings":
 			{
-				"buffer_size": 976,
+				"buffer_size": 1638,
 				"line_ending": "Unix"
 			}
 		}
@@ -308,6 +308,9 @@
 	},
 	"file_history":
 	[
+		"/Users/joshuapham/Documents/School/2015 Spring/CIS 29/Lab 1: Binary Decoding/Lab 1: Binary Decoding/Morse.bin",
+		"/Users/joshuapham/Documents/Hacks/dgwebsite2/wip-views/css/styles.css",
+		"/Users/joshuapham/Documents/Hacks/dgwebsite2/wip-views/index.html",
 		"/Users/joshuapham/Documents/Hacks/dgwebsite2/wip-views/styles.css",
 		"/Users/joshuapham/Library/Application Support/Sublime Text 2/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
 		"/Users/joshuapham/Documents/Web/getNextEvent/index.html",
@@ -339,6 +342,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"</p",
+			"img src=\"",
+			"l-button\">",
+			"utton\">",
+			"dl-button\">",
+			"</a>",
+			"/a href>",
+			"button",
+			"icon",
 			"kyzooknew_preprocess_comment",
 			"p",
 			"53",
@@ -407,18 +419,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "project-page-mockup/base.html",
 					"settings":
 					{
-						"buffer_size": 8060,
+						"buffer_size": 6870,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6563,
-								6563
+								5382,
+								5382
 							]
 						],
 						"settings":
@@ -432,25 +444,29 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1350.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "css/styles.css",
+					"file": "project-page-mockup/projects-styles.css",
 					"settings":
 					{
-						"buffer_size": 5599,
+						"buffer_size": 4608,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								495,
-								495
+								3961,
+								3961
+							],
+							[
+								4606,
+								4606
 							]
 						],
 						"settings":
@@ -459,35 +475,39 @@
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
 							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3880.0,
+						"translation.y": 3367.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/Users/joshuapham/Documents/School/2015 Spring/CIS 29/Lab 1: Binary Decoding/Lab 1: Binary Decoding/Morse.bin",
+					"file": "project-page-mockup/scrollbehavior.js",
 					"settings":
 					{
-						"buffer_size": 976,
+						"buffer_size": 1638,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9,
-								9
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/base16-eighties.dark.tmTheme",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
