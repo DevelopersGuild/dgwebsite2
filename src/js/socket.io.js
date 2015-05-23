@@ -1,5 +1,6 @@
 /* global io */
 
+/*
 'use strict';
 var socket = io();
 
@@ -16,3 +17,5 @@ socket.on('onlineUsers', function(users) {
 socket.on('guestNum', function(num) {
   $('#onlineGuests').text('Guests Online: ' + num);
 });
+
+*/

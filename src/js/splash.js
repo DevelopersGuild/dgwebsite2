@@ -1,4 +1,16 @@
-new WOW().init();
+/* global window*/
+
+'use strict';
+
+window.$ = window.jQuery = require('jquery');
+require('bootstrap');
+require('./jqModal.min');
+require('./jquery.flexslider-min');
+var WOW = require('wow/dist/wow.min');
+//require('./../css/splash.css');
+
+new WOW.WOW().init();
+
 $(window).load(function() {
     $('.flexslider').flexslider({
         slideshowSpeed: 1500,
@@ -63,3 +75,5 @@ if (window.iOS) {
     // iOS doesn't support "background-attachment: fixed," and, in fact, does something weird, instead.
     $(".fixed-background").removeClass("fixed-background");
 }
+
+

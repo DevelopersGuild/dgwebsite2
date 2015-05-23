@@ -7,3 +7,6 @@ data
 # Sublime Text stuff
 *.sublime-workspace
 *.sublime-project
+
+public/*.js
+public/*.css
