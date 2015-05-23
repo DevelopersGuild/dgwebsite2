@@ -33,7 +33,7 @@ gulp.task('compile', ['compile-js', 'compile-css']);
 gulp.task('server', ['compile'], function () {
   return nodemon({
     script: 'server.js',
-    ext: 'js html',
+    ext: 'js css html',
     env: { 'NODE_ENV': 'development' },
     tasks: ['compile']
   });

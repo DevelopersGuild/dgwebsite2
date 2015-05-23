@@ -7,7 +7,6 @@ require('bootstrap');
 require('./jqModal.min');
 require('./jquery.flexslider-min');
 var WOW = require('wow/dist/wow.min');
-//require('./../css/splash.css');
 
 new WOW.WOW().init();
 
