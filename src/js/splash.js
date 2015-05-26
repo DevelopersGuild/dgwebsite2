@@ -19,7 +19,7 @@ $(window).load(function() {
         pauseOnAction: false,
         touch: false,
     });
-
+    /*
     $('#modal').jqm({
       trigger: 'button#joinbutton'
     });
@@ -31,6 +31,7 @@ $(window).load(function() {
     $('#modal a').click(function() {
       $('#modal').jqmHide();
     });
+*/
 });
 
 //go to top button function
