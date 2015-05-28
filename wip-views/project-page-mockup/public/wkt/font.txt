@@ -1,0 +1,3 @@
+Google’s Lato at title (title always stylized in all caps) and menu items
+Gothic bold (high weight) on game over
+Arial on menu items
