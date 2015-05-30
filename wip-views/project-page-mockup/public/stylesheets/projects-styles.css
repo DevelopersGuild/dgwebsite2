@@ -195,7 +195,7 @@ h2.subheading-block > span {
 }
 
 h2.subheading-block.orange > span{
-  background-color: rgb(214, 141, 75);
+  background-color: rgb(147, 147, 147);
 }
 
 #controls {
@@ -245,7 +245,7 @@ section#downloads .dl-icon {
   border-radius:300px;
   height: 200px;
   width: 200px;
-  border: solid rgb(190, 116, 49) 10px;
+  border: solid rgb(95, 95, 95) 10px;
   margin: 0 auto;
   background-color: rgba(29, 27, 26, 1);
   margin-top: 20px;

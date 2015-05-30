@@ -1,0 +1,11 @@
+{
+  "name": "project-page-mockup",
+  "version": "1.0.0",
+  "description": "temp while templating",
+  "main": "jquery.waypoints.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joshua Pham",
+  "license": "MIT"
+}
