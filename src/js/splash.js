@@ -1,4 +1,15 @@
-new WOW().init();
+/* global window*/
+
+'use strict';
+
+window.$ = window.jQuery = require('jquery');
+require('bootstrap');
+require('./jqModal.min');
+require('./jquery.flexslider-min');
+var WOW = require('wow/dist/wow.min');
+
+new WOW.WOW().init();
+
 $(window).load(function() {
     $('.flexslider').flexslider({
         slideshowSpeed: 1500,
@@ -8,7 +19,7 @@ $(window).load(function() {
         pauseOnAction: false,
         touch: false,
     });
-
+    /*
     $('#modal').jqm({
       trigger: 'button#joinbutton'
     });
@@ -20,6 +31,7 @@ $(window).load(function() {
     $('#modal a').click(function() {
       $('#modal').jqmHide();
     });
+*/
 });
 
 //go to top button function
@@ -63,3 +75,5 @@ if (window.iOS) {
     // iOS doesn't support "background-attachment: fixed," and, in fact, does something weird, instead.
     $(".fixed-background").removeClass("fixed-background");
 }
+
+

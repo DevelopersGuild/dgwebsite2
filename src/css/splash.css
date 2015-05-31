@@ -1,3 +1,8 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../../node_modules/animate.css/animate.min.css";
+@import "flexslider.css";
+@import "jqModal.css";
+
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -35,7 +40,7 @@ body {
 .landing {
     background-size: cover;
     background-position: center;
-    background-image: url("../img/the-mlc.jpg");
+    background-image: url("/img/the-mlc.jpg");
     height: 100%;
     min-height: 720px;
 }
@@ -147,7 +152,7 @@ body {
 .traits {
     text-align: center;
     top:200%;
-   /* height: 100%;*/ /*why 110%?*/  
+   /* height: 100%;*/ /*why 110%?*/
     /*I feel 75% is too narraw for two-lines logo -Buce*/
     background-size: cover;
     background-attachment: fixed;
@@ -172,8 +177,8 @@ body {
 }
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
+@media only screen
+and (min-device-width : 768px)
 and (max-device-width : 1024px) {
     .single_trait img {
         max-width: 80%;
@@ -209,15 +214,15 @@ and (max-device-width : 1024px) {
 .faq {
     box-shadow: inset 0 20px 20px -20px black, inset 0 -20px 20px -20px black;
     /*height: 100%;*/
-    background-image: url("../img/us-720p.jpg");
+    background-image: url("/img/us-720p.jpg");
     background-size: cover;
     background-position: center;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     /* Retina-specific stuff here */
     .faq {
-        background-image: url("../img/us-1920p.jpg");
+        background-image: url("/img/us-1920p.jpg");
     }
 }
 
@@ -284,8 +289,8 @@ and (max-device-width : 1024px) {
     bottom: 20px;
     background-color: #b0bec5;
     cursor: pointer;
-    -moz-border-radius: 4%; 
-    -webkit-border-radius: 4%; 
+    -moz-border-radius: 4%;
+    -webkit-border-radius: 4%;
     border-radius: 100%;
 }
 
@@ -353,8 +358,8 @@ and (max-device-width : 1024px) {
 
 /********IPHONE 5 COLUMN FIX******/
 
-@media screen 
-and (min-device-width : 320px) 
+@media screen
+and (min-device-width : 320px)
 and (max-device-width : 480px) {
 
     .overlay {
@@ -384,8 +389,8 @@ and (max-device-width : 480px) {
 }
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
+@media only screen
+and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 
     .overlay {
