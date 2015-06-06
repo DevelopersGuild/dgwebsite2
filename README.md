@@ -20,8 +20,9 @@
 ## Node Packages Used
 
 - Async
-- Bcrypt - Encrypt passwords
+- Body-Parser - Parse body elements
 - Express - Must-have Node.js framework
+- Express-Session - Handle sessions
 - Moment - Parse time
 - Mongoose - MongoDB wrapper
 - Nunjucks - Render HTML templates

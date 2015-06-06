@@ -1,0 +1,10 @@
+Title menu:
+Left mouse button - Chooses an option
+
+In game:
+Left mouse button - Clicks buttons
+Left/right/up/down keys - Move the player
+Z - Attack with laser whip
+X - Shoot an arrow
+Spacebar - Dash forward
+Double-tap left/right/up/down keys - Dash that direction

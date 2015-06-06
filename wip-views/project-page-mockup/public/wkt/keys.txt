@@ -1,0 +1,43 @@
+	font-family: arial,helvetica,sans-serif;
+	padding: 5px 3px;
+	white-space: nowrap;
+	color: #000;
+	background: #eee;
+	border-width: 2px 4px 5px 3px;
+	border-style: solid;
+	border-color: #ccc #aaa #888 #bbb;
+	font-weight: bold;
+	padding: .5em;
+
+
+## Controls
+
+In all game states, pressing `Escape` will close the game.
+
+#### At the main menu
+
+`Up arrow` and `Down arrow` change menu selection.
+
+`Enter` chooses the selected menu item.
+
+#### During gameplay
+
+`Left arrow` and `A` move the player character left.
+
+`Right arrow` and `D` move the player character right.
+
+`Space` makes the player character jump.
+
+`P` pauses the game.
+
+`Q` while standing still attacks with the spear.
+
+`W` while standing still casts a holy orb.
+
+#### When paused
+
+`R` resumes the game.
+
+#### At game over screen
+
+`Enter` resets the level.
