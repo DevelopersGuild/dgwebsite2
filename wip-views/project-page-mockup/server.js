@@ -14,5 +14,10 @@ nunjucks.configure('views', {
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
-  res.render('base.html');
+  res.render('base.html', {
+    controls1: [
+      {imgurl: "http://placehold.it/80x80", desc: "blahblahblah"},
+      {imgurl: "http://placehold.it/80x80", desc: "blahbl222ahblah"}
+    ]
+  });
 });
