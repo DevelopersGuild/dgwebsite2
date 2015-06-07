@@ -2,7 +2,7 @@
 	"colors": {
 	},
 	"demo": {
-		"url": "video/demo.webm",
+		"src": "video/demo.webm",
 		"alt": "Gameplay demo video"
 	},
 	"description": "Wraithkeeper’s Tomb is 2D roguelike side-scrolling RPG. Our hero finds himself in the midst of a castle and must battle his way past the wraiths that inhabit it. But things get stranger as he battles his way past hordes of endless wraiths. What awaits him at the end?",
@@ -10,7 +10,7 @@
 		"Mac": "bin/mac/WraithkeepersTomb-0.9.zip"
 	},
 	"fonts": {
-		"urls": {
+		"srcs": {
 			"Lato": "fonts/lato.ttf",
 			"Gothic bold": "fonts/gothic-bold.ttf"
 		},
@@ -181,23 +181,23 @@
 	"repo": "https://github.com/DevelopersGuild/wraithkeeperstomb",
 	"screenshots": [
 		{
-			"url": "img/screenshot-1-title.png",
+			"src": "img/screenshot-1-title.png",
 			"alt": "Welcome."
 		},
 		{
-			"url": "img/screenshot-2-monsters.png",
+			"src": "img/screenshot-2-monsters.png",
 			"alt": "Watch out! Monsters!"
 		},
 		{
-			"url": "img/screenshot-3-cookie.png",
+			"src": "img/screenshot-3-cookie.png",
 			"alt": "Eat cookies to restore health."
 		},
 		{
-			"url": "img/screenshot-4-boss.png",
+			"src": "img/screenshot-4-boss.png",
 			"alt": "Boss fight!"
 		},
 		{
-			"url": "img/screenshot-5-dead.png",
+			"src": "img/screenshot-5-dead.png",
 			"alt": "Death."
 		}
 	],
