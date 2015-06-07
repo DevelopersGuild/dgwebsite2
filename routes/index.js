@@ -23,7 +23,9 @@ function handleSplashFetch(req, res) {
 }
 
 function handleHubFetch(req, res) {
-  res.render('hub.html');
+  res.render('hub.html', {
+    carousel: require('../config/carousel')
+  });
 }
 
 var projectPage = new RegExp('/projects/([^/]+)');
