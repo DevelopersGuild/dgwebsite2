@@ -295,62 +295,33 @@ section#downloads .dl-icon {
   color: rgb(184, 184, 184);
 }
 
-#people .item {
-  height:auto;
-  display: table;
-  padding: 0px 0px 50px 0px;
-}
-
-#people .item > * {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 30px;
-}
-
-#people .item-icon {
-  border-radius:300px;
-  height: 180px;
-  width: 180px;
-  border: solid rgb(111, 84, 136) 10px;
-  margin: 0 auto;
-  background-color: rgba(29, 27, 26, 1);
-  margin-top: 20px;
-  transition:0.2s;
-}
-
-#people .item-icon > p {
-  position:absolute;
-  display:none;
-  left: 16%;
-  top: 31%;
-  font-size: 1.2em;
-  font-style: italic;
-  font-weight: 200;
-}
-
-#people .item:hover .item-icon > p {
-  display:inline-block;
-  background-color: rgba(0,0,0,0.3);
-  /*padding: 17px;*/
-  border-radius: 5px;
-}
-
-#people .item:hover .item-icon {
-  background-color: rgb(0,0,0);
-}
-
-
-
-#people .item-meta > * {
-    font-size: 18px;
-}
-
-#people .item-meta > p.role {
+#people p.gituser {
+  float: right;
+  background-color: rgb(55, 47, 69);
+  border-radius: 10px 0 0 10px;
   font-style: italic;
 }
 
-#people .item-meta > .name {
+#people p.name {
+  float: left;
+  background-color: rgb(112, 99, 152);
+  border-radius: 0 10px 10px 0;
   color: rgb(243, 238, 245);
+  border-left: 8px solid rgb(172, 157, 216);
+}
+
+#people p {
+  padding:30px;
+  font-size: 18px;
+}
+
+#people div.col-md-6 {
+  margin:0;
+  padding:0;
+}
+
+#people {
+  padding-bottom:60px;
 }
 
 #footer {
