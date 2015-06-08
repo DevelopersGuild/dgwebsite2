@@ -295,19 +295,23 @@ section#downloads .dl-icon {
   color: rgb(184, 184, 184);
 }
 
-#people p.gituser {
+#people p.role {
   float: right;
   background-color: rgb(55, 47, 69);
   border-radius: 10px 0 0 10px;
   font-style: italic;
 }
 
-#people p.name {
+#people p.name-meta {
   float: left;
   background-color: rgb(112, 99, 152);
   border-radius: 0 10px 10px 0;
   color: rgb(243, 238, 245);
   border-left: 8px solid rgb(172, 157, 216);
+}
+
+#people p.name-meta #gituser {
+  font-style: italic;
 }
 
 #people p {
