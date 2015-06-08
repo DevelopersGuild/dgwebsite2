@@ -28,9 +28,8 @@ function handleHubFetch(req, res) {
   });
 }
 
-var projectPage = new RegExp('^/projects/([^/]+)/$');
 function handleProjectPage(req, res, next) {
-  var project = req.originalUrl.match(projectPage)[1];
+  var project = req.params.name;
   try {
     var projectDetails = require('../config/projects/' + project);
     res.render('projects/base.html', projectDetails);
@@ -73,7 +72,7 @@ function handleUserLogin(req, res) {
 router.get('/', handleIndexFetch);
 router.get('/hub', handleHubFetch);
 router.get('/splash', handleSplashFetch);
-router.get(projectPage, handleProjectPage);
+router.get('/projects/:name', handleProjectPage);
 
 // Since 'login' is a reserved word in GitHub, this won't be an issue
 router.get('/user/login', handleUserLogin);
