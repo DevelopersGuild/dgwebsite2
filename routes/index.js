@@ -22,6 +22,23 @@ function handleSplashFetch(req, res) {
   res.render('splash.html');
 }
 
+function handleHubFetch(req, res) {
+  res.render('hub.html', {
+    carousel: require('../config/carousel')
+  });
+}
+
+var projectPage = new RegExp('/projects/([^/]+)');
+function handleProjectPage(req, res, next) {
+  var project = req.originalUrl.match(projectPage)[1];
+  try {
+    var projectDetails = require('../config/projects/' + project);
+    res.render('projects/base.html', projectDetails);
+  } catch (_) {
+    next();
+  }
+}
+
 function handleUserLogin(req, res) {
   var code = req.query.code;
 
@@ -54,7 +71,9 @@ function handleUserLogin(req, res) {
 }
 
 router.get('/', handleIndexFetch);
+router.get('/hub', handleHubFetch);
 router.get('/splash', handleSplashFetch);
+router.get(projectPage, handleProjectPage);
 
 // Since 'login' is a reserved word in GitHub, this won't be an issue
 router.get('/user/login', handleUserLogin);
