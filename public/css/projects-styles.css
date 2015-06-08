@@ -209,6 +209,11 @@ h2.subheading-block.orange > span{
 #controls table {
     margin: 0 auto;
 }
+
+#controls td > img {
+  max-height:70px;
+  width:auto;
+}
 /*
 
 section#description .info {
@@ -263,7 +268,7 @@ section#downloads .dl-icon {
   border-radius: 4px;
   margin: 0;
   background: linear-gradient( rgb(45, 176, 56),rgb(52, 118, 72));
-  font-size: 16px;
+  font-size: 14px;
   font-family: Sans-serif;
 }
 
@@ -290,6 +295,12 @@ section#downloads .dl-icon {
 
 #downloads .dl-button span {
   color: rgb(184, 184, 184);
+}
+
+#downloads iframe {
+  display:block;
+  margin:0 auto;
+  margin-bottom: 10px;
 }
 
 #people p.role {
