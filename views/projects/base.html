@@ -5,14 +5,14 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <script type="text/javascript" src="js/jquery.waypoints.js"></script>
+    <script type="text/javascript" src="/js/jquery.waypoints.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/projects-styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/projects-styles.css">
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='
     stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext' rel='
     stylesheet' type='text/css'>
-    <script type="text/javascript" src="js/scrollbehavior.js"></script>
+    <script type="text/javascript" src="/js/scrollbehavior.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -23,9 +23,9 @@
             <a href><span class="link">Members</span></a>
             <a href><span class="link">About</span></a>
         </div>
-        <div class="landing">
+        <div class="landing" style="background: url({{landing_image}}) no-repeat; background-size: cover;">
             <div class="fade-overlay"></div>
-            <h1 id="maintitle">Wraithkeeper's Tomb</h1>
+            <h1 id="maintitle">{{title}}</h1>
         </div>
         <div class="content">
             <div class="header-cont">
@@ -45,86 +45,56 @@
                 </div>
             </section>
             <section class="row" id="controls">
-                <div class="col-md-4">
-                    <h2 class="subheading-block"><span>At the main menu</span></h2>
-                    <table>
-                        {% for control in controls1 %}
-                        <tr>
-                            <td><img src={{ control.imgurl }}></td>
-                            <td><p>{{ control.desc }}</td>
-                        <tr>
-                        {% endfor %}
-                        <!-- <tr>
-                            <td><img src="http://placehold.it/80x80" alt=""></td>
-                            <td><p>Control one</p></td>
-                        </tr>
-                        <tr>
-                            <td><img src="http://placehold.it/80x80" alt=""></td>
-                            <td><p>Control two</p></td>
-                        </tr>
-                        <tr>
-                            <td><img src="http://placehold.it/80x80" alt=""></td>
-                            <td><p>Control three</p></td>
-                        </tr> -->
-                    </table>
-                </div>
-                <div class="col-md-4">
-                    <h2 class="subheading-block"><span>During gameplay</span></h2>
-                    <table>
-                        <tr>
-                            <td><img src="http://placehold.it/80x80" alt=""></td>
-                            <td><p>Control one</p></td>
-                        </tr>
-                        <tr>
-                            <td><img src="http://placehold.it/80x80" alt=""></td>
-                            <td><p>Control two</p></td>
-                        </tr>
-                        <tr>
-                            <td><img src="http://placehold.it/80x80" alt=""></td>
-                            <td><p>Control three</p></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-md-4">
-                    <h2 class="subheading-block"><span>When paused</span></h2>
-                    <table>
-                        <tr>
-                            <td><img src="http://placehold.it/80x80" alt=""></td>
-                            <td><p>Control one</p></td>
-                        </tr>
-                        <tr>
-                            <td><img src="http://placehold.it/80x80" alt=""></td>
-                            <td><p>Control two</p></td>
-                        </tr>
-                        <tr>
-                            <td><img src="http://placehold.it/80x80" alt=""></td>
-                            <td><p>Control three</p></td>
-                        </tr>
-                    </table>
-                </div>
+                {% for controlgroup in controls %}
+                    {% if loop.index % 3 == 0 %}
+                    <div class="row">
+                    {% endif %}
+
+                    <div class="col-md-4">
+                        <h2 class="subheading-block"><span>{{controlgroup.game_mode}}</span></h2>
+                        <table>
+                            {% for control in controlgroup.controls %}
+                                <tr>
+                                    <td><img src={{ control.imgurl }}></td>
+                                    <td><p>{{ control.description }}</td>
+                                <tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+                    {% if loop.index % 3 == 0 %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
             </section>
             <section class="row" id="downloads">
                 <h2 class="subheading-block orange"><span>Available across platforms</span></h2>
                 <div class="row">
+                  {% if downloads.Windows != 'null' %}
                   <div class="col-md-4">
                     <div class="dl">
                       <div class="dl-icon"><img src="http://static.iconsplace.com/icons/preview/white/windows-8-256.png"></div>
-                      <p>Windows 8</p>
-                      <a href><div class="dl-button"><img src="http://icons.iconarchive.com/icons/rade8/minium-2/256/Sidebar-Downloads-icon.png"><p>chamberslabyrinth.msi<span> 11mb</span></p></div></a>
+                      <p>{{downloads.Windows.name}}</p>
+                      <a href={{downloads.Windows.src}}><div class="dl-button"><img src="http://icons.iconarchive.com/icons/rade8/minium-2/256/Sidebar-Downloads-icon.png"><p>Download for Windows<span> {{downloads.Windows.size}}</span></p></div></a>
                     </div>
                   </div>
+                  {% endif %}
+
+                  {% if downloads.Mac != 'null' %}
                   <div class="col-md-4">
                     <div class="dl">
                       <div class="dl-icon"><img src="https://miapple.me/wp-content/uploads/2014/06/Mac-OS-X-10.10-Yosemite-icon.png"></div>
-                      <p>Mac OS X 10.10 Yosemite</p>
-                      <a href><div class="dl-button"><img src="http://icons.iconarchive.com/icons/rade8/minium-2/256/Sidebar-Downloads-icon.png"><p>chamberslabyrinth.dmg<span> 11mb</span></p></div></a>
+                      <p>{{downloads.Mac.name}}</p>
+                      <a href={{downloads.Mac.src}}><div class="dl-button"><img src="http://icons.iconarchive.com/icons/rade8/minium-2/256/Sidebar-Downloads-icon.png"><p>Download for Mac<span> {{downloads.Mac.size}}</span></p></div></a>
                     </div>
                   </div>
+                  {% endif %}
+
                   <div class="col-md-4">
                     <div class="dl">
                       <div class="dl-icon"><img src="http://icons.iconarchive.com/icons/tatice/operating-systems/256/Linux-icon.png"></div>
                       <p>Linux</p>
-                      <a href><div class="dl-button"><img src="http://icons.iconarchive.com/icons/rade8/minium-2/256/Sidebar-Downloads-icon.png"><p>(Coming soon)<span> 11mb</span></p></div></a>
+                      <iframe src="https://ghbtns.com/github-btn.html?user=twbs&repo={{}}&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
                     </div>
                   </div>
                 </div>
@@ -132,18 +102,19 @@
             <section class="row" id="people">
                 <h2 class="subheading-block"><span>Connect with the creators</span></h2>
                 <div class="row">
+                    {% for contributor in contributors %}
                     <div class="item">
                         <div class="col-md-6">
-                            <p class="role">Principal Developer</p>
+                            <p class="role">{{contributor.role}}</p>
                         </div>
                         <div class="col-md-6">
                             <p class="name-meta">
-                                <span id="name">Vihan Chaudhry</span><br>
-                                <span id="gituser">@smeek</span>
+                                <span id="name">{{contributor.name}}</span><br>
+                                <span id="gituser">@{{contributor.github}}</span>
                             </p>
                         </div>
                     </div>
-
+                    {% endfor %}
                 </div>
             </section>
         </div>

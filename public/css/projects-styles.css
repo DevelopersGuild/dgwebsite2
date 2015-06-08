@@ -75,18 +75,18 @@ p {
 
 /* Landing and overarching */
 .landing {
-    width:1140px;
+    width:100%;
     height:100%;
     position: relative;
 }
 
-#maintitle {
+.landing #maintitle {
     color:white;
     font-size:45px;
     text-transform: uppercase;
     position: absolute;
     bottom:50px;
-    right:0px;
+    right:160px;
 }
 
 .fade-overlay {
@@ -233,9 +233,6 @@ section#description .media {
     display: inline-block;
     float:right;
 }*/
-
-section#downloads .row {
-}
 
 section#downloads .dl {
   text-align: center;
