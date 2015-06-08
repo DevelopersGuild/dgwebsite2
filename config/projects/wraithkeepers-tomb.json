@@ -9,6 +9,7 @@
 	"downloads": {
 		"Mac": {
 			"name": "WraithkeepersTomb-0.9.zip",
+      "os_version": "Mac OSX Yosemite 10.10.1" // is it this, Paul?
 			"size": "16mb",
 			"src": "bin/mac/WraithkeepersTomb-0.9.zip"
 		}
