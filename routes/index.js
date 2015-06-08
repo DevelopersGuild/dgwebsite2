@@ -28,7 +28,7 @@ function handleHubFetch(req, res) {
   });
 }
 
-var projectPage = new RegExp('/projects/([^/]+)');
+var projectPage = new RegExp('^/projects/([^/]+)/$');
 function handleProjectPage(req, res, next) {
   var project = req.originalUrl.match(projectPage)[1];
   try {
