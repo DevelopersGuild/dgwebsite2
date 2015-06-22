@@ -129,7 +129,7 @@ p {
 }
 
 .header span.nav {
-    float:right;
+    float:left;
     margin-right:30px;
     color:white;
     opacity:0.1;
