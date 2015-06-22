@@ -110,10 +110,12 @@
                             <p class="role">{{contributor.role}}</p>
                         </div>
                         <div class="col-md-6">
-                            <p class="name-meta">
-                                <span id="name">{{contributor.name}}</span><br>
-                                <span id="gituser">@{{contributor.github}}</span>
-                            </p>
+                            <a href="https://github.com/{{contributor.github}}">
+                                <p class="name-meta">
+                                    <span id="name">{{contributor.name}}</span><br>
+                                    <span id="gituser">@{{contributor.github}}</span>
+                                </p>
+                            </a>
                         </div>
                     </div>
                     {% endfor %}
