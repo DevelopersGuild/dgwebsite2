@@ -38,7 +38,7 @@ p {
 }
 
 #page-header img.logo {
-  max-height:40px;
+  max-height:30px;
   float:left;
 }
 
@@ -46,7 +46,7 @@ p {
   text-transform: uppercase;
   margin-left: 2em;
   position: relative;
-  font-size: 1.4em;
+  font-size: 1.0em;
   line-height: 2em;
   color:white;
 }
@@ -278,7 +278,7 @@ section#downloads .dl-icon {
 }
 
 #downloads .dl-button {
-  text-align: right;
+  text-align: center;
   background: linear-gradient(rgb(255,255,255),rgb(200,200,200));
   padding: 5px;
   border: 2px solid rgb(74, 73, 73);
@@ -287,6 +287,7 @@ section#downloads .dl-icon {
 }
 
 #downloads .dl-button img {
+  display: none;
   vertical-align: middle;
   height: 30px;
   width: 30px;
@@ -300,6 +301,7 @@ section#downloads .dl-icon {
 
 #downloads .dl-button span {
   color: rgb(184, 184, 184);
+  display: none;
 }
 
 #downloads iframe {
@@ -308,30 +310,21 @@ section#downloads .dl-icon {
   margin-bottom: 10px;
 }
 
-#people .col-role {
-  padding-right: 0;
-}
-
-#people .col-name-meta {
-  padding-left: 0;
-}
-
 #people p {
   padding:20px;
   font-size: 18px;
 }
 
 #people p.role {
-  float: right;
+  display: none;
   background-color: rgb(55, 47, 69);
   border-radius: 10px 0 0 10px;
   font-style: italic;
 }
 
 #people p.name-meta {
-  float: left;
   background-color: rgb(112, 99, 152);
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 10px 10px 10px;
   color: rgb(243, 238, 245);
   border-left: 8px solid rgb(172, 157, 216);
 }
@@ -370,7 +363,48 @@ section#downloads .dl-icon {
   color: rgb(79, 78, 86);
 }
 
+.col-xxs-6,
+.col-xxs-12 {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xxs-6 {
+  width: 50%;
+}
+
+.col-xxs-12 {
+  width: 100%;
+}
+
+.col-xs-6 {
+  width: 100%;
+}
+
+.col-xs-12 {
+  width: 100%;
+}
+
+@media (max-width: 599px) {
+  .hidden-xxs {
+    display: none !important;
+  }
+}
+
+
 @media (min-width: 600px) {
+  #page-header span {
+    font-size: 1.1em;
+    line-height: 2.5em;
+  }
+
+  #page-header img.logo {
+    max-height: 38px;
+  }
+
   .landing #maintitle {
     right: 60px;
   }
@@ -380,14 +414,51 @@ section#downloads .dl-icon {
     white-space: nowrap;
   }
 
+  #people .col-role {
+    padding-right: 0;
+  }
+
+  #people .col-name-meta {
+    padding-left: 0;
+  }
+
   #people p {
-    padding:30px;
+    padding: 30px;
+  }
+
+  #people p.role {
+    display: block;
+    float: right;
+  }
+
+  #people p.name-meta {
+    float: left;
+    border-radius: 0 10px 10px 0;
+    border-left: 8px solid rgb(172, 157, 216);
+  }
+
+
+  .col-xs-6 {
+    width: 50%;
+  }
+
+  .col-xs-12 {
+    width: 100%;
   }
 }
 
 @media (min-width: 768px) {
   #page-header {
     position: fixed;
+  }
+
+  #page-header img.logo {
+    max-height: 38px;
+  }
+
+  #page-header span {
+    font-size: 1.4em;
+    line-height: 2em;
   }
 
   .landing #maintitle {
@@ -414,10 +485,18 @@ section#downloads .dl-icon {
   section:first-of-type {
     padding-top: 160px;
   }
+
+  #downloads .dl-button span {
+    display: inline;
+  }
 }
 
 @media (min-width: 1200px) {
   .landing #maintitle {
     right: 160px;
+  }
+
+  #downloads .dl-button img {
+    display: inline;
   }
 }

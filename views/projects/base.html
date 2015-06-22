@@ -40,7 +40,7 @@
             <h2 class="subheading-block gray"><span>Available across platforms</span></h2>
             <div class="row">
               {% if downloads.Windows != null %}
-              <div class="col-sm-4">
+              <div class="col-xxs-6 col-md-4">
                 <a href="{{ downloads.Windows.src }}"><div class="dl">
                   <div class="dl-icon"><img src="/img/windows8.png"></div>
                   <p>{{ downloads.Windows.name }}</p>
@@ -50,7 +50,7 @@
               {% endif %}
 
               {% if downloads.Mac != null %}
-              <div class="col-sm-4">
+              <div class="col-xxs-6 col-md-4">
                 <a href="{{ downloads.Mac.src }}"><div class="dl">
                   <div class="dl-icon"><img src="/img/mac10.10.png"></div>
                   <p>{{ downloads.Mac.os_version }}</p>
@@ -59,7 +59,7 @@
               </div></a>
               {% endif %}
 
-              <div class="col-sm-4">
+              <div class="col-sm-6 col-md-4">
                 <a href="{{ source.url }}"><div class="dl">
                   <div class="dl-icon"><img src="/img/github.png"></div>
                   <p>GitHub</p>
@@ -94,11 +94,11 @@
             <div class="row">
                 {% for contributor in contributors %}
                 <div class="col-md-6">
-                    <div class="item">
-                        <div class="col-role col-xs-6">
+                    <div class="contributor">
+                        <div class="col-role hidden-xxs col-xs-6">
                             <p class="role">{{contributor.role}}</p>
                         </div>
-                        <div class="col-name-meta col-xs-6">
+                        <div class="col-name-meta col-xxs-12 col-xs-6">
                             {% if contributor.github %}<a href="https://github.com/{{contributor.github}}">{% endif %}
                                 <p class="name-meta">
                                     <span class="name">{{contributor.name}}</span><br>
