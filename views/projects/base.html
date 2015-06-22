@@ -22,7 +22,7 @@
             <h1 id="maintitle">{{ title }}</h1>
         </div>
         <div class="content">
-            <div class="header-cont">
+            <div class="header-cont hidden-xs hidden-sm">
                 <div class="header">
                     <span class="nav" id="demo">Demo</span>
                     <span class="nav" id="downloads">Download</span>
@@ -34,14 +34,14 @@
             <section class="row" id="demo">
                 <div class="col-md-4"><p>{{ description }}</p></div>
                 <div class="col-md-8">
-                    <video controls src={{ demo.src }} width="640" height="356">
+                    <video class="img-responsive center-block" controls src={{ demo.src }} width="640" height="356">
                 </div>
             </section>
             <section class="row" id="downloads">
                 <h2 class="subheading-block orange"><span>Available across platforms</span></h2>
                 <div class="row">
                   {% if downloads.Windows != null %}
-                  <div class="col-md-4">
+                  <div class="col-sm-4">
                     <a href="{{ downloads.Windows.src }}"><div class="dl">
                       <div class="dl-icon"><img src="/img/windows8.png"></div>
                       <p>{{ downloads.Windows.name }}</p>
@@ -51,7 +51,7 @@
                   {% endif %}
 
                   {% if downloads.Mac != null %}
-                  <div class="col-md-4">
+                  <div class="col-sm-4">
                     <a href="{{ downloads.Mac.src }}"><div class="dl">
                       <div class="dl-icon"><img src="/img/mac10.10.png"></div>
                       <p>{{ downloads.Mac.os_version }}</p>
@@ -60,7 +60,7 @@
                   </div></a>
                   {% endif %}
 
-                  <div class="col-md-4">
+                  <div class="col-sm-4">
                     <a href="{{ source.url }}"><div class="dl">
                       <div class="dl-icon"><img src="/img/github.png"></div>
                       <p>GitHub</p>

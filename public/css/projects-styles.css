@@ -191,6 +191,7 @@ h2.subheading-block > span {
   padding: 16px;
   border-radius: 4px;
   border-bottom: 5px solid rgb(44, 37, 32);
+  white-space: nowrap;
 }
 
 h2.subheading-block.orange > span{
