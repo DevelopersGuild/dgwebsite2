@@ -368,6 +368,7 @@ section#downloads .dl-icon {
   color: rgb(79, 78, 86);
 }
 
+/* Create new xxs size to replace xs. */
 .col-xxs-6,
 .col-xxs-12 {
     float: left;
@@ -377,6 +378,7 @@ section#downloads .dl-icon {
     padding-left: 15px;
 }
 
+/* xxs always active. */
 .col-xxs-6 {
   width: 50%;
 }
@@ -385,11 +387,19 @@ section#downloads .dl-icon {
   width: 100%;
 }
 
+/* xs now only activates at 600px, instead of always active. This creates a new
+ * Bootstrap gride size. */
 .col-xs-6 {
   width: 100%;
 }
 
 .col-xs-12 {
+  width: 100%;
+}
+
+/* Give md the same precedence has the new xxs definitions so we can use xxs,
+ * xs, and md in the same element. */
+.col-md-4 {
   width: 100%;
 }
 
@@ -488,6 +498,10 @@ section#downloads .dl-icon {
 
   #downloads .dl-button span {
     display: inline;
+  }
+
+  .col-md-4 {
+    width: 33.3333%;
   }
 }
 

@@ -53,7 +53,7 @@
                   {% endif %}
 
                   {% if downloads.Mac != null %}
-                  <div class="col-xxs-6 col-md-4">
+                  <div class="col-xs-6 col-md-4">
                     <a href="{{ downloads.Mac.src }}"><div class="dl">
                       <div class="dl-icon"><img src="/img/mac10.10.png"></div>
                       <p>{{ downloads.Mac.os_version }}</p>
@@ -62,7 +62,7 @@
                   </div></a>
                   {% endif %}
 
-                  <div class="col-sm-6 col-md-4">
+                  <div class="col-xs-6 col-md-4">
                     <a href="{{ source.url }}"><div class="dl">
                       <div class="dl-icon"><img src="/img/github.png"></div>
                       <p>GitHub</p>
@@ -79,7 +79,7 @@
                 <div class="row">
 
                     {% for controlgroup in controls %}
-                    <div class="col-sm-6 col-md-4">
+                    <div class="col-xs-6 col-md-4">
                         <h3 class="subheading-block"><span>{{controlgroup.game_mode}}</span></h3>
                         <table>
                             {% for control in controlgroup.controls %}
