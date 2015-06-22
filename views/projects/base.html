@@ -9,126 +9,119 @@
     <link href='http://fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <div class="wrapper">
-        <div id="page-header">
-            <img class="logo" src="/img/dglogo.png"></img>
-            <span id="title">Developers' Guild</span>
-            <a href><span class="link">Projects</span></a>
-            <a href><span class="link">Members</span></a>
-            <a href><span class="link">About</span></a>
-        </div>
-        <div class="landing" style="background: url({{landing_image}}) no-repeat; background-size: cover;">
-            <div class="fade-overlay"></div>
-            <h1 id="maintitle">{{ title }}</h1>
-        </div>
-        <div class="content">
-            <div class="header-cont hidden-xs hidden-sm">
-                <div class="header">
-                    <span class="nav" id="demo">Demo</span>
-                    <span class="nav" id="downloads">Download</span>
-                    <span class="nav" id="controls">Controls</span>
-                    <span class="nav" id="people">People</span>
-                </div>
+    <header id="page-header" class="row">
+        <img class="logo" src="/img/dglogo.png"></img>
+        <span id="title">Developers' Guild</span>
+        <a href><span class="link">Projects</span></a>
+        <a href><span class="link">Members</span></a>
+        <a href><span class="link">About</span></a>
+    </header>
+    <div class="landing" style="background: url({{landing_image}}) no-repeat; background-size: cover;">
+        <div class="fade-overlay"></div>
+        <h1 id="maintitle">{{ title }}</h1>
+    </div>
+    <main class="container content">
+        <nav class="header-cont hidden-xs hidden-sm">
+            <div class="header">
+                <span class="nav" id="demo">Demo</span>
+                <span class="nav" id="downloads">Download</span>
+                <span class="nav" id="controls">Controls</span>
+                <span class="nav" id="people">People</span>
             </div>
+        </nav>
 
-            <section class="row" id="demo">
-                <div class="col-md-4"><p>{{ description }}</p></div>
-                <div class="col-md-8">
-                    <video class="img-responsive center-block" controls src={{ demo.src }} width="640" height="356">
+        <section class="row" id="demo">
+            <div class="col-md-4"><p>{{ description }}</p></div>
+            <div class="col-md-8">
+                <video class="img-responsive center-block" controls src={{ demo.src }} width="640" height="356">
+            </div>
+        </section>
+        <section class="row" id="downloads">
+            <h2 class="subheading-block orange"><span>Available across platforms</span></h2>
+            <div class="row">
+              {% if downloads.Windows != null %}
+              <div class="col-sm-4">
+                <a href="{{ downloads.Windows.src }}"><div class="dl">
+                  <div class="dl-icon"><img src="/img/windows8.png"></div>
+                  <p>{{ downloads.Windows.name }}</p>
+                  <div class="dl-button"><img src="/img/download.png"><p>Download for Windows<span> {{ downloads.Windows.size }}</span></p></div>
+                </div></a>
+              </div>
+              {% endif %}
+
+              {% if downloads.Mac != null %}
+              <div class="col-sm-4">
+                <a href="{{ downloads.Mac.src }}"><div class="dl">
+                  <div class="dl-icon"><img src="/img/mac10.10.png"></div>
+                  <p>{{ downloads.Mac.os_version }}</p>
+                  <div class="dl-button"><img src="/img/download.png"><p>{{ downloads.Mac.name }}<span> {{ downloads.Mac.size }}</span></p></div>
                 </div>
-            </section>
-            <section class="row" id="downloads">
-                <h2 class="subheading-block orange"><span>Available across platforms</span></h2>
-                <div class="row">
-                  {% if downloads.Windows != null %}
-                  <div class="col-sm-4">
-                    <a href="{{ downloads.Windows.src }}"><div class="dl">
-                      <div class="dl-icon"><img src="/img/windows8.png"></div>
-                      <p>{{ downloads.Windows.name }}</p>
-                      <div class="dl-button"><img src="/img/download.png"><p>Download for Windows<span> {{ downloads.Windows.size }}</span></p></div>
-                    </div></a>
-                  </div>
-                  {% endif %}
+              </div></a>
+              {% endif %}
 
-                  {% if downloads.Mac != null %}
-                  <div class="col-sm-4">
-                    <a href="{{ downloads.Mac.src }}"><div class="dl">
-                      <div class="dl-icon"><img src="/img/mac10.10.png"></div>
-                      <p>{{ downloads.Mac.os_version }}</p>
-                      <div class="dl-button"><img src="/img/download.png"><p>{{ downloads.Mac.name }}<span> {{ downloads.Mac.size }}</span></p></div>
-                    </div>
-                  </div></a>
-                  {% endif %}
+              <div class="col-sm-4">
+                <a href="{{ source.url }}"><div class="dl">
+                  <div class="dl-icon"><img src="/img/github.png"></div>
+                  <p>GitHub</p>
+                  <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=fork&count=true&size=large" }} frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+                  <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=watch&count=true&size=large&v=2" }} frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                </div></a>
+              </div>
+            </div>
+        </section>
+        <section class="row" id="controls">
 
-                  <div class="col-sm-4">
-                    <a href="{{ source.url }}"><div class="dl">
-                      <div class="dl-icon"><img src="/img/github.png"></div>
-                      <p>GitHub</p>
-                      <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=fork&count=true&size=large" }} frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
-                      <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=watch&count=true&size=large&v=2" }} frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-                    </div></a>
-                  </div>
-                </div>
-            </section>
-            <section class="row" id="controls">
-
-                <div class="row">
+            <div class="row">
 
                 {% for controlgroup in controls %}
-                    <div class="col-md-4">
-                        <h2 class="subheading-block"><span>{{controlgroup.game_mode}}</span></h2>
-                        <table>
-                            {% for control in controlgroup.controls %}
-                                <tr>
-                                    <td><img src={{ "/img/keyboard-keys/" + control.name + ".png" }}></td>
-                                    <td><p>{{ control.description }}</td>
-                                <tr>
-                            {% endfor %}
-                        </table>
-                    </div>
-
-                    {% if loop.index % 3 == 0 and not loop.last %}
-                    </div>
-                    <div class="row">
-                    {% endif %}
+                <div class="col-sm-6 col-md-4">
+                    <h2 class="subheading-block"><span>{{controlgroup.game_mode}}</span></h2>
+                    <table>
+                        {% for control in controlgroup.controls %}
+                            <tr>
+                                <td><img class="img-responsive center-block" src={{ "/img/keyboard-keys/" + control.name + ".png" }}></td>
+                                <td><p>{{ control.description }}</td>
+                            <tr>
+                        {% endfor %}
+                    </table>
+                </div>
                 {% endfor %}
 
-                </div>
-            </section>
-            <section class="row" id="people">
-                <h2 class="subheading-block"><span>Connect with the creators</span></h2>
-                <div class="row">
-                    {% for contributor in contributors %}
-                    <div class="col-md-6">
-                        <div class="item">
-                            <div class="col-role col-xs-6">
-                                <p class="role">{{contributor.role}}</p>
-                            </div>
-                            <div class="col-name-meta col-xs-6">
-                                {% if contributor.github %}<a href="https://github.com/{{contributor.github}}">{% endif %}
-                                    <p class="name-meta">
-                                        <span class="name">{{contributor.name}}</span><br>
-                                        {% if contributor.github %}
-                                        <span class="gituser">@{{contributor.github}}</span>
-                                        {% endif %}
-                                    </p>
-                                {% if contributor.github %}</a>{% endif %}
-                            </div>
+            </div>
+        </section>
+        <section class="row" id="people">
+            <h2 class="subheading-block"><span>Connect with the creators</span></h2>
+            <div class="row">
+                {% for contributor in contributors %}
+                <div class="col-md-6">
+                    <div class="item">
+                        <div class="col-role col-xs-6">
+                            <p class="role">{{contributor.role}}</p>
+                        </div>
+                        <div class="col-name-meta col-xs-6">
+                            {% if contributor.github %}<a href="https://github.com/{{contributor.github}}">{% endif %}
+                                <p class="name-meta">
+                                    <span class="name">{{contributor.name}}</span><br>
+                                    {% if contributor.github %}
+                                    <span class="gituser">@{{contributor.github}}</span>
+                                    {% endif %}
+                                </p>
+                            {% if contributor.github %}</a>{% endif %}
                         </div>
                     </div>
-                    {% if loop.index % 2 == 0 and not loop.last %}
-                    </div>
-                    <div class="row">
-                    {% endif %}
-                    {% endfor %}
                 </div>
-            </section>
-        </div>
-        <div id="footer">
+                {% if loop.index % 2 == 0 and not loop.last %}
+                </div>
+                <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
         <p>Developers' Guild is an open-source community. <a href="http://github.com/developersguild">Click here to see our projects.</a></p>
         <a href="mailto:contact@developersguild.io">contact@developersguild.io</a>
-        </div>
-    </div>
+    </footer>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="/js/jquery.waypoints.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
