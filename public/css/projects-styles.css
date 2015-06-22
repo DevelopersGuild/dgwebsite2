@@ -327,6 +327,7 @@ section#people {
 
 #people p.name-meta .gituser {
   font-style: italic;
+  opacity: 0.75;
 }
 
 #people p {
