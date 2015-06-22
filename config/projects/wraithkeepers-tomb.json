@@ -87,38 +87,23 @@
 	],
 	"controls": [
 		{
-			"game_mode": "Anytime",
-			"controls": [
-				{
-					"type": "keyboard",
-					"name": "Escape",
-					"description": "Quit"
-				}
-			]
-		},
-		{
-			"game_mode": "Main Menu",
-			"controls": [
-				{
-					"type": "keyboard",
-					"name": "Up",
-					"description": "Change selection"
-				},
-				{
-					"type": "keyboard",
-					"name": "Down",
-					"description": "Change selection"
-				},
-				{
-					"type": "keyboard",
-					"name": "Enter",
-					"description": "Choose"
-				}
-			]
-		},
-		{
 			"game_mode": "During Gameplay",
 			"controls": [
+				{
+					"type": "keyboard",
+					"name": "Q",
+					"description": "Melee attack"
+				},
+				{
+					"type": "keyboard",
+					"name": "W",
+					"description": "Ranged attack"
+				},
+				{
+					"type": "keyboard",
+					"name": "Space",
+					"description": "Jump"
+				},
 				{
 					"type": "keyboard",
 					"name": "Left",
@@ -131,23 +116,8 @@
 				},
 				{
 					"type": "keyboard",
-					"name": "Space",
-					"description": "Jump"
-				},
-				{
-					"type": "keyboard",
 					"name": "P",
 					"description": "Pause"
-				},
-				{
-					"type": "keyboard",
-					"name": "Q",
-					"description": "Melee attack"
-				},
-				{
-					"type": "keyboard",
-					"name": "W",
-					"description": "Ranged attack"
 				}
 			]
 		},
@@ -158,6 +128,26 @@
 					"type": "keyboard",
 					"name": "Space",
 					"description": "Advance dialogue"
+				}
+			]
+		},
+		{
+			"game_mode": "Main Menu",
+			"controls": [
+				{
+					"type": "keyboard",
+					"name": "Enter",
+					"description": "Choose"
+				},
+				{
+					"type": "keyboard",
+					"name": "Up",
+					"description": "Change selection"
+				},
+				{
+					"type": "keyboard",
+					"name": "Down",
+					"description": "Change selection"
 				}
 			]
 		},
@@ -178,6 +168,16 @@
 					"type": "keyboard",
 					"name": "Enter",
 					"description": "Restart"
+				}
+			]
+		},
+		{
+			"game_mode": "Anytime",
+			"controls": [
+				{
+					"type": "keyboard",
+					"name": "Escape",
+					"description": "Quit"
 				}
 			]
 		}
