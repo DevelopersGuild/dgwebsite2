@@ -303,6 +303,10 @@ section#downloads .dl-icon {
   margin-bottom: 10px;
 }
 
+section#people {
+  padding-bottom:60px;
+}
+
 #people p.role {
   float: right;
   background-color: rgb(55, 47, 69);
@@ -330,10 +334,6 @@ section#downloads .dl-icon {
 #people div.col-md-6 {
   margin:0;
   padding:0;
-}
-
-#people {
-  padding-bottom:60px;
 }
 
 #footer {
