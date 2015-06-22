@@ -142,13 +142,7 @@ p {
 
 section {
     width: 85vw;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    margin: 0 auto;
-}
-
-section:last-of-type {
-  padding-bottom:100px;
+    margin: 100px auto;
 }
 
 section#description {
@@ -176,17 +170,28 @@ section#description .media {
     float:right;
 }
 
-h2.subheading-block {
-    text-align: center;
-    margin-bottom: 40px;
-    display: block;
+h2,
+h3 {
+    margin-top: 77px;
+    margin-bottom: 50px;
 }
 
-h2.subheading-block > span {
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.subheading-block {
+    text-align: center;
+}
+
+.subheading-block > span {
   font-family:'Montserrat';
   color: rgb(216, 209, 205);
   text-transform: uppercase;
-  font-size: 24px; 
   background: rgb(111, 84, 136);
   padding: 16px;
   border-radius: 4px;
@@ -194,7 +199,7 @@ h2.subheading-block > span {
   display: block;
 }
 
-h2.subheading-block.gray > span{
+.subheading-block.gray > span {
   background-color: rgb(147, 147, 147);
 }
 
@@ -409,7 +414,7 @@ section#downloads .dl-icon {
     right: 60px;
   }
 
-  h2.subheading-block > span {
+  .subheading-block > span {
     display: inline;
     white-space: nowrap;
   }
@@ -466,12 +471,7 @@ section#downloads .dl-icon {
     bottom: 50px;
   }
 
-  section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-
-  h2.subheading-block {
+  h2 {
     margin-bottom: 77px;
   }
 
@@ -483,7 +483,7 @@ section#downloads .dl-icon {
   }
 
   section:first-of-type {
-    padding-top: 160px;
+    margin-top: 160px;
   }
 
   #downloads .dl-button span {
