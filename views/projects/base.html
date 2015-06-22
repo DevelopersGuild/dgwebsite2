@@ -26,8 +26,8 @@
                 <div class="header">
                     <span class="nav" id="demo">Demo</span>
                     <span class="nav" id="screenshots">Screenshots</span>
-                    <span class="nav" id="controls">Controls</span>
                     <span class="nav" id="downloads">Download</span>
+                    <span class="nav" id="controls">Controls</span>
                     <span class="nav" id="people">People</span>
                 </div>
             </div>
@@ -37,30 +37,6 @@
                 <div class="col-md-8">
                     <video controls src={{ demo.src }} width="640" height="356">
                 </div>
-            </section>
-            <section class="row" id="controls">
-
-                {% for controlgroup in controls %}
-                    {% if loop.index % 3 == 0 %}
-                    <div class="row">
-                    {% endif %}
-
-                    <div class="col-md-4">
-                        <h2 class="subheading-block"><span>{{controlgroup.game_mode}}</span></h2>
-                        <table>
-                            {% for control in controlgroup.controls %}
-                                <tr>
-                                    <td><img src={{ "/img/keyboard-keys/" + control.name + ".png" }}></td>
-                                    <td><p>{{ control.description }}</td>
-                                <tr>
-                            {% endfor %}
-                        </table>
-                    </div>
-
-                    {% if loop.index % 3 == 0 %}
-                    </div>
-                    {% endif %}
-                {% endfor %}
             </section>
             <section class="row" id="downloads">
                 <h2 class="subheading-block orange"><span>Available across platforms</span></h2>
@@ -94,6 +70,30 @@
                     </div></a>
                   </div>
                 </div>
+            </section>
+            <section class="row" id="controls">
+
+                {% for controlgroup in controls %}
+                    {% if loop.index % 3 == 0 %}
+                    <div class="row">
+                    {% endif %}
+
+                    <div class="col-md-4">
+                        <h2 class="subheading-block"><span>{{controlgroup.game_mode}}</span></h2>
+                        <table>
+                            {% for control in controlgroup.controls %}
+                                <tr>
+                                    <td><img src={{ "/img/keyboard-keys/" + control.name + ".png" }}></td>
+                                    <td><p>{{ control.description }}</td>
+                                <tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+                    {% if loop.index % 3 == 0 %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
             </section>
             <section class="row" id="people">
                 <h2 class="subheading-block"><span>Connect with the creators</span></h2>
