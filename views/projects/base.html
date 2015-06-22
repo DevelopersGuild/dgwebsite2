@@ -73,11 +73,9 @@
             </section>
             <section class="row" id="controls">
 
-                {% for controlgroup in controls %}
-                    {% if loop.index % 3 == 0 %}
-                    <div class="row">
-                    {% endif %}
+                <div class="row">
 
+                {% for controlgroup in controls %}
                     <div class="col-md-4">
                         <h2 class="subheading-block"><span>{{controlgroup.game_mode}}</span></h2>
                         <table>
@@ -90,10 +88,13 @@
                         </table>
                     </div>
 
-                    {% if loop.index % 3 == 0 %}
+                    {% if loop.index % 3 == 0 and not loop.last %}
                     </div>
+                    <div class="row">
                     {% endif %}
                 {% endfor %}
+
+                </div>
             </section>
             <section class="row" id="people">
                 <h2 class="subheading-block"><span>Connect with the creators</span></h2>
