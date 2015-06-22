@@ -193,7 +193,7 @@ h2.subheading-block > span {
   white-space: nowrap;
 }
 
-h2.subheading-block.orange > span{
+h2.subheading-block.gray > span{
   background-color: rgb(147, 147, 147);
 }
 
