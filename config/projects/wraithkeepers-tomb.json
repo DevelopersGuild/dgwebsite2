@@ -7,7 +7,6 @@
 	},
 	"description": "Wraithkeeper’s Tomb is 2D roguelike side-scrolling RPG. Our hero finds himself in the midst of a castle and must battle his way past the wraiths that inhabit it. But things get stranger as he battles his way past hordes of endless wraiths. What awaits him at the end?",
 	"downloads": {
-    "repo": "wraithkeeperstomb",
 		"Mac": {
 			"name": "WraithkeepersTomb-0.9.zip",
 			"os_version": "Mac OS X 10.10",
@@ -184,7 +183,6 @@
 		}
 	],
 	"landing_image": "img/landing.jpg",
-	"repo": "https://github.com/DevelopersGuild/wraithkeeperstomb",
 	"screenshots": [
 		{
 			"src": "img/screenshot-1-title.png",
@@ -207,5 +205,12 @@
 			"alt": "Death."
 		}
 	],
+	"source": {
+		"github": {
+			"account": "DevelopersGuild",
+			"repo": "wraithkeeperstomb"
+		},
+		"url": "https://github.com/DevelopersGuild/wraithkeeperstomb"
+	},
 	"title": "Wraithkeeper's Tomb"
 }

@@ -100,8 +100,14 @@
 		}
 	],
 	"landing_image": "",
-	"repo": "https://github.com/DevelopersGuild/zombie-ninja-attack-craft2",
 	"screenshots": [
 	],
+	"source": {
+		"github": {
+			"account": "DevelopersGuild",
+			"repo": "zombie-ninja-attack-craft2"
+		},
+		"url": "https://github.com/DevelopersGuild/zombie-ninja-attack-craft2",
+	},
 	"title": "Sanctum Breach"
 }
