@@ -325,7 +325,7 @@ section#people {
   border-left: 8px solid rgb(172, 157, 216);
 }
 
-#people p.name-meta #gituser {
+#people p.name-meta .gituser {
   font-style: italic;
 }
 
