@@ -106,12 +106,14 @@
                                 <p class="role">{{contributor.role}}</p>
                             </div>
                             <div class="col-name-meta col-xs-6">
-                                <a href="https://github.com/{{contributor.github}}">
+                                {% if contributor.github %}<a href="https://github.com/{{contributor.github}}">{% endif %}
                                     <p class="name-meta">
                                         <span class="name">{{contributor.name}}</span><br>
+                                        {% if contributor.github %}
                                         <span class="gituser">@{{contributor.github}}</span>
+                                        {% endif %}
                                     </p>
-                                </a>
+                                {% if contributor.github %}</a>{% endif %}
                             </div>
                         </div>
                     </div>
