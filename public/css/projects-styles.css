@@ -123,8 +123,8 @@ p {
 }
 
 .header {
-    float:right;
-    margin: 32px 100px 0px 0px;
+    float:left;
+    margin: 20px 0 0 100px;
 }
 
 .header span.nav {
