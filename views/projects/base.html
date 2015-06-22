@@ -100,19 +100,25 @@
                 <h2 class="subheading-block"><span>Connect with the creators</span></h2>
                 <div class="row">
                     {% for contributor in contributors %}
-                    <div class="item">
-                        <div class="col-md-6">
-                            <p class="role">{{contributor.role}}</p>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://github.com/{{contributor.github}}">
-                                <p class="name-meta">
-                                    <span class="name">{{contributor.name}}</span><br>
-                                    <span class="gituser">@{{contributor.github}}</span>
-                                </p>
-                            </a>
+                    <div class="col-md-6">
+                        <div class="item">
+                            <div class="col-role col-xs-6">
+                                <p class="role">{{contributor.role}}</p>
+                            </div>
+                            <div class="col-name-meta col-xs-6">
+                                <a href="https://github.com/{{contributor.github}}">
+                                    <p class="name-meta">
+                                        <span class="name">{{contributor.name}}</span><br>
+                                        <span class="gituser">@{{contributor.github}}</span>
+                                    </p>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    {% if loop.index % 2 == 0 and not loop.last %}
+                    </div>
+                    <div class="row">
+                    {% endif %}
                     {% endfor %}
                 </div>
             </section>
