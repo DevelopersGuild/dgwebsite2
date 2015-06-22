@@ -10,7 +10,7 @@
     "repo": "wraithkeeperstomb",
 		"Mac": {
 			"name": "WraithkeepersTomb-0.9.zip",
-      "os_version": "Mac OSX Yosemite 10.10.1",
+			"os_version": "Mac OS X 10.10",
 			"size": "16mb",
 			"src": "bin/mac/WraithkeepersTomb-0.9.zip"
 		}
