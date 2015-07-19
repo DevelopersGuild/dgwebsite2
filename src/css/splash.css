@@ -79,8 +79,28 @@ body {
     margin: .67em 0;
 }
 
-.slides li {
-    text-transform: uppercase;
+.suave {
+    text-align: left;
+    font-size: 1.45em;
+    font-weight:300;
+    margin: auto;
+    /*border-bottom: 10px solid gray;*/
+    display: inline-block;
+    text-align: center;
+}
+
+.suave h1, .suave p{
+    text-shadow: 2px 2px 3px black;
+}
+
+.suave h1 {
+    font-weight:100;
+}
+
+@media (max-width:1083px) {
+    .suave {
+        width: 80%;
+    }
 }
 
 .landing #joinbutton {
@@ -108,42 +128,6 @@ body {
     font-size:1.0em;
 }
 
-/*////////INTRO SECTION////////*/
-
-.intro {
-    padding: 100px 0px 90px 0px;
-    color:white;
-    /*background-color: rgba(34, 49, 59, 1);*/
-    background-color: rgba(42, 60, 82, 1);
-    box-shadow: inset 0 1em 1em -1em black;
-    /*border-top: rgb(214,214,214) 12px solid;*/
-    border-bottom: rgb(37, 38, 44) 3px solid;
-}
-
-.suave {
-    text-align: left;
-    font-size: 1.45em;
-    font-weight:300;
-    margin: auto;
-    /*border-bottom: 10px solid gray;*/
-    display: inline-block;
-    text-align: center;
-}
-
-.suave h1, .suave p{
-    text-shadow: 2px 2px 3px black;
-}
-
-.suave h1 {
-    font-weight:100;
-}
-
-@media (max-width:1083px) {
-    .suave {
-        width: 80%;
-    }
-}
-
 /*/////////TRAITS SECTION//////////*/
 .traits {
     text-align: center;
@@ -158,7 +142,7 @@ body {
     background-color: rgb(160, 176, 196);
     padding-top: 100px;
     padding-bottom: 100px;
-    box-shadow: inset 0 -1em 1em -1em black;
+    box-shadow: inset 0 -.8em 1em -1em black, inset 0 1em 1em -1em black;
 }
 
 .single_trait {
