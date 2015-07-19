@@ -1,6 +1,5 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../../node_modules/animate.css/animate.min.css";
-@import "flexslider.css";
 @import "jqModal.css";
 
 body {
@@ -71,9 +70,6 @@ body {
     margin-top: 25px;
     /*width: 650px;*/
     text-shadow: 2px 2px 3px rgb(57, 57, 57);
-}
-
-.tagline span {
     font-size: 2em;
     line-height: 0.8em;
     color:white;

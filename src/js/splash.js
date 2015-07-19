@@ -5,20 +5,11 @@
 window.$ = window.jQuery = require('jquery');
 require('bootstrap');
 require('./jqModal.min');
-require('./jquery.flexslider-min');
 var WOW = require('wow/dist/wow.min');
 
 new WOW.WOW().init();
 
 $(window).load(function() {
-    $('.flexslider').flexslider({
-        slideshowSpeed: 1500,
-        animationSpeed: 50,
-        controlNav: false,
-        directionNav: false,
-        pauseOnAction: false,
-        touch: false,
-    });
     /*
     $('#modal').jqm({
       trigger: 'button#joinbutton'
