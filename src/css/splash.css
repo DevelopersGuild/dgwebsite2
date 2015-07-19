@@ -258,22 +258,6 @@ and (max-device-width : 1024px) {
     font-size: 1.5em;
 }
 
-/*/////////////GO TO TOP BUTTON SECTION///////////////*/
-#gotop {
-    display: none;
-    position: fixed;
-    width: 3.5vmax;
-    height: 3.5vmax;
-    opacity: 0.3;
-    right: 20px;
-    bottom: 20px;
-    background-color: #b0bec5;
-    cursor: pointer;
-    -moz-border-radius: 4%;
-    -webkit-border-radius: 4%;
-    border-radius: 100%;
-}
-
 /*/////////MODAL DIALOG/////////*/
 #modal {
     width:70%;
