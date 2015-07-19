@@ -21,7 +21,7 @@ body {
 .overlay {
     background-color: rgba(34, 26, 6, 0.5);
     width: 100%;
-    display: block;
+    min-height: 100vh;
 }
 
 .fixed-background {
@@ -35,13 +35,12 @@ body {
     background-size: cover;
     background-position: center;
     background-image: url("/img/the-mlc.jpg");
-    height: 100%;
-    min-height: 720px;
+    min-height: 100vh;
 }
 
 .landingcont {
-    height: 100%;
-    margin-top: 10%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
 @media only screen and (max-width: 320px) {
@@ -55,8 +54,6 @@ body {
 
 .logo > img {
     height: 35vh;
-    max-height: 320px;
-    min-height: 300px;
     display: block;
     margin: 0 auto;
 }
