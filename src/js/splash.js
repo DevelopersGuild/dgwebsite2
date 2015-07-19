@@ -3,7 +3,6 @@
 'use strict';
 
 window.$ = window.jQuery = require('jquery');
-require('bootstrap');
 require('./jqModal.min');
 
 $(window).load(function() {
