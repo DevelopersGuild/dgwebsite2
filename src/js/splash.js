@@ -5,9 +5,6 @@
 window.$ = window.jQuery = require('jquery');
 require('bootstrap');
 require('./jqModal.min');
-var WOW = require('wow/dist/wow.min');
-
-new WOW.WOW().init();
 
 $(window).load(function() {
     /*
@@ -59,9 +56,6 @@ window.iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
 if (window.iOS) {
     // The go-to-top button looks goofy on iOS with our current CSS.
     $("#gotop").hide();
-
-    // Wow doesn't activate while scrolling on iOS, which is confusing.  It activates after any scrolling completely stops.
-    $(".wow").removeClass("wow");
 
     // iOS doesn't support "background-attachment: fixed," and, in fact, does something weird, instead.
     $(".fixed-background").removeClass("fixed-background");

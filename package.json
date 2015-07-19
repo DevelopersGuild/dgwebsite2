@@ -29,8 +29,7 @@
     "mongoose": "^4.0.4",
     "nunjucks": "^1.3.0",
     "request": "^2.55.0",
-    "socket.io": "^1.3.5",
-    "wow": "https://github.com/matthieua/WOW/archive/1.1.0.tar.gz"
+    "socket.io": "^1.3.5"
   },
   "devDependencies": {
     "browserify": "^10.2.1",
