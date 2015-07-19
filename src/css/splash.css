@@ -215,7 +215,7 @@ and (max-device-width : 1024px) {
     border-radius: 3px;
     text-align: left;
     /*border: 10px solid rgba(0, 0, 0, 0.7);*/
-    background-color: rgba(228, 234, 241, 0.7)
+    background-color: rgba(228, 234, 241, 0.9);
 }
 
 .single_faq > p {
