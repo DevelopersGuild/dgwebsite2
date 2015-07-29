@@ -1,0 +1,72 @@
+[
+  {
+    "sha": "e4af0ac892492a8bbf9284773bb402de671f4977",
+    "commit": {
+      "author": {
+        "name": "Joshua Pham",
+        "email": "joshua.pham@gmail.com",
+        "date": "2015-07-29T07:01:06Z"
+      },
+      "committer": {
+        "name": "Joshua Pham",
+        "email": "joshua.pham@gmail.com",
+        "date": "2015-07-29T07:01:06Z"
+      },
+      "message": "progress on redesign of main hub page. Most is laid out, will begin work on slack sidebar now",
+      "tree": {
+        "sha": "f9aa0476c61a3bc410165957d5117e5d9d4c197f",
+        "url": "https://api.github.com/repos/DevelopersGuild/dgwebsite2/git/trees/f9aa0476c61a3bc410165957d5117e5d9d4c197f"
+      },
+      "url": "https://api.github.com/repos/DevelopersGuild/dgwebsite2/git/commits/e4af0ac892492a8bbf9284773bb402de671f4977",
+      "comment_count": 0
+    },
+    "url": "https://api.github.com/repos/DevelopersGuild/dgwebsite2/commits/e4af0ac892492a8bbf9284773bb402de671f4977",
+    "html_url": "https://github.com/DevelopersGuild/dgwebsite2/commit/e4af0ac892492a8bbf9284773bb402de671f4977",
+    "comments_url": "https://api.github.com/repos/DevelopersGuild/dgwebsite2/commits/e4af0ac892492a8bbf9284773bb402de671f4977/comments",
+    "author": {
+      "login": "smerdy",
+      "id": 6334450,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6334450?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/smerdy",
+      "html_url": "https://github.com/smerdy",
+      "followers_url": "https://api.github.com/users/smerdy/followers",
+      "following_url": "https://api.github.com/users/smerdy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/smerdy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/smerdy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/smerdy/subscriptions",
+      "organizations_url": "https://api.github.com/users/smerdy/orgs",
+      "repos_url": "https://api.github.com/users/smerdy/repos",
+      "events_url": "https://api.github.com/users/smerdy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/smerdy/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "smerdy",
+      "id": 6334450,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6334450?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/smerdy",
+      "html_url": "https://github.com/smerdy",
+      "followers_url": "https://api.github.com/users/smerdy/followers",
+      "following_url": "https://api.github.com/users/smerdy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/smerdy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/smerdy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/smerdy/subscriptions",
+      "organizations_url": "https://api.github.com/users/smerdy/orgs",
+      "repos_url": "https://api.github.com/users/smerdy/repos",
+      "events_url": "https://api.github.com/users/smerdy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/smerdy/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9dd0395140fd107024d68070d45ff22181850a42",
+        "url": "https://api.github.com/repos/DevelopersGuild/dgwebsite2/commits/9dd0395140fd107024d68070d45ff22181850a42",
+        "html_url": "https://github.com/DevelopersGuild/dgwebsite2/commit/9dd0395140fd107024d68070d45ff22181850a42"
+      }
+    ]
+  }
+]

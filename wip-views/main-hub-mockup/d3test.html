@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script type="text/javascript">
+var req = new XMLHttpRequest();
+var twoweeks = new Date();
+
+twoweeks.setDate(twoweeks.getDate() - (twoweeks.getDay() + 2) - 7);
+console.log(twoweeks);
+oneweek = new Date(twoweeks);
+oneweek.setDate(oneweek.getDate() + 7)
+console.log(twoweeks + ' until ' + oneweek);
+req.open('GET', 'https://api.github.com/repos/developersguild/dgwebsite2/commits?sha=master&since=' + twoweeks + '&until=' + oneweek, true);
+req.send();
+
+req.onreadystatechange = function(){
+  console.log(req.responseText);
+}
+</script>
+
+</body>
+</html>
