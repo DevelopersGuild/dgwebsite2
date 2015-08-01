@@ -93,19 +93,37 @@ body {
     }
 }
 
-.landing #joinbutton {
-    margin-top: 30px;
+.landing .btn {
+    margin: 30px 30px;
     font-size: 25px;
     padding: 21px 37px;
     background-clip: padding-box;
     border: solid 5px rgba(255,255,255, 0.5);
     box-shadow: 0px 0px 2px 2px rgba(50,50,50, 0.4);
     transition: background-color 0.2s;
+    height: 85px;
 }
 
-.landing #joinbutton:hover {
+.landing #githubbutton {
+    background-color: #000000;
+}
+
+.landing .btn:hover {
     background-color: #61CC4C;
     transition: background-color 0.2s;
+}
+
+.landing #idbutton:hover {
+  background-color: #61CC4C;
+}
+
+.landing #githubbutton:hover {
+  background-color: #61CC4C;
+}
+
+.landing .btn > img {
+    height: 100%;
+    margin-right: 5px;
 }
 
 /*override flexslider style*/
