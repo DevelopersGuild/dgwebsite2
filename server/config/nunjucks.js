@@ -7,7 +7,7 @@ module.exports = function(app) {
   var env = new nunjucks.Environment(
 
     // Tell Nunjucks where the templates are stored.
-    new nunjucks.FileSystemLoader('views'),
+    new nunjucks.FileSystemLoader('client/views'),
     { autoescape: true }
   );
 

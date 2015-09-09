@@ -13,7 +13,7 @@ var uglify    = require('gulp-uglify');
 var source = require('vinyl-source-stream');
 
 gulp.task('compile-js', function() {
-  return browserify('src/js/splash.js')
+  return browserify('client/js/splash.js')
   .bundle()
   .pipe(source('splash.min.js'))
   .pipe(streamify(uglify()))
@@ -21,7 +21,7 @@ gulp.task('compile-js', function() {
 });
 
 gulp.task('compile-css', function() {
-  return gulp.src('src/css/splash.css')
+  return gulp.src('client/css/splash.css')
     .pipe(importCss())
     .pipe(concat('splash.min.css'))
     .pipe(minifyCss('splash.min.css'))
@@ -31,8 +31,8 @@ gulp.task('compile-css', function() {
 gulp.task('compile', ['compile-js', 'compile-css']);
 
 gulp.task('server', ['compile'], function() {
-  gulp.watch('./src/css/*.css', ['compile-css']);
-  gulp.watch('./src/js/*.js', ['compile-js']);
+  gulp.watch('./client/css/*.css', ['compile-css']);
+  gulp.watch('./client/js/*.js', ['compile-js']);
   return nodemon({
     script: 'server',
     env: { NODE_ENV: 'development'},
