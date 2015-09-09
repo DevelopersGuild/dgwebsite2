@@ -30,11 +30,12 @@ gulp.task('compile-css', function() {
 
 gulp.task('compile', ['compile-js', 'compile-css']);
 
-gulp.task('server', ['compile'], function () {
+gulp.task('server', ['compile'], function() {
+  gulp.watch('./src/css/*.css', ['compile-css']);
+  gulp.watch('./src/js/*.js', ['compile-js']);
   return nodemon({
-    script: 'server.js',
-    ext: 'js css html',
-    env: { 'NODE_ENV': 'development' },
-    tasks: ['compile']
+    script: 'server',
+    env: { NODE_ENV: 'development'},
+    watch: ['server/**/*.js'],
   });
 });
