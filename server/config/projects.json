@@ -27,19 +27,25 @@
     "name": "Developers' Guild Forums",
     "image": "dg_forum.png",
     "href": "http://forum.developersguild.io",
-    "term": "Winter 2015 - Spring 2015"
+    "term": "Winter 2015"
   },
   {
     "name": "Cosmic Ball",
     "image": "cosmic_ball.png",
     "href": "https://itunes.apple.com/us/app/cosmic-ball/id964393146",
-    "term": "Winter 2015 - Spring 2015"
+    "term": "Fall 2014"
+  },
+  {
+    "name": "Flappy Bird",
+    "image": "flappybird.png",
+    "href": "",
+    "term": "Spring 2014"
   },
   {
     "name": "Developers' Guild Website",
     "image": "dg_website.png",
     "href": "https://developersguild.io",
-    "term": "Winter 2015 - Spring 2015"
+    "term": "Spring 2014"
   }
 ]
 
