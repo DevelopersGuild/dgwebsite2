@@ -3,37 +3,43 @@
 		"name": "Sanctum Breach",
     "image": "sanctum_breach.png",
 		"href": "/projects/sanctum-breach",
-    "quarter": "Winter 2015 - Spring 2015"
+    "term": "Winter 2015 - Spring 2015"
 	},
 	{
 		"name": "Battleturf",
 		"image": "battleturf.png",
-		"href": "/projects/battleturf"
+		"href": "/projects/battleturf",
+    "term": "Winter 2015 - Spring 2015"
 	},
   {
     "name": "Daze",
     "image": "daze.png",
     "href": "http://daze.developersguild.io",
-    "quarter": "Spring 2015"
+    "term": "Spring 2015"
   },
   {
     "name": "Wraithkeeper's Tomb",
     "image": "wraithkeepers_tomb.png",
-    "href": "/projects/wraithkeepers-tomb"
+    "href": "/projects/wraithkeepers-tomb",
+    "term": "Winter 2015 - Spring 2015"
   },
   {
     "name": "Developers' Guild Forums",
     "image": "dg_forum.png",
-    "href": "http://forum.developersguild.io"
+    "href": "http://forum.developersguild.io",
+    "term": "Winter 2015 - Spring 2015"
   },
   {
     "name": "Cosmic Ball",
     "image": "cosmic_ball.png",
-    "href": "https://itunes.apple.com/us/app/cosmic-ball/id964393146"
+    "href": "https://itunes.apple.com/us/app/cosmic-ball/id964393146",
+    "term": "Winter 2015 - Spring 2015"
   },
   {
     "name": "Developers' Guild Website",
-    "image": "dg_website.png"
+    "image": "dg_website.png",
+    "href": "https://developersguild.io",
+    "term": "Winter 2015 - Spring 2015"
   }
 ]
 
