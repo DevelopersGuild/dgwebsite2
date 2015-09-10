@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -65,6 +67,22 @@
                     <div><p>Make <br> Friends</p></div>
                 </div>
                 </div>
+            </div>
+
+            <div class="row projects-title">
+                <p>Our Projects</p>
+            </div>
+
+            <div class="row projects">
+              <div id="owl-slider">
+                {% for project in projects %}
+                <div class="item">
+                  <img src="/img/projects/{{ project.image }}" alt="{{ project.name }}">
+                </div>
+                {% endfor %}
+              </div>
+              <span class="glyphicon glyphicon-circle-arrow-left nav-btn prev" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-circle-arrow-right nav-btn next" aria-hidden="true"></span>
             </div>
 
             <div class="row faq_title">

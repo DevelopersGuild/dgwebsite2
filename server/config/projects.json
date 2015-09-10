@@ -1,0 +1,39 @@
+[
+	{
+		"name": "Sanctum Breach",
+    "image": "sanctum_breach.png",
+		"href": "/projects/sanctum-breach",
+    "quarter": "Winter 2015 - Spring 2015"
+	},
+	{
+		"name": "Battleturf",
+		"image": "battleturf.png",
+		"href": "/projects/battleturf"
+	},
+  {
+    "name": "Daze",
+    "image": "daze.png",
+    "href": "http://daze.developersguild.io",
+    "quarter": "Spring 2015"
+  },
+  {
+    "name": "Wraithkeeper's Tomb",
+    "image": "wraithkeepers_tomb.png",
+    "href": "/projects/wraithkeepers-tomb"
+  },
+  {
+    "name": "Developers' Guild Forums",
+    "image": "dg_forum.png",
+    "href": "http://forum.developersguild.io"
+  },
+  {
+    "name": "Cosmic Ball",
+    "image": "cosmic_ball.png",
+    "href": "https://itunes.apple.com/us/app/cosmic-ball/id964393146"
+  },
+  {
+    "name": "Developers' Guild Website",
+    "image": "dg_website.png"
+  }
+]
+

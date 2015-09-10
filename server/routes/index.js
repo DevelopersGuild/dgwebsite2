@@ -19,7 +19,9 @@ function handleSplashFetch(req, res) {
   // TEMP
   //req.session.splash = true;
 
-  res.render('splash.html');
+  res.render('splash.html', {
+    projects: require('../config/projects')
+  });
 }
 
 function handleHubFetch(req, res) {

@@ -1,6 +1,8 @@
-@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../../node_modules/animate.css/animate.min.css";
+@import "bootstrap.min.css";
 @import "jqModal.css";
+@import "owl.carousel.css";
+@import "owl.theme.css";
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -15,6 +17,7 @@ body {
 }
 
 .row {
+    position: relative;
     margin: 0px;
 }
 
@@ -362,4 +365,65 @@ and (max-device-width : 1024px) {
     .single_faq {
         padding: 15px 15px 5px 15px;
     }
+}
+
+.projects-title {
+  background-color: rgb(42, 60, 82);
+  padding: 35px 0px;
+}
+
+.projects-title p {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 300;
+  color: white;
+}
+
+#owl-slider .item {
+  margin: 3px;
+}
+#owl-slider .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.projects {
+  position: relative;
+  background-color: rgb(42, 60, 82);
+}
+
+.projects p {
+  margin: 1em;
+  font-size: 2.25em;
+  font-weight: 400;
+  color: white;
+}
+
+.nav-btn {
+  position: absolute;
+  color: white;
+  opacity: 0.75;
+  font-size: 50px;
+  top: 50%;
+  margin-top: -25px;
+
+  transition: all 0.25s;
+}
+
+.nav-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.nav-btn.prev {
+  left: 0.1em;
+}
+
+.nav-btn.next {
+  right: 0.1em;
+}
+
+.owl-controls {
+  display: none !important;
 }

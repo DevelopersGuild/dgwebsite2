@@ -3,7 +3,6 @@
 'use strict';
 
 /*
-window.$ = window.jQuery = require('jquery');
 require('./jqModal.min');
 
 $(window).load(function() {
@@ -20,6 +19,28 @@ $(window).load(function() {
     });
 });
 */
+
+window.$ = window.jQuery = require('jquery');
+require('./owl.carousel.min.js');
+
+$(document).ready(function() {
+  var $owl = $("#owl-slider");
+  $owl.owlCarousel({
+    items : 4,
+    itemsDesktop : [1199,3],
+    itemsDesktopSmall : [979,3],
+  });
+
+  $(".next").click(function() {
+    $owl.trigger('owl.next');
+  });
+
+  $(".prev").click(function() {
+    $owl.trigger('owl.prev');
+  });
+
+});
+
 
 window.iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
 if (window.iOS) {
