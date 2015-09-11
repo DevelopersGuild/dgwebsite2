@@ -386,6 +386,12 @@ and (max-device-width : 1024px) {
   display: block;
   width: 100%;
   height: auto;
+  opacity: 0.5;
+  transition: all 0.25s;
+}
+
+#owl-slider .item img:hover {
+  opacity: 1;
 }
 
 .projects {
