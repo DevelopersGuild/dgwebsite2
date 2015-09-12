@@ -14,18 +14,42 @@ var source = require('vinyl-source-stream');
 
 gulp.task('compile-js', function() {
   return browserify('client/js/splash.js')
-  .bundle()
-  .pipe(source('splash.min.js'))
-  .pipe(streamify(uglify()))
-  .pipe(gulp.dest('public'));
+    .bundle()
+    .pipe(source('splash.min.js'))
+    .pipe(streamify(uglify()))
+    .pipe(gulp.dest('public'));
 });
 
-gulp.task('compile-css', function() {
-  return gulp.src('client/css/splash.css')
+gulp.task('compile-js', function() {
+  return browserify('client/js/splash.js')
+    .bundle()
+    .pipe(source('splash.min.js'))
+    .pipe(streamify(uglify()))
+    .pipe(gulp.dest('public'));
+});
+
+gulp.task('dev-css', function() {
+  return gulp.src('client/css/*.css')
     .pipe(importCss())
     .pipe(concat('splash.min.css'))
-    .pipe(minifyCss('splash.min.css'))
     .pipe(gulp.dest('public'));
+});
+
+gulp.task('dev-js', function() {
+  return browserify('client/js/splash.js')
+    .bundle()
+    .pipe(source('splash.min.js'))
+    .pipe(gulp.dest('public'));
+});
+
+gulp.task('dev', ['dev-css', 'dev-js'], function() {
+  gulp.watch('./client/css/*.css', ['dev-css']);
+  gulp.watch('./client/js/*.js', ['dev-js']);
+  return nodemon({
+    script: 'server',
+    env: { NODE_ENV: 'development'},
+    watch: ['server/**/*.js'],
+  });
 });
 
 gulp.task('compile', ['compile-js', 'compile-css']);
