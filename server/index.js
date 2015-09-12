@@ -6,7 +6,7 @@ var express = require('express');
 var app = express();
 
 var Config = require('./config/index');
-var SessionConfig = require('./config/session');
+//var SessionConfig = require('./config/session'); /* Requires mongo and isn't used yet. */
 var NunjucksEnv = require('./config/nunjucks')(app);
 
 var server = app.listen(Config.SERVER_PORT, Config.SERVER_ADDRESS, function () {
@@ -24,7 +24,7 @@ var io = require('socket.io')(server);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(SessionConfig);
+//app.use(SessionConfig); /* Requires mongo and isn't used yet. */
 
 app.use(express.static('public'));
 

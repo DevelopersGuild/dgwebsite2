@@ -3,8 +3,8 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="/splash.min.css">
-        <link href='//fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/splash.css">
+        <link href="//fonts.googleapis.com/css?family=Open Sans:300,400" rel="stylesheet" type="text/css">
 
         <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
@@ -27,71 +27,79 @@
 
     <body>
 
-        <div class="container">
+        <main class="landing fixed-background">
+            <div class="container">
+                <div class="landingcont">
+                    <img class="logo img-responsive" src="img/dglogo.svg" alt="Developers' Guild logo">
+                    <p class="lead">
+                        <b>Developers' Guild</b> is <em>the</em>
+                        community for building projects at De Anza College.
+                    </p>
+                    <a href="http://eepurl.com/boktMz" target="_blank" class="btn btn-lg btn-primary">
+                        <span class="fa fa-lg fa-user"></span>
+                        Join Now
+                    </a>
+                    <a href="https://github.com/DevelopersGuild" target="_blank" class="btn btn-lg btn-default">
+                        <span class="fa fa-lg fa-github"></span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </main>
 
-            <div class="row landing fixed-background">
-                <div class="row overlay"><div class="col-md-8 col-md-offset-2">
-                    <div class="landingcont">
-                        <div class="logo">
-                            <img class="img-responsive" src="img/dglogo.svg" alt="Developers' Guild">
+        <section class="traits">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 single_trait">
+                        <div class="hidden-xs icon center-block">
+                            <img class="img-responsive center-block" src="img/deanza.svg" alt="">
                         </div>
-                        <div class="tagline">
-                            <div class="suave">
-                                <h1><span style="font-weight: bold;">Developers' Guild</span> is <span style="font-style: italic">the</span> community for building projects at De Anza College.</h1>
-                            </div>
+                        <p>Meet Weekly</p>
+                    </div>
+                    <div class="visible-xs-block"><br></div>
+                    <div class="col-sm-4 single_trait">
+                        <div class="hidden-xs icon center-block">
+                            <img class="img-responsive center-block" src="img/tools.svg" alt="">
                         </div>
-                        <a href="http://eepurl.com/boktMz" target="_blank"><button id="joinbutton" class="btn btn-lg btn-primary">JOIN NOW</button></a>
-                        <a href="https://github.com/DevelopersGuild" target="_blank"><button id="githubbutton" class="btn btn-lg btn-primary"><img src="/img/github-white.png"> GITHUB</button></a>
+                        <p>Create Projects</p>
                     </div>
-                </div></div>
-            </div>
-
-            <div class="row traits">
-                <div class="col-sm-10 col-sm-offset-1">
-                <div class="col-sm-4 single_trait">
-                    <div class="img-responsive">
-                       <img src="img/deanza.svg" alt="">
+                    <div class="visible-xs-block"><br></div>
+                    <div class="col-sm-4 single_trait">
+                        <div class="hidden-xs icon center-block">
+                            <img class="img-responsive center-block" src="img/friends.svg" alt="">
+                        </div>
+                        <p>Make Friends</p>
                     </div>
-                    <div><p>Meet weekly <br> at De Anza College</p></div>
-                </div>
-                <div class="col-sm-4 single_trait">
-                    <div class="img-responsive">
-                       <img src="img/tools.svg" alt="">
-                    </div>
-                    <div><p>Create and <br> Join Projects</p></div>
-                </div>
-                <div class="col-sm-4 single_trait">
-                    <div class="img-responsive">
-                       <img src="img/friends.svg" alt="">
-                    </div>
-                    <div><p>Make <br> Friends</p></div>
-                </div>
                 </div>
             </div>
+        </section>
 
-            <div class="row projects-title">
-                <p>Our Projects</p>
+        <section>
+            <div class="projects-title">
+                <p>Past Projects</p>
             </div>
 
-            <div class="row projects">
-              <div id="owl-slider">
-                {% for project in projects %}
-                <div class="item">
-                  <img src="/img/projects/{{ project.image }}" alt="{{ project.name }}">
-                </div>
-                {% endfor %}
+            <div class="projects">
+                <div id="owl-slider">
+                    {% for project in projects %}
+                    <div class="item">
+                        <img src="/img/projects/{{ project.image }}" alt="{{ project.name }}">
+                    </div>
+                    {% endfor %}
               </div>
-              <span class="glyphicon glyphicon-circle-arrow-left nav-btn prev" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-circle-arrow-right nav-btn next" aria-hidden="true"></span>
+              <span class="fa fa-arrow-circle-left nav-btn prev"></span>
+              <span class="fa fa-arrow-circle-right nav-btn next"></span>
             </div>
+        </section>
 
-            <div class="row faq_title">
+        <section>
+            <div class="faq_title">
                 <p>Frequently Asked Questions</p>
             </div>
 
 
-            <div class="faq fixed-background"><div class="overlay">
-                <div class="container faq-container">
+            <div class="faq fixed-background">
+                <div class="container-fluid faq-container">
                     <div class="row overlay_faq">
                         <div class="row">
                             <div class="col-sm-6">
@@ -183,19 +191,19 @@
 
                     </div>
                 </div>
-            </div></div>
+            </div>
+        </section>
 
-            <div class="row ping-us">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="ping-us_title">
-                        <p>Message us!</p>
-                    </div>
-                    <div class="ping-us_email">
-                        <p><a href="mailto:contact@developersguild.io">contact@developersguild.io</a></p>
-                    </div>
+        <section class="ping-us">
+            <div class="container">
+                <div class="ping-us_title">
+                    <p>Message us!</p>
+                </div>
+                <div class="ping-us_email">
+                    <p><a href="mailto:contact@developersguild.io">contact@developersguild.io</a></p>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- <div id="modal">
             <div class="close-button">
@@ -214,7 +222,7 @@
             </form>
         </div>
         -->
-        <script src="/splash.min.js"></script>
+        <script src="/splash.js"></script>
     </body>
 
 </html>

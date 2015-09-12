@@ -7,7 +7,7 @@ require('./jqModal.min');
 
 $(window).load(function() {
     $('#modal').jqm({
-      trigger: 'button#joinbutton'
+      trigger: 'a#joinbutton'
     });
 
     if(window.location.hash && window.location.hash === '#join'){

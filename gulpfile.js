@@ -4,54 +4,41 @@ var browserify  = require('browserify');
 var gulp        = require('gulp');
 
 var concat    = require('gulp-concat');
+var gulpIf    = require('gulp-if');
 var importCss = require('gulp-import-css');
 var minifyCss = require('gulp-minify-css');
 var nodemon   = require('gulp-nodemon');
 var streamify = require('gulp-streamify');
 var uglify    = require('gulp-uglify');
+var cssCombo  = require('gulp-css-combo');
 
 var source = require('vinyl-source-stream');
 
-gulp.task('compile-js', function() {
-  return browserify('client/js/splash.js')
-    .bundle()
-    .pipe(source('splash.min.js'))
-    .pipe(streamify(uglify()))
-    .pipe(gulp.dest('public'));
-});
+var isProduction = process.env.NODE_ENV === 'production';
 
 gulp.task('compile-js', function() {
   return browserify('client/js/splash.js')
     .bundle()
-    .pipe(source('splash.min.js'))
-    .pipe(streamify(uglify()))
+    .pipe(source('splash.js'))
+    .pipe(gulpIf(isProduction, streamify(uglify())))
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('dev-css', function() {
-  return gulp.src('client/css/*.css')
-    .pipe(importCss())
-    .pipe(concat('splash.min.css'))
-    .pipe(gulp.dest('public'));
+gulp.task('compile-css-splash', function() {
+    return gulp.src('client/css/splash.css')
+      .pipe(cssCombo())
+      .pipe(gulpIf(isProduction, minifyCss('splash.css')))
+      .pipe(gulp.dest('public'));
 });
 
-gulp.task('dev-js', function() {
-  return browserify('client/js/splash.js')
-    .bundle()
-    .pipe(source('splash.min.js'))
-    .pipe(gulp.dest('public'));
+gulp.task('compile-css-projects', function() {
+    return gulp.src('client/css/projects.css')
+      .pipe(cssCombo())
+      .pipe(gulpIf(isProduction, minifyCss('projects.css')))
+      .pipe(gulp.dest('public'));
 });
 
-gulp.task('dev', ['dev-css', 'dev-js'], function() {
-  gulp.watch('./client/css/*.css', ['dev-css']);
-  gulp.watch('./client/js/*.js', ['dev-js']);
-  return nodemon({
-    script: 'server',
-    env: { NODE_ENV: 'development'},
-    watch: ['server/**/*.js'],
-  });
-});
-
+gulp.task('compile-css', ['compile-css-splash', 'compile-css-projects']);
 gulp.task('compile', ['compile-js', 'compile-css']);
 
 gulp.task('server', ['compile'], function() {
@@ -60,6 +47,7 @@ gulp.task('server', ['compile'], function() {
   return nodemon({
     script: 'server',
     env: { NODE_ENV: 'development'},
-    watch: ['server/**/*.js'],
+    watch: ['server/**/*'],
+    ext: 'js json',
   });
 });

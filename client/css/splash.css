@@ -1,24 +1,13 @@
 @import "../../node_modules/animate.css/animate.min.css";
 @import "bootstrap.min.css";
+@import "font-awesome.min.css";
 @import "jqModal.css";
 @import "owl.carousel.css";
 @import "owl.theme.css";
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
-}
-
-.container {
-    text-align: center;
-    display: block;
-    width: 100%;
-    padding: 0px;
-}
-
-.row {
-    position: relative;
-    margin: 0px;
 }
 
 .overlay {
@@ -52,81 +41,62 @@ body {
 
 
 .logo {
-    margin-top: 20px;
-}
-
-.logo > img {
     height: 35vh;
-    display: block;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
 }
 
-.tagline {
-    margin-top: 25px;
-    text-shadow: 2px 2px 3px rgb(57, 57, 57);
-    font-size: 2em;
-    line-height: 0.8em;
+.lead {
+    text-shadow: 1px 1px 10px rgb(57, 57, 57);
     color: white;
-    opacity: 1;
-    font-weight: 300;
-    display: block;
-    margin: .67em 0;
+    font-weight: 400;
+    font-size: 26px;
+    margin: 25px 0;
 }
 
-.suave {
-    text-align: left;
-    font-size: 1.45em;
-    font-weight: 300;
-    margin: auto;
-    display: inline-block;
-    text-align: center;
+.btn {
+  box-shadow: inset 0 -3px rgba(0, 0, 0, .25);
+  border: 0;
 }
 
-.suave h1, .suave p{
-    text-shadow: 2px 2px 3px black;
+.btn:focus {
+  outline: 0 !important;
 }
 
-.suave h1 {
-    font-weight: 100;
-}
-
-@media (max-width: 1083px) {
-    .suave {
-        width: 80%;
-    }
+.btn:active {
+  box-shadow: inset 0 3px 1px rgba(0, 0, 0, .2);
 }
 
 .landing .btn {
-    margin: 30px 30px;
+    padding: 12px 30px 16px;
+    font-size: 22px;
+    margin: 20px 20px;
+    /*
     font-size: 25px;
     padding: 21px 37px;
     background-clip: padding-box;
     border: solid 5px rgba(255,255,255, 0.5);
-    box-shadow: 0px 0px 2px 2px rgba(50,50,50, 0.4);
     transition: background-color 0.2s;
-    height: 85px;
+    text-transform: uppercase;
+    */
 }
 
-.landing #githubbutton {
-    background-color: #000000;
+.fa {
+    margin-right: 5px;
+}
+
+.landing #github-button {
+    background-color: #121a16;
 }
 
 .landing .btn:hover {
+    /*
     background-color: #61CC4C;
     transition: background-color 0.2s;
+    */
 }
 
-.landing #idbutton:hover {
+.landing #github-button:hover {
   background-color: #61CC4C;
-}
-
-.landing #githubbutton:hover {
-  background-color: #61CC4C;
-}
-
-.landing .btn > img {
-    height: 100%;
-    margin-right: 5px;
 }
 
 /*override flexslider style*/
@@ -141,43 +111,28 @@ body {
 
 /*/////////TRAITS SECTION//////////*/
 .traits {
-    text-align: center;
-    top: 200%;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
     background-color: rgb(160, 176, 196);
-    padding-top: 100px;
-    padding-bottom: 100px;
-    box-shadow: inset 0 -.8em 1em -1em black, inset 0 1em 1em -1em black;
+    padding: 100px 0;
 }
 
-.single_trait {
-    text-align: center;
-    padding: 20px;
-}
-
-.single_trait img {
+.single_trait .icon {
     max-width: 60%;
     margin-bottom: 20px;
 }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-    .single_trait img {
-        max-width: 80%;
-    }
+.single_trait p {
+    color: white;
+    font-size: 1.75em;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(57, 57, 57, 0.7);
+    letter-spacing: 1px;
 }
 
-.single_trait p {
-    font-size: 1.5em;
-    color: white;
-    margin-top: 15px;
-    letter-spacing: 1px;
-    font-weight: 200;
-    text-shadow: 2px 2px 3px rgba(57, 57, 57, 0.7);
+@media (min-width : 768px) {
+    .single_trait p {
+        font-size: 1.5em;
+    }
 }
 
 
@@ -195,18 +150,22 @@ and (max-device-width : 1024px) {
 }
 
 .faq {
-    box-shadow: inset 0 20px 20px -20px black, inset 0 -20px 20px -20px black;
     background-image: url("/img/us-720p.jpg");
     background-size: cover;
     background-position: center;
 }
 
+/*
+ * I think the site looks good enough even without this larger
+ * file... -Paul M. Sep 12 2015
+ *
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    /* Retina-specific stuff here */
     .faq {
         background-image: url("/img/us-1920p.jpg");
     }
 }
+/**/
 
 .single_faq_wrapper {
 }
@@ -369,7 +328,7 @@ and (max-device-width : 1024px) {
 
 .projects-title {
   background-color: rgb(42, 60, 82);
-  padding: 35px 0px;
+  padding: 50px 0px;
 }
 
 .projects-title p {
@@ -382,6 +341,7 @@ and (max-device-width : 1024px) {
 #owl-slider .item {
   margin: 3px;
 }
+
 #owl-slider .item img {
   display: block;
   width: 100%;

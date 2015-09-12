@@ -1,102 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ title }} | Developers' Guild</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/projects-styles.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/projects.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext">
 </head>
 <body>
+    <!--
+    These links don't have any targets...
+
     <header id="page-header" class="row">
         <img class="logo" src="/img/dglogo.svg"></img>
         <span id="title">Developers' Guild</span>
         <a href><span class="link">Projects</span></a>
-        <a href><span class="link">Members</span></a>
         <a href><span class="link">About</span></a>
     </header>
+    -->
+
     <div class="landing" style="background-image: url({{landing_image}});">
         <div class="fade-overlay"></div>
         <h1 id="maintitle">{{ title }}</h1>
     </div>
-    <main class="container content">
-        <nav class="header-cont hidden-xs hidden-sm">
-            <div class="header">
-                <span class="nav" id="demo">Demo</span>
-                <span class="nav" id="downloads">Download</span>
-                <span class="nav" id="controls">Controls</span>
-                <span class="nav" id="people">People</span>
-            </div>
-        </nav>
 
+    <main class="content container">
         <section id="demo">
-            <div class="row">
-                <div class="col-md-4"><p>{{ description }}</p></div>
-                <div class="col-md-8">
-                    <video class="img-responsive center-block" controls src={{ demo.src }} width="640" height="356">
-                </div>
-            </div>
+            <video controls src="{{ demo.src }}" width="640" height="360"></video>
+            <p>{{ description }}</p>
+            <!-- This fixes a padding issue that occurs when the video is taller than the text. -->
+            <div class="clearfix"></div>
         </section>
         <section id="downloads">
+            <h2 class="subheading-block"><span>Available across platforms</span></h2>
             <div class="row">
-                <h2 class="subheading-block gray"><span>Available across platforms</span></h2>
-                <div class="row">
-                  {% if downloads.Windows != null %}
-                  <div class="col-xxs-6 col-md-4">
-                    <a href="{{ downloads.Windows.src }}"><div class="dl">
-                      <div class="dl-icon"><img src="/img/windows8.png"></div>
-                      <p>{{ downloads.Windows.name }}</p>
-                      <div class="dl-button"><img src="/img/download.png"><p>Download for Windows<span> {{ downloads.Windows.size }}</span></p></div>
-                    </div></a>
-                  </div>
-                  {% endif %}
-
-                  {% if downloads.Mac != null %}
-                  <div class="col-xs-6 col-md-4">
-                    <a href="{{ downloads.Mac.src }}"><div class="dl">
-                      <div class="dl-icon"><img src="/img/mac10.10.png"></div>
-                      <p>{{ downloads.Mac.os_version }}</p>
-                      <div class="dl-button"><img src="/img/download.png"><p>{{ downloads.Mac.name }}<span> {{ downloads.Mac.size }}</span></p></div>
+                {% if downloads.Windows != null %}
+                <div class="download col-xs-6 col-md-4">
+                    <div class="os-logo os-logo-windows">
+                        <span class="fa fa-windows"></span>
                     </div>
-                  </div></a>
-                  {% endif %}
+                    <div class="os-name">Windows</div>
+                    <a class="btn btn-lg btn-primary" href="{{ downloads.Windows.src }}">
+                        <span class="fa fa-lg fa-download"></span>
+                        {{ downloads.Windows.name }}
+                        <span class="dl-size">{{ downloads.Windows.size }}</span>
+                    </a>
+                </div>
+                {% endif %}
 
-                  <div class="col-xs-6 col-md-4">
-                    <a href="{{ source.url }}"><div class="dl">
-                      <div class="dl-icon"><img src="/img/github.png"></div>
-                      <p>GitHub</p>
-                      <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=fork&count=true&size=large" }} frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
-                      <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=watch&count=true&size=large&v=2" }} frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-                    </div></a>
-                  </div>
+                {% if downloads.Mac != null %}
+                <div class="download col-xs-6 col-md-4">
+                    <div class="os-logo os-logo-apple">
+                        <span class="fa fa-apple"></span>
+                    </div>
+                    <div class="os-name">Mac OS X</div>
+                    <a class="btn btn-lg btn-primary" href="{{ downloads.Mac.src }}">
+                        <span class="fa fa-lg fa-download"></span>
+                        {{ downloads.Mac.name }}
+                        <span class="dl-size">{{ downloads.Mac.size }}</span>
+                    </a>
+                </div>
+                {% endif %}
+
+                <div class="download col-xs-6 col-md-4">
+                    <div class="os-logo os-logo-github">
+                        <span class="fa fa-github"></span>
+                    </div>
+                    <div class="os-name">GitHub</div>
+                    <a class="btn btn-lg btn-default" href="{{ source.url }}">
+                        <span class="fa fa-lg fa-code-fork"></span>
+                        Source code
+                    </a>
+                    <!--
+                    <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=fork&count=true&size=large" }} frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+                    <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=watch&count=true&size=large&v=2" }} frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                    -->
                 </div>
             </div>
         </section>
         <section id="controls">
+            <h2 class="subheading-block">
+                <span>Player controls</span>
+            </h2>
             <div class="row">
-                <h2 class="subheading-block"><span>Player controls</span></h2>
-                <div class="row">
 
-                    {% for controlgroup in controls %}
-                    <div class="col-xs-6 col-md-4">
-                        <h3 class="subheading-block"><span>{{controlgroup.game_mode}}</span></h3>
-                        <table>
-                            {% for control in controlgroup.controls %}
-                                <tr>
-                                    <td><img class="img-responsive center-block" src={{ "/img/keyboard-keys/" + control.name + ".png" }}></td>
-                                    <td><p>{{ control.description }}</td>
-                                <tr>
-                            {% endfor %}
-                        </table>
-                    </div>
-                    {% endfor %}
-
+                {% for controlgroup in controls %}
+                <div class="col-xs-6 col-md-4">
+                    <h3 class="subheading-block">
+                        <span>{{controlgroup.game_mode}}</span>
+                    </h3>
+                    <table class="table-responsive">
+                        {% for control in controlgroup.controls %}
+                            <tr>
+                                <td>
+                                  <img class="img-responsive center-block" src={{ "/img/keyboard-keys/" + control.name + ".png" }}>
+                                </td>
+                                <td>
+                                  <p>{{ control.description }}</p>
+                                </td>
+                            <tr>
+                        {% endfor %}
+                    </table>
                 </div>
+                {% endfor %}
+
             </div>
         </section>
         <section id="people">
-            <div class="row">
                 <h2 class="subheading-block"><span>Connect with the creators</span></h2>
                 <div class="row">
                     {% for contributor in contributors %}
@@ -123,16 +133,15 @@
                     {% endif %}
                     {% endfor %}
                 </div>
-            </div>
         </section>
     </main>
+
     <footer id="footer">
-        <p>Developers' Guild is an open-source community. <a href="http://github.com/developersguild">Click here to see our projects.</a></p>
+        <p>
+            Developers' Guild is an open-source community.
+            <a href="http://github.com/developersguild">Click here to see our projects.</a>
+        </p>
         <a href="mailto:contact@developersguild.io">contact@developersguild.io</a>
     </footer>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.waypoints.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/scrollbehavior.js"></script>
 </body>
 </html>

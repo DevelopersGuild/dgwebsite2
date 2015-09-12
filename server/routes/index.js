@@ -5,10 +5,10 @@ var express   = require('express');
 
 var router = express.Router();
 
-var GitHubConfig = require('../config/github');
-
-var GitHub = require('../models/github');
-var User = require('../models/user');
+/* Require mongo but not finished... reenable once used */
+//var GitHubConfig = require('../config/github');
+//var GitHub = require('../models/github');
+//var User = require('../models/user');
 
 function handleIndexFetch(req, res) {
   res.render('index.html', { loginUrl: GitHubConfig.loginUrl });
@@ -72,12 +72,12 @@ function handleUserLogin(req, res) {
 }
 
 router.get('/', handleSplashFetch);
-router.get('/hub', handleHubFetch);
 router.get('/projects/:name', handleProjectPage);
+//router.get('/hub', handleHubFetch);
 
 
-router.get('/index', handleIndexFetch);
+//router.get('/index', handleIndexFetch);
 // Since 'login' is a reserved word in GitHub, this won't be an issue
-router.get('/user/login', handleUserLogin);
+//router.get('/user/login', handleUserLogin);
 
 module.exports = router;
