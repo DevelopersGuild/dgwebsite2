@@ -3,6 +3,7 @@ body {
   font-family:'Lato';
   padding: 0;
   margin: 0;
+  /* width: 900px; */
 }
 
 * {
@@ -50,15 +51,50 @@ body {
   margin-bottom: -6px;
 }
 
+.sidebar {
+  height: auto;
+  width: 345px;
+  margin-right: 77px;
+  float:right;
+}
+
+.message {
+  padding:10px;
+}
+
+.message > * {
+  display:inline-block;
+}
+
+.message img.ava {
+  height:30px;
+  width:30px;
+  margin-right:10px;
+}
+
+.message p {
+  width:250px;
+}
+
+.message .author {
+  font-style:italic;
+  font-weight:300;
+}
+
+.message .time {
+  color: rgb(100,100,100);
+}
+
 .main {
   width: 784px;
   height:800px;
   padding-left: 147px;
   /* background-color: rgba(0,0,0,0.1); */
+  float: left;
   display: inline-block;
 }
 
-.main > h1 {
+.main > h1, .sidebar > h1 {
   text-transform: uppercase;
   font-weight:400;
 
