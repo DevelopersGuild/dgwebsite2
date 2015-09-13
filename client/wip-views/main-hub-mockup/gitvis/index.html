@@ -70,9 +70,12 @@ console.log(contributions);
   {
     login: [
       {
-        'date': Date object,
-        'message': 'yada',
-        'url': 'foo'
+        'hist': [0,0,1,3,4,1,2],
+        'commits': [... {
+          'msg': 'yada',
+          'url': 'urlbada',
+          'date': // date object
+        }...]
       }
     ]
   }
@@ -139,6 +142,9 @@ dgw.appendCommit('@b', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' 
 // TODO: parse Github fetch -> maps to model
 
 
+/*
+
+ */
 // D3 init
 var pC = d3.select('body').append('svg'); // projectContainer
 var dgw_entries = d3.entries(dgw.contributors)
