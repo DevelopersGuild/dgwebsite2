@@ -7,10 +7,9 @@
 
 <style type="text/css">
 .day {
-  width:10;
-  height:10;
+  width:20;
+  height:20;
   stroke:rgb(255,255,255);
-  fill:rgb(0,0,0);
 }
 
 </style>
@@ -69,7 +68,7 @@ console.log(contributions);
 // sample, given a project array:
 /*projects[0] = [
   {
-    eval(login): [
+    login: [
       {
         'date': Date object,
         'message': 'yada',
@@ -81,6 +80,8 @@ console.log(contributions);
 
 // Defining models to store commits
 
+var ROOF_COMMITS = 5;
+
 var Project = function(name) {
   this.name = name;
   this.contributors = {};
@@ -89,15 +90,27 @@ var Project = function(name) {
 Project.prototype.appendCommit = function(login, commit) {
   // commit format: date, msg, url
   var date = commit.date;
+  var week_offset = date.getDay();
+
+  var histogram = new Array()
+  for (var i = 0; i < 7; i++) histogram.push(0);
+
   if (this.contributors[login] == undefined) {
-    this.contributors[login] = new Array();
+    this.contributors[login] = {
+      'commits': new Array(),
+      'hist': histogram
+    }
   }
-  this.contributors[login].push({
+
+  this.contributors[login].commits.push({
     'date': date,
     'msg': commit.msg,
     'url': commit.url,
-    'week_offset': date.getDay() // TODO: normalize 0 to previous Friday (day of meeting). Currently normalizes to Sunday as 0
+    'week_offset': week_offset // TODO: normalize 0 to previous Friday (day of meeting). Currently normalizes to Sunday as 0
   });
+
+  this.contributors[login].hist[week_offset]++;
+
 }
 
 // generates random Date object within the next 7 days
@@ -116,25 +129,29 @@ dgw.appendCommit('@a', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' 
 
 
 // D3 init
-
 var pC = d3.select('body').append('svg'); // projectContainer
+var dgw_entries = d3.entries(dgw.contributors)
 var contributor_row = pC.selectAll('rect')
-  .data(d3.entries(dgw.contributors))
+  .data(dgw_entries)
   .enter()
   .append('g')
-  .attr('class', 'contributor')
+  .attr('class', 'contributor');
 
 contributor_row.selectAll('rect')
-  .data(function(d){return d.value})
+  .data(function(d){return d.value.commits})
   .enter()
   .append('rect')
   .attr('class', 'day')
   .attr('x', function(d) {
-    return d.week_offset * 10 + 50;
+    return d.week_offset * 20 + 30;
   })
   .attr('y', function(d,i,j) {
-    return j * 10;
-  });
+    return j * 20;
+  })
+  .attr('fill', function(d,i,j) {
+    var val = ( 1 - ( dgw_entries[j].value.hist[d.week_offset] / ROOF_COMMITS ) )* 255;
+    return 'rgb(' + val + ',' + val + ',' + val + ')';
+  })
 
 contributor_row.append('text')
   .text(function(d){
@@ -142,9 +159,8 @@ contributor_row.append('text')
   })
   .attr('fill', 'rgb(0,0,0)')
   .attr('y', function(d,i) {
-    return i * 10 + 10;
+    return i * 20 + 20;
   })
-
 
 // TODO: d3.scale
 
