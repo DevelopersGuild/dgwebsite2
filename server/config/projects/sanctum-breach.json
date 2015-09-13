@@ -2,12 +2,34 @@
 	"colors": {
 	},
 	"demo": {
-		"srcs" [
+		"srcs": [
+			{
+				"url": "video/demo.mp4",
+				"type": "video/mp4; codecs=\"avc1.42E01E\""
+			},
+			{
+				"url": "video/demo.mkv",
+				"type": "video/mkv; codecs=\"vp8\""
+			},
+			{
+				"url": "video/demo.webm",
+				"type": "video/webm; codecs=\"vp8\""
+			}
 		],
-		"alt": ""
+		"alt": "Gameplay demo video"
 	},
 	"description": "In a far far future, the old planet Earth has long been abandoned. Its reclaimed beauty stands as a testament to the cancerous nature of humankind, who left their home world to settle amongst the stars. You are an augmented space traveler, one of many sent forth every few years by the Colonies to seek the presence of habitable planets. Earth's reclaimed status as a suitable home presents your dying colony an opportunity to journey  back to the Sol System. This was your mission. But amidst nature's dominion of the old world, you discover an anomaly: a standing castle nestled deep in the mountains. Within its walls remain the only sentient life left on the planet. Just who built these creatures?",
 	"downloads": {
+		"Windows": {
+			"name": "SanctumBreach-beta2.zip",
+			"size": "51mb",
+			"src": "bin/windows/SanctumBreach-beta2.zip"
+		},
+		"Mac": {
+			"name": "SanctumBreach-beta2.zip",
+			"size": "63mb",
+			"src": "bin/mac/SanctumBreach-beta2.zip"
+		}
 	},
 	"fonts": {
 		"srcs": {
