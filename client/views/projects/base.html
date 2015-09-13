@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }} | Developers' Guild</title>
+    <link rel="stylesheet" href="/projects.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext">
+</head>
+<body>
+    <!--
+    These links don't have any targets...
+
+    <header id="page-header" class="row">
+        <img class="logo" src="/img/dglogo.svg"></img>
+        <span id="title">Developers' Guild</span>
+        <a href><span class="link">Projects</span></a>
+        <a href><span class="link">About</span></a>
+    </header>
+    -->
+
+    <div class="landing" style="background-image: url({{landing_image}});">
+        <div class="fade-overlay"></div>
+        <h1 id="maintitle">{{ title }}</h1>
+    </div>
+
+    <main class="content container">
+        <section id="demo">
+            <video controls src="{{ demo.src }}" width="640" height="360"></video>
+            <p>{{ description }}</p>
+            <!-- This fixes a padding issue that occurs when the video is taller than the text. -->
+            <div class="clearfix"></div>
+        </section>
+        <section id="downloads">
+            <h2 class="subheading-block"><span>Available across platforms</span></h2>
+            <div class="row">
+                {% if downloads.Windows != null %}
+                <div class="download col-xs-6 col-md-4">
+                    <div class="os-logo os-logo-windows">
+                        <span class="fa fa-windows"></span>
+                    </div>
+                    <div class="os-name">Windows</div>
+                    <a class="btn btn-lg btn-primary" href="{{ downloads.Windows.src }}">
+                        <span class="fa fa-lg fa-download"></span>
+                        {{ downloads.Windows.name }}
+                        <span class="dl-size">{{ downloads.Windows.size }}</span>
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if downloads.Mac != null %}
+                <div class="download col-xs-6 col-md-4">
+                    <div class="os-logo os-logo-apple">
+                        <span class="fa fa-apple"></span>
+                    </div>
+                    <div class="os-name">Mac OS X</div>
+                    <a class="btn btn-lg btn-primary" href="{{ downloads.Mac.src }}">
+                        <span class="fa fa-lg fa-download"></span>
+                        {{ downloads.Mac.name }}
+                        <span class="dl-size">{{ downloads.Mac.size }}</span>
+                    </a>
+                </div>
+                {% endif %}
+
+                <div class="download col-xs-6 col-md-4">
+                    <div class="os-logo os-logo-github">
+                        <span class="fa fa-github"></span>
+                    </div>
+                    <div class="os-name">GitHub</div>
+                    <a class="btn btn-lg btn-default" href="{{ source.url }}">
+                        <span class="fa fa-lg fa-code-fork"></span>
+                        Source code
+                    </a>
+                    <!--
+                    <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=fork&count=true&size=large" }} frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+                    <iframe src={{ "https://ghbtns.com/github-btn.html?user=" + source.github.account + "&repo=" + source.github.repo + "&type=watch&count=true&size=large&v=2" }} frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                    -->
+                </div>
+            </div>
+        </section>
+        <section id="controls">
+            <h2 class="subheading-block">
+                <span>Player controls</span>
+            </h2>
+            <div class="row">
+
+                {% for controlgroup in controls %}
+                <div class="col-xs-6 col-md-4">
+                    <h3 class="subheading-block">
+                        <span>{{controlgroup.game_mode}}</span>
+                    </h3>
+                    <table class="table-responsive">
+                        {% for control in controlgroup.controls %}
+                            <tr>
+                                <td>
+                                  <img class="img-responsive center-block" src={{ "/img/keyboard-keys/" + control.name + ".png" }}>
+                                </td>
+                                <td>
+                                  <p>{{ control.description }}</p>
+                                </td>
+                            <tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                {% endfor %}
+
+            </div>
+        </section>
+        <section id="people">
+                <h2 class="subheading-block"><span>Connect with the creators</span></h2>
+                <div class="row">
+                    {% for contributor in contributors %}
+                    <div class="col-md-6">
+                        <div class="contributor">
+                            <div class="col-role hidden-xxs col-xs-6">
+                                <p class="role">{{contributor.role}}</p>
+                            </div>
+                            <div class="col-name-meta col-xxs-12 col-xs-6">
+                                {% if contributor.github %}<a href="https://github.com/{{contributor.github}}">{% endif %}
+                                    <p class="name-meta">
+                                        <span class="name">{{contributor.name}}</span><br>
+                                        {% if contributor.github %}
+                                        <span class="gituser">@{{contributor.github}}</span>
+                                        {% endif %}
+                                    </p>
+                                {% if contributor.github %}</a>{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% if loop.index % 2 == 0 and not loop.last %}
+                    </div>
+                    <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>
+            Developers' Guild is an open-source community.
+            <a href="http://github.com/developersguild">Click here to see our projects.</a>
+        </p>
+        <a href="mailto:contact@developersguild.io">contact@developersguild.io</a>
+    </footer>
+</body>
+</html>

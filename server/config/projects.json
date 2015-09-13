@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Sanctum Breach",
+    "image": "sanctum_breach.jpg",
+    "href": "/projects/sanctum-breach",
+    "term": "Winter 2015 — Spring 2015"
+  },
+  {
+    "name": "Battleturf",
+    "image": "battleturf.jpg",
+    "href": "/projects/battleturf",
+    "term": "Winter 2015 — Spring 2015"
+  },
+  {
+    "name": "Daze",
+    "image": "daze.jpg",
+    "href": "http://daze.developersguild.io",
+    "term": "Spring 2015"
+  },
+  {
+    "name": "Wraithkeeper's Tomb",
+    "image": "wraithkeepers_tomb.jpg",
+    "href": "/projects/wraithkeepers-tomb",
+    "term": "Winter 2015 — Spring 2015"
+  },
+  {
+    "name": "Developers' Guild Forums",
+    "image": "dg_forum.jpg",
+    "href": "http://forum.developersguild.io",
+    "term": "Winter 2015"
+  },
+  {
+    "name": "Cosmic Ball",
+    "image": "cosmic_ball.jpg",
+    "href": "https://itunes.apple.com/us/app/cosmic-ball/id964393146",
+    "term": "Fall 2014"
+  },
+  {
+    "name": "Flappy Bird",
+    "image": "flappybird.jpg",
+    "href": "",
+    "term": "Spring 2014"
+  },
+  {
+    "name": "Developers' Guild Website",
+    "image": "dg_website.jpg",
+    "href": "https://developersguild.io",
+    "term": "Spring 2014"
+  }
+]
+
