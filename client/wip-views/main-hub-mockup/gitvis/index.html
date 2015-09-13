@@ -3,7 +3,7 @@
   <title></title>
   <script type="text/javascript" src="../d3.min.js"></script>
   <script src="./jquery.min.js"></script>
-  <script src="./dgw-git-contributors.json"></script>
+  <!--<script src="./dgw-git-contributors.json"></script>-->
 
 <style type="text/css">
 .day {
@@ -32,38 +32,11 @@ Assumptions (for now)
 
  */
 
-/*var req = new XMLHttpRequest();
 var twoweeks = new Date();
 
 twoweeks.setDate(twoweeks.getDate() - (twoweeks.getDay() + 2) - 7);
-console.log(twoweeks);
 oneweek = new Date(twoweeks);
 oneweek.setDate(oneweek.getDate() + 7)
-console.log(twoweeks + ' until ' + oneweek);
-req.open('GET', 'https://api.github.com/repos/developersguild/dgwebsite2/commits?sha=master&since=' + twoweeks + '&until=' + oneweek, true);
-req.send();
-
-req.onreadystatechange = function(){
-  console.log(req.responseText);
-}*/
-
-/*var contributions = []
-
-d3.select('body').selectAll('p')
-  .data(contributors).enter()
-  .append('p').text(function(contributor){
-    contributions.push({eval(contributor.login) : new Array()});
-    return '@' + contributor.login;
-  });
-
-wks_2.forEach(function(c) {
-  contributions[c.author.login].push(c);
-})
-
-console.log(contributions);
-*/
-
-//var cont = d3.select('body').selectAll('svg').append();
 
 // sample, given a project array:
 /*projects[0] = [
@@ -74,7 +47,8 @@ console.log(contributions);
         'commits': [... {
           'msg': 'yada',
           'url': 'urlbada',
-          'date': // date object
+          'date': // date object,
+          'week_offset': // days from Sunday
         }...]
       }
     ]
@@ -87,7 +61,7 @@ var ROOF_COMMITS = 5;
 
 var Project = function(name) {
   this.name = name;
-  this.contributors = {};
+  this.contributors = new Object()
 }
 
 Project.prototype.appendCommit = function(login, commit) {
@@ -95,10 +69,9 @@ Project.prototype.appendCommit = function(login, commit) {
   var date = commit.date;
   var week_offset = date.getDay();
 
-  var histogram = new Array()
-  for (var i = 0; i < 7; i++) histogram.push(0);
-
   if (this.contributors[login] == undefined) {
+    var histogram = new Array()
+    for (var i = 0; i < 7; i++) histogram.push(0);
     this.contributors[login] = {
       'commits': new Array(),
       'hist': histogram
@@ -124,27 +97,34 @@ function genRanDate() {
 
 var today = new Date();
 var dgw = new Project('dgwebsite');
-dgw.appendCommit('@a', {'date': genRanDate(), 'msg': 'yada', 'url': 'sampleurl' })
-dgw.appendCommit('@b', {'date': genRanDate(), 'msg': 'yada', 'url': 'sampleurl' })
-dgw.appendCommit('@a', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@a', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@a', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@a', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@b', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@b', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@b', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@b', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@b', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@b', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
-dgw.appendCommit('@b', {'date': genRanDate(), 'msg': 'bada', 'url': 'sampleurl' })
 
+function parseCommit(data, callback) {
+  var login = data.author.login,
+  commit = {
+    'date': new Date(data.commit.author.date),
+    'url': data.url,
+    'msg': data.commit.message
+  }
+  callback(login, commit);
+}
 
+$.ajax({
+  type: 'GET',
+  url: 'https://api.github.com/repos/developersguild/dgwebsite2/commits?sha=master&since=' + twoweeks + '&until=' + oneweek,
+  success: function(data) {
+    data.forEach(function(commit) {
+      parseCommit(commit, dgw.appendCommit.bind(dgw))
+    });
+    render();
+  },
+  error: function(data) {
+    console.log('failed request')
+  }
+})
 // TODO: parse Github fetch -> maps to model
 
+function render() {
 
-/*
-
- */
 // D3 init
 var pC = d3.select('body').append('svg'); // projectContainer
 var dgw_entries = d3.entries(dgw.contributors)
@@ -160,7 +140,7 @@ contributor_row.selectAll('rect')
   .append('rect')
   .attr('class', 'day')
   .attr('x', function(d) {
-    return d.week_offset * 20 + 30;
+    return d.week_offset * 20 + 50;
   })
   .attr('y', function(d,i,j) {
     return j * 20;
@@ -181,7 +161,7 @@ contributor_row.append('text')
 
 // TODO: d3.scale
 
-
+}
 </script>
 
 </body>
