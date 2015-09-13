@@ -62,22 +62,45 @@ console.log(contributions);
 
 //var cont = d3.select('body').selectAll('svg').append();
 
-console.log(new Date('2015-09-11'))
-
-var projects = new Array();
-projects[0] = [
+// sample, given a project array:
+/*projects[0] = [
   {
-    'login': '@a',
-    'commits': [
+    eval(login): [
       {
-        'date': new Date(),
+        'date': Date object,
         'message': 'yada',
         'url': 'foo'
       }
     ]
   }
-]
+]*/
 
+var Project = function(name) {
+  this.name = name;
+  this.contributors = {};
+}
+
+Project.prototype.appendCommit = function(login, commit) {
+  // commit format: date, msg, url
+  if (this.contributors[login] == undefined) {
+    this.contributors[login] = new Array();
+
+  }
+  this.contributors[login].push({
+    'date': new Date(commit.date),
+    'msg': commit.msg,
+    'url': commit.url
+  });
+}
+
+var dgw = new Project('dgwebsite');
+dgw.appendCommit('@a', {'date': new Date(), 'msg': 'yada', 'url': 'sampleurl' })
+dgw.appendCommit('@b', {'date': new Date(), 'msg': 'yada', 'url': 'sampleurl' })
+dgw.appendCommit('@a', {'date': new Date(), 'msg': 'bada', 'url': 'sampleurl' })
+
+dgw.contributors['@a'].forEach(function(commit) {
+  console.log(commit.date)
+})
 
 </script>
 
