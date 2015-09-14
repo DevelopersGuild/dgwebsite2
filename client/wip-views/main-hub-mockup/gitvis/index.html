@@ -7,8 +7,6 @@
 
 <style type="text/css">
 .day {
-  width:20;
-  height:20;
   stroke:rgb(255,255,255);
 }
 
@@ -57,7 +55,7 @@ oneweek.setDate(oneweek.getDate() + 7)
 
 // Defining models to store commits
 
-var ROOF_COMMITS = 5;
+var ROOF_COMMITS = 5, GRID_SIZE = 30
 
 var Project = function(name) {
   this.name = name;
@@ -89,12 +87,11 @@ Project.prototype.appendCommit = function(login, commit) {
 
 }
 
-// generates random Date object within the next 7 days
-function genRanDate() {
-  var today = new Date();
-  return new Date(today.setDate(today.getDate() + Math.round(Math.random()*7)));
-}
+// D3 Scale functions
+// TODO: normalize how number of commits translates to opacity.
 
+// GitHub fetching and parsing
+// 
 var today = new Date();
 var dgw = new Project('dgwebsite');
 
@@ -110,7 +107,7 @@ function parseCommit(data, callback) {
 
 $.ajax({
   type: 'GET',
-  url: 'https://api.github.com/repos/developersguild/dgwebsite2/commits?sha=master&since=' + twoweeks + '&until=' + oneweek,
+  url: 'https://api.github.com/repos/developersguild/dgwebsite2/commits?sha=master&since=' + twoweeks /*+ '&until=' + oneweek*/,
   success: function(data) {
     data.forEach(function(commit) {
       parseCommit(commit, dgw.appendCommit.bind(dgw))
@@ -121,45 +118,70 @@ $.ajax({
     console.log('failed request')
   }
 })
-// TODO: parse Github fetch -> maps to model
 
 function render() {
 
 // D3 init
 var pC = d3.select('body').append('svg'); // projectContainer
+
 var dgw_entries = d3.entries(dgw.contributors)
-var contributor_row = pC.selectAll('rect')
+
+// Decorate grid
+pC.selectAll('g')
+  .data(dgw_entries)
+  .enter()
+  .append('g')
+  .attr('class', 'bgrow') // had to use class to differentiate so that later selection for data doesn't conflict
+  .selectAll('rect')
+    .data(new Array(7))
+    .enter()
+    .append('rect')
+    .attr('class', 'bgsquare')
+    .attr('fill', 'rgb(220,220,220')
+    .attr('stroke', 'rgb(255,255,255)')
+    .attr('x', function(d,i) {
+      return i * GRID_SIZE + 100;
+    })
+    .attr('y', function(d,i,j) {
+      return j * GRID_SIZE;
+    })
+    .attr('width', GRID_SIZE).attr('height', GRID_SIZE)
+
+// Fill grid with data
+var contributor_row = pC.selectAll('g.contributor')
   .data(dgw_entries)
   .enter()
   .append('g')
   .attr('class', 'contributor');
 
-contributor_row.selectAll('rect')
+contributor_row.selectAll('rect.day')
   .data(function(d){return d.value.commits})
   .enter()
   .append('rect')
   .attr('class', 'day')
   .attr('x', function(d) {
-    return d.week_offset * 20 + 50;
+    return d.week_offset * GRID_SIZE + 100;
   })
   .attr('y', function(d,i,j) {
-    return j * 20;
+    return j * GRID_SIZE;
   })
+  .attr('width', GRID_SIZE).attr('height', GRID_SIZE)
   .attr('fill', function(d,i,j) {
     var val = ( 1 - ( dgw_entries[j].value.hist[d.week_offset] / ROOF_COMMITS ) )* 255;
-    return 'rgb(' + val + ',' + val + ',' + val + ')';
+    return 'rgb(30' + ',' + val + ',' + '0)';
   })
 
+// Add text
 contributor_row.append('text')
   .text(function(d){
     return d.key;
   })
   .attr('fill', 'rgb(0,0,0)')
+  .attr('font-family', 'Open Sans')
+  .attr('font-size', '14')
   .attr('y', function(d,i) {
-    return i * 20 + 20;
+    return i * GRID_SIZE + GRID_SIZE - 10;
   })
-
-// TODO: d3.scale
 
 }
 </script>
