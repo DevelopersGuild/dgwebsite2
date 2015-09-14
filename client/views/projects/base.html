@@ -94,7 +94,7 @@
                         {% for control in controlgroup.controls %}
                             <tr>
                                 <td>
-                                  <img class="img-responsive center-block" src={{ "/img/keyboard-keys/" + control.name + ".png" }}>
+                                  <img class="img-responsive center-block" src="/img/keyboard-keys/{{ control.name | lower}}.png">
                                 </td>
                                 <td>
                                   <p>{{ control.description }}</p>
