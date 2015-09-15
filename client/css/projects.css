@@ -127,12 +127,13 @@ p {
 
 section {
     text-align: center;
-    width: 85vw;
     margin: 80px auto;
 }
 
 section p {
     text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 h2,
@@ -162,8 +163,9 @@ h3 {
 }
 
 #demo video {
-    margin: 0 30px 20px;
-    float: right;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
 }
 
 #demo p {
@@ -447,12 +449,24 @@ h3 {
 }
 
 @media (min-width: 992px) {
+    section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
     .landing #maintitle {
         left: auto;
         right: 60px;
         bottom: 30px;
         transform: none;
         -webkit-transform: none;
+    }
+
+    #demo video {
+        margin: 0 30px 20px;
+        float: right;
+        width: 512px;
+        height: 288px;
     }
 
     .col-md-4 {
@@ -465,6 +479,18 @@ h3 {
 }
 
 @media (min-width: 1200px) {
+    section {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    #demo video {
+        margin: 0 30px 20px;
+        float: right;
+        width: 640px;
+        height: 360px;
+    }
+
     /*
      * This is too far in the center now that we have a down arrow in the
      * bottom center.
