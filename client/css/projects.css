@@ -70,12 +70,12 @@ p {
 }
 
 .landing #maintitle {
-    color: #f8e8f8;
-    font-size: 45px;
+    color: #f4e4f4;
+    font-size: 40px;
     text-transform: uppercase;
     position: absolute;
     bottom: 90px;
-    right: 10px;
+    left: 10px;
 }
 
 .fade-overlay {
@@ -84,6 +84,39 @@ p {
     height: 250px;
     bottom: 0;
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));
+}
+
+.landing #there-is-more {
+    color: rgba(255,255,255,0.65);
+    font-size: 46px;
+    display: none;
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+
+    animation-duration: 1.5s;
+    animation-name: glow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-name: glow;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes glow {
+    from { color: rgba(255,255,255,0.70); }
+    to   { color: rgba(255,255,255,0.60); }
+}
+
+@-webkit-keyframes glow {
+    from { color: rgba(255,255,255,0.70); }
+    to   { color: rgba(255,255,255,0.60); }
 }
 
 .content {
@@ -332,6 +365,7 @@ h3 {
 
 
 @media (min-width: 600px) {
+    /*
     #page-header span {
         font-size: 1.1em;
         line-height: 2.5em;
@@ -340,9 +374,18 @@ h3 {
     #page-header img.logo {
         max-height: 38px;
     }
+    */
 
     .landing #maintitle {
-        right: 60px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
+        white-space: nowrap;
+    }
+
+    .landing #there-is-more {
+        display: inline;
+        font-size: 36px;
     }
 
     .subheading-block > span {
@@ -373,7 +416,6 @@ h3 {
         border-left: 8px solid rgb(172, 157, 216);
     }
 
-
     .col-xs-6 {
         width: 50%;
     }
@@ -384,11 +426,11 @@ h3 {
 }
 
 @media (min-width: 768px) {
+    /*
     #page-header img.logo {
         max-height: 38px;
     }
 
-    /*
     #page-header span {
         font-size: 1.4em;
         line-height: 2em;
@@ -396,8 +438,7 @@ h3 {
     */
 
     .landing #maintitle {
-        right: 100px;
-        bottom: 50px;
+        font-size: 45px;
     }
 
     h2 {
@@ -407,18 +448,30 @@ h3 {
 
 @media (min-width: 992px) {
     .landing #maintitle {
-        right: 120px;
+        left: auto;
+        right: 60px;
+        bottom: 30px;
+        transform: none;
+        -webkit-transform: none;
     }
 
     .col-md-4 {
         width: 33.3333%;
     }
+
+    .landing #there-is-more {
+        font-size: 46px;
+    }
 }
 
 @media (min-width: 1200px) {
-    .landing #maintitle {
-        right: 160px;
-    }
+    /*
+     * This is too far in the center now that we have a down arrow in the
+     * bottom center.
+     * .landing #maintitle {
+     *     right: 160px;
+     * }
+     */
 
     #downloads .dl-size {
         display: inline;
