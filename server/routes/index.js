@@ -72,12 +72,13 @@ function handleUserLogin(req, res) {
 }
 
 router.get('/', handleSplashFetch);
-router.get('/projects/:name', handleProjectPage);
 //router.get('/hub', handleHubFetch);
-
 
 //router.get('/index', handleIndexFetch);
 // Since 'login' is a reserved word in GitHub, this won't be an issue
 //router.get('/user/login', handleUserLogin);
+
+// Anything else we assume might be a project.
+router.get('/:name', handleProjectPage);
 
 module.exports = router;
