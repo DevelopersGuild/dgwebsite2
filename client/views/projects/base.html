@@ -27,7 +27,11 @@
 
     <main class="content container">
         <section id="demo">
-            <video controls src="{{ demo.src }}"></video>
+            <video controls>
+                {% for src in demo.srcs %}
+                <source type="{{ src.type }}" src="{{ src.url }}">
+                {% endfor %}
+            </video>
             <p>{{ description }}</p>
             <!-- This fixes a padding issue that occurs when the video is taller than the text. -->
             <div class="clearfix"></div>
