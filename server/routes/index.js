@@ -30,6 +30,10 @@ function handleHubFetch(req, res) {
   });
 }
 
+function handleJoin(req, res) {
+  res.redirect('http://eepurl.com/boktMz');
+}
+
 function handleProjectPage(req, res, next) {
   var project = req.params.name;
   try {
@@ -77,6 +81,8 @@ router.get('/', handleSplashFetch);
 //router.get('/index', handleIndexFetch);
 // Since 'login' is a reserved word in GitHub, this won't be an issue
 //router.get('/user/login', handleUserLogin);
+
+router.get('/join', handleJoin)
 
 // Anything else we assume might be a project.
 router.get('/:name', handleProjectPage);
