@@ -29,6 +29,13 @@ gulp.task('compile-css-splash', function() {
       .pipe(gulp.dest('public'));
 });
 
+gulp.task('compile-css-git', function() {
+    return gulp.src('client/css/git.css')
+      .pipe(cssCombo())
+      .pipe(gulpIf(isProduction, minifyCss('git.css')))
+      .pipe(gulp.dest('public'));
+});
+
 gulp.task('compile-css-projects', function() {
     return gulp.src('client/css/projects.css')
       .pipe(cssCombo())
@@ -36,7 +43,7 @@ gulp.task('compile-css-projects', function() {
       .pipe(gulp.dest('public'));
 });
 
-gulp.task('compile-css', ['compile-css-splash', 'compile-css-projects']);
+gulp.task('compile-css', ['compile-css-splash', 'compile-css-git', 'compile-css-projects']);
 gulp.task('compile', ['compile-js', 'compile-css']);
 
 gulp.task('server', ['compile'], function() {

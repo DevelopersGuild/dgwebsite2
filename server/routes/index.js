@@ -83,6 +83,9 @@ router.get('/', handleSplashFetch);
 //router.get('/user/login', handleUserLogin);
 
 router.get('/join', handleJoin)
+router.get('/git', function(req, res) {
+  res.render('git.html');
+});
 
 // Anything else we assume might be a project.
 router.get('/:name', handleProjectPage);
