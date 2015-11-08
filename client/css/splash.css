@@ -9,6 +9,7 @@ body {
     text-align: center;
 }
 
+
 .overlay {
     background-color: rgba(34, 26, 6, 0.5);
     width: 100%;
@@ -391,4 +392,54 @@ and (max-device-width : 1024px) {
 
 .owl-controls {
   display: none !important;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.past-projects-title {
+
+  font-size: 50px;
+  color: rgb(70, 70, 70);
+  padding: 50px 0px 0px;
+  font-weight: 300;
+
+}
+
+.past-project-subtitle {
+
+  font-size: 35px;
+  color: rgb(70, 70, 70);
+  margin: 0px 0px 30px;
+  font-weight: 300;
+
+}
+
+.past-project-name {
+
+  color: rgb(50, 164, 183);
+  font-size: 24px;
+  margin-bottom: 20px;
+
+}
+
+.this-is-a-creation-image {
+
+  width: 75%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(70, 70, 70);
+  border-radius: 10px;
+}
+
+.this-is-a-past-project-type {
+
+  padding-bottom: 60px;
+
+}
+
+.past-projects {
+
+  padding-bottom: 30px;
 }
