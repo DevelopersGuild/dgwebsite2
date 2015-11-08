@@ -37,7 +37,7 @@ require('./events')(io);
 
 // Handle 404 Error
 app.use(function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
+  //res.writeHead(200, {'Content-Type': 'text/html'});
   res.send('<h1>404</h1>');
   res.end();
 });
