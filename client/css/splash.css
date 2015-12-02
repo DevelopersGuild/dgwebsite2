@@ -116,22 +116,23 @@ body {
 }
 
 /*/////////FAQ SECTION/////////*/
-.faq_title {
-    background-color: #eceff1;
-    padding: 100px 0px;
-}
-
-.faq_title p {
+.faq-title {
+    padding: 50px 0px;
     margin: 0px;
     font-size: 2.25em;
     font-weight: 300;
-    color: #424242;
+    color: #fff;
 }
 
 .faq {
     background-image: url("/img/us-720p.jpg");
     background-size: cover;
     background-position: center;
+}
+
+.FAQ-section {
+    background-color: #51512E;
+    padding: 0px 0px 50px;
 }
 
 /*
