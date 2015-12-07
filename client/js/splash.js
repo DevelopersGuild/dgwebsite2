@@ -26,7 +26,7 @@ require('./owl.carousel.min.js');
 $(document).ready(function() {
   var $owl = $("#owl-slider");
   $owl.owlCarousel({
-    items : 4,
+    items : 3,
     itemsDesktop : [1199,3],
     itemsDesktopSmall : [979,3],
   });
