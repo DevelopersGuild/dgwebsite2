@@ -262,7 +262,6 @@ body {
 /********IPHONE 5 COLUMN FIX******/
 
 @media screen
-and (min-device-width : 320px)
 and (max-device-width : 480px) {
     .overlay {
         padding: 0;
@@ -286,7 +285,7 @@ and (max-device-width : 480px) {
     }
 
     .faq-container {
-        width: 90%;
+        width: 100%;
     }
 }
 
