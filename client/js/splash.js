@@ -22,6 +22,7 @@ $(window).load(function() {
 
 window.$ = window.jQuery = require('jquery');
 require('./owl.carousel.min.js');
+require('./lightbox.min.js');
 
 $(document).ready(function() {
   var $owl = $("#owl-slider");
