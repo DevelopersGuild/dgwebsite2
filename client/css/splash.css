@@ -27,7 +27,7 @@ body {
 .landing {
     background-size: cover;
     background-position: center;
-    background-image: url("/img/dg-rama.jpg");
+    background-image: url("/img/dgHeader.jpg");
     min-height: 100vh;
 }
 
@@ -318,7 +318,7 @@ and (max-device-width : 1024px) {
 }
 
 .projects-title {
-  background-color: rgb(47, 82, 76);
+  background-color: rgb(43, 124, 109);
   padding: 50px 0px;
 }
 
@@ -404,7 +404,7 @@ and (max-device-width : 1024px) {
 .past-project-subtitle {
 
   font-size: 35px;
-  color: rgb(132, 194, 251);
+  color: rgb(209, 230, 250);
   margin: 0px 0px 30px;
   font-weight: 300;
 
@@ -412,7 +412,7 @@ and (max-device-width : 1024px) {
 
 .past-project-name {
 
-  color: rgb(50, 164, 183);
+  color: rgb(196, 212, 214);
   font-size: 24px;
   margin-bottom: 20px;
 
