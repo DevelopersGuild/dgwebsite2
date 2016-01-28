@@ -18,9 +18,15 @@ body {
 }
 
 .fixed-background {
-    background-attachment: fixed;
+    //background-attachment: fixed;
+    position: fixed;
+    z-index: -1;
 }
-
+.artificial{
+    min-height: 100vh;
+    width: 100vw;
+    
+}
 
 /*////////LANDING PAGE////////*/
 
@@ -29,6 +35,7 @@ body {
     background-position: center;
     background-image: url("/img/dgHeader.jpg");
     min-height: 100vh;
+    width: 100vw;
 }
 
 .landingcont {
@@ -143,9 +150,10 @@ body {
 }
 
 .FAQ-section {
-    background-color: #407085;
+    background-color: rgba(64, 112, 133, 0.8);
     padding: 0px 0px 50px;
 }
+
 
 /*
  * I think the site looks good enough even without this larger
@@ -434,6 +442,6 @@ and (max-device-width : 1024px) {
 }
 
 .past-projects {
-  background-color: rgb(3, 57, 62);
+  background-color: rgba(3, 57, 62, 0.8);
   padding-bottom: 30px;
 }
