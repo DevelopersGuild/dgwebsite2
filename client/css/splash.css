@@ -19,8 +19,8 @@ body {
 
 .fixed-background {
     //background-attachment: fixed;
-    position: fixed;
-    z-index: -1;
+    //position: fixed;
+    //z-index: -1;
 }
 .artificial{
     min-height: 100vh;
@@ -36,6 +36,8 @@ body {
     background-image: url("/img/dgHeader.jpg");
     min-height: 100vh;
     width: 100vw;
+     position: fixed;
+    z-index: -1;
 }
 
 .landingcont {
@@ -307,6 +309,7 @@ and (max-device-width : 480px) {
     .faq-container {
         width: 100%;
     }
+
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -323,6 +326,7 @@ and (max-device-width : 1024px) {
     .single_faq {
         padding: 15px 15px 5px 15px;
     }
+
 }
 
 .projects-title {
@@ -345,7 +349,7 @@ and (max-device-width : 1024px) {
   display: block;
   width: 100%;
   height: auto;
-  opacity: 0.9;
+  opacity: 1;
   transition: all 0.25s;
 }
 
@@ -444,4 +448,35 @@ and (max-device-width : 1024px) {
 .past-projects {
   background-color: rgba(3, 57, 62, 0.8);
   padding-bottom: 30px;
+}
+
+.outerContainer{
+
+    -moz-animation: opening 1 ease-in-out 1.5s;
+    -webkit-animation: opening 1 ease-in-out 1.5s;
+    animation: opening 1 ease-in-out 1.5s;
+}
+@-moz-keyframes opening {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes opening {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes opening {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
