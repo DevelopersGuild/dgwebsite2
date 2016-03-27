@@ -87,6 +87,10 @@ router.get('/git', function(req, res) {
   res.render('git.html');
 });
 
+router.get('/calendar', function(req, res) {
+  res.redirect('https://calendar.google.com/calendar/embed?src=deanzadevelopersguild%40gmail.com');
+});
+
 // Anything else we assume might be a project.
 router.get('/:name', handleProjectPage);
 
